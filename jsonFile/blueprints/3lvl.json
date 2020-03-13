@@ -1,0 +1,117 @@
+{
+  
+  "Level_3" : {
+    "C91F92CJ77YP7NW6T5V" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level2%2Fammo.rifle.explosive.png?alt=media&token=6547de6e-07c7-4c5d-aa60-b18514fb5640",
+      "name" : "Explosive 5.56 Rifle Ammo",
+      "uid" : "C91F92CJ77YP7NW6T5V",
+      "value_1" : "125"
+    },
+    "YG862ECS7OSQY0APQW3" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level2%2Fammo.rifle.hv.png?alt=media&token=9ae906a8-fa92-4f7c-97e8-9fbd94af6c8b",
+         "name" : "HV 5.56 Rifle Ammo",
+         "uid" : "YG862ECS7OSQY0APQW3",
+         "value_1" : "125"
+       },
+    "0KV8MZVOAGGFJ838T22" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level2%2Fammo.rifle.incendiary.png?alt=media&token=6703d3af-e86c-463c-add4-741180cbf2e2",
+         "name" : "Incendiary 5.56 Rifle Ammo",
+         "uid" : "0KV8MZVOAGGFJ838T22",
+         "value_1" : "125"
+       },
+    "DGICT4YNBDRBENV9IA0" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level2%2Fammo.rocket.basic.png?alt=media&token=6a0850fd-0ec5-4840-9e5a-8ea8dc6f5fad",
+         "name" : "Rocket",
+         "uid" : "DGICT4YNBDRBENV9IA0",
+         "value_1" : "125"
+       },
+    "JYXH4G69R9HDQO3I0UR" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level2%2Fdoor.double.hinged.toptier.png?alt=media&token=5fc20f0f-dc06-4929-84ff-431257492564",
+         "name" : "Armored Double Door",
+         "uid" : "JYXH4G69R9HDQO3I0UR",
+         "value_1" : "500"
+       },
+    "ZBL0SYFBVXJX17ZLRSR" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level2%2Fdoor.hinged.toptier.png?alt=media&token=6f35347e-c807-40b3-920c-69e9dd971067",
+         "name" : "Armored Door",
+         "uid" : "ZBL0SYFBVXJX17ZLRSR",
+         "value_1" : "500"
+       },
+    "UAFK5EDPRTN5FAZMO2M" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level2%2Fexplosive.timed.png?alt=media&token=c263ead9-19ac-4e71-af80-9e6f7262405b",
+         "name" : "Timed Explosive Charge",
+         "uid" : "UAFK5EDPRTN5FAZMO2M",
+         "value_1" : "500"
+       },
+    "PZWKUBBU09S6S8L3LTO" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level2%2Fexplosives.png?alt=media&token=2d5e9325-3219-46c6-a0b7-d3cfb9213707",
+         "name" : "Explosives",
+         "uid" : "PZWKUBBU09S6S8L3LTO",
+         "value_1" : "500"
+       },
+    "1P5U153BNX23AQM78VZ" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level2%2Fgates.external.high.stone.png?alt=media&token=b66616fb-8a0a-4808-906d-be190b113c00",
+         "name" : "High External Stone Gate",
+         "uid" : "1P5U153BNX23AQM78VZ",
+         "value_1" : "500"
+       },
+    "CIBXTUSWMQV7PP0TVP6" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level2%2Fmetal.facemask.png?alt=media&token=479fe2a2-fe6f-41aa-a4d4-2dba03f52eb9",
+         "name" : "Metal Facemask",
+         "uid" : "CIBXTUSWMQV7PP0TVP6",
+         "value_1" : "500"
+       },
+    "QCAYQ4XR18WWNN6CK4H" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level2%2Fmetal.plate.torso.png?alt=media&token=5a955255-986b-4bf4-8df1-3e5fabb8a3ad",
+         "name" : "Metal Chest Plate",
+         "uid" : "QCAYQ4XR18WWNN6CK4H",
+         "value_1" : "500"
+       },
+    "3KW4WUQ31H5DHEMYZDF" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level2%2Frifle.ak.png?alt=media&token=47149126-e09c-4924-8e97-731cb44c3a1e",
+         "name" : "Assault Rifle",
+         "uid" : "3KW4WUQ31H5DHEMYZDF",
+         "value_1" : "500"
+       },
+    "L1O9K6AOTM85547XSXI" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level2%2Frifle.bolt.png?alt=media&token=0aaff246-cb9a-4633-854a-35f6d54209e8",
+         "name" : "Bolt Action Rifle",
+         "uid" : "L1O9K6AOTM85547XSXI",
+         "value_1" : "500"
+       },
+    "1R2460I2NC91F92CJ77" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level2%2Fsmg.mp5.png?alt=media&token=face0858-da08-4b1c-a98f-ea1c9708ae59",
+         "name" : "MP5A4",
+         "uid" : "1R2460I2NC91F92CJ77",
+         "value_1" : "125"
+       },
+    "YP7NW6T5VYG862ECS7O" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level2%2Fwall.window.bars.toptier.png?alt=media&token=e876f80c-b683-4f49-a3da-ea16fed432be",
+         "name" : "Reinforced Window Bars",
+         "uid" : "YP7NW6T5VYG862ECS7O",
+         "value_1" : "125"
+       },
+    "SQY0APQW30KV8MZVOAG" : {
+            "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level2%2Fweapon.mod.holosight.png?alt=media&token=20cc9224-ac17-4e3c-a17b-85dc70fdd25a",
+            "name" : "Holosight",
+            "uid" : "SQY0APQW30KV8MZVOAG",
+            "value_1" : "125"
+          },
+    "GFJ838T22DGICT4YNBD" : {
+            "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level2%2Fweapon.mod.lasersight.png?alt=media&token=097a92d3-7d2a-46a7-9db5-599709fdb172",
+            "name" : "Weapon Lasersight",
+            "uid" : "GFJ838T22DGICT4YNBD",
+            "value_1" : "125"
+          },
+    "RBENV9IA0JYXH4G69R9" : {
+            "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level2%2Fweapon.mod.small.scope.png?alt=media&token=f62433a4-09a1-40a9-a0c4-e810e94d6b39",
+            "name" : "4x Zoom Scope",
+            "uid" : "RBENV9IA0JYXH4G69R9",
+            "value_1" : "125"
+          },
+    
+    
+  }
+}
+
+

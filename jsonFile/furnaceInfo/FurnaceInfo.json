@@ -1,0 +1,109 @@
+{
+  "JG8NGAJQEE5WFU3D0C2" : {
+    "id" : "JG8NGAJQEE5WFU3D0C2",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F1metal.png?alt=media&token=64266db0-ad23-4e5a-9fb8-b0c5ad7dfc83",
+    "type" : "iron"
+  },
+  "5NFD9MJZEVZX57HWX4B" : {
+    "id" : "5NFD9MJZEVZX57HWX4B",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F2metal.png?alt=media&token=7bc522a6-b643-418b-a612-bef816c20e33",
+    "type" : "iron"
+  },
+  "7R2FT62VHNONQGBG1A9" : {
+    "id" : "7R2FT62VHNONQGBG1A9",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F3metal.png?alt=media&token=82520e85-2cff-4839-81bf-9d6162a27987",
+    "type" : "iron"
+  },
+  "KNPJ0B6VIKYILV2GQH7" : {
+    "id" : "KNPJ0B6VIKYILV2GQH7",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F4metal.png?alt=media&token=be2b7a77-6ba5-49fa-a03a-b4b624645a5a",
+    "type" : "iron"
+  },
+  "Q65OBNEHYHOKXVBQ71Z" : {
+    "id" : "Q65OBNEHYHOKXVBQ71Z",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F5000metal.png?alt=media&token=be6ef17a-94e9-4fa8-b145-b2bd142d599b",
+    "type" : "iron"
+  },
+  "7IT8Z6MI34R48E7SZZY" : {
+    "id" : "7IT8Z6MI34R48E7SZZY",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F6metal.png?alt=media&token=b48f5be7-1813-4d44-8c12-aa5bb313f61e",
+    "type" : "iron"
+  },
+  "1HMRCLLWY0UCMH6UV9T" : {
+    "id" : "1HMRCLLWY0UCMH6UV9T",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F7252metal.png?alt=media&token=65be7287-3548-4281-b519-ac316a6f4aab",
+    "type" : "iron"
+  },
+  "W64S1JJ27G0DZGSAS0W" : {
+    "id" : "W64S1JJ27G0DZGSAS0W",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F1sera.png?alt=media&token=81606ffd-edc4-40a6-9ba8-8c005d12f314",
+    "type" : "sulfur"
+  },
+  "8XC19DAIU49AHXUEF26" : {
+    "id" : "8XC19DAIU49AHXUEF26",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F2sera.png?alt=media&token=49081951-8148-499c-86eb-dcaeff4d9938",
+    "type" : "sulfur"
+  },
+  "KPI41103TY3EXW702WE" : {
+    "id" : "KPI41103TY3EXW702WE",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F3sera.png?alt=media&token=1bde6d43-109e-497c-aea1-d21a1e135411",
+    "type" : "sulfur"
+  },
+  "YJI5XB5Y8F33UUDJSBP" : {
+    "id" : "YJI5XB5Y8F33UUDJSBP",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F4sera.png?alt=media&token=c5cd66f4-8541-43c0-a685-166c1373bfd8",
+    "type" : "sulfur"
+  },
+  "S9WGRDIV1TFCCBF4Z4P" : {
+    "id" : "S9WGRDIV1TFCCBF4Z4P",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F5sera.png?alt=media&token=82e7171f-50c8-4029-8fb1-5d71dbcabd59",
+    "type" : "sulfur"
+  },
+  "8Y9CD8P9UJG8NGAJQEE" : {
+    "id" : "8Y9CD8P9UJG8NGAJQEE",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F6sera.png?alt=media&token=9e5ffa5a-e718-47af-98d7-a19e78d0d3f1",
+    "type" : "sulfur"
+  },
+  "5WFU3D0C25NFD9MJZEV" : {
+    "id" : "5WFU3D0C25NFD9MJZEV",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F7sera.png?alt=media&token=5c242c7b-9268-46dd-9a5b-b3a9fc5c8413",
+    "type" : "sulfur"
+  },
+  "ZX57HWX4B7R2FT62VHN" : {
+    "id" : "ZX57HWX4B7R2FT62VHN",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F8514sera.png?alt=media&token=2e6d673f-fc5f-48e3-a0fc-4e107d2c0f57",
+    "type" : "sulfur"
+  },
+  "ONQGBG1A9KNPJ0B6VIK" : {
+    "id" : "ONQGBG1A9KNPJ0B6VIK",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F1hqm.png?alt=media&token=a5f10085-ece4-44f2-93fc-93025c13b224",
+    "type" : "MVK"
+  },
+  "R48E7SZZY1HMRCLLWY0" : {
+    "id" : "R48E7SZZY1HMRCLLWY0",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F2hqm.png?alt=media&token=2f6c1046-fc87-4b92-b22f-1bb1536950f3",
+    "type" : "MVK"
+  },
+  "UCMH6UV9TW64S1JJ27G" : {
+    "id" : "UCMH6UV9TW64S1JJ27G",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F3hqm.png?alt=media&token=3bd56c18-bd14-43c7-8804-dc4631c80705",
+    "type" : "MVK"
+  },
+  "0DZGSAS0W8XC19DAIU4" : {
+    "id" : "0DZGSAS0W8XC19DAIU4",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F4hqm.png?alt=media&token=7f468a30-8d99-4cb6-8cd9-39dfc84d33ef",
+    "type" : "MVK"
+  },
+  "9AHXUEF26KPI41103TY" : {
+    "id" : "9AHXUEF26KPI41103TY",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F5000metal.png?alt=media&token=be6ef17a-94e9-4fa8-b145-b2bd142d599b",
+    "type" : "MVK"
+  },
+  "3EXW702WEYJI5XB5Y8F" : {
+    "id" : "3EXW702WEYJI5XB5Y8F",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/FurnaceInfo%2F6hqm.png?alt=media&token=323728ba-04c0-4a19-824f-c2bbd7684efa",
+    "type" : "MVK"
+  }
+  
+  
+}

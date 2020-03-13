@@ -1,0 +1,414 @@
+{
+
+  "Level_2" : {
+    "OLDRLEOVJJA1JZ8H5H7" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fammo.pistol.fire.png?alt=media&token=bf3d2c98-e8eb-4b75-8238-6212041be11c",
+      "name" : "Incendiary Pistol Bullet",
+      "uid" : "OLDRLEOVJJA1JZ8H5H7",
+      "value_1" : "125"
+    },
+    "ASJIDQO4J0419CM128F" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fammo.pistol.hv.png?alt=media&token=a3a04b34-358c-4817-9196-8868a2bac26b",
+      "name" : "HV Pistol Ammo",
+      "uid" : "ASJIDQO4J0419CM128F",
+      "value_1" : "125"
+    },
+    "CW7KYB70MSSRVKFK5EE" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Frifle.png?alt=media&token=2c8e746c-117d-4d91-89bc-436f30e54e74",
+      "name" : "5.56 Rifle Ammo",
+      "uid" : "CW7KYB70MSSRVKFK5EE",
+      "value_1" : "125"
+    },
+    "PSTO5GAZNO3MQZ6LULC" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fammo.rocket.fire.png?alt=media&token=c03b86f2-fc13-40db-bd32-dfc9fccdbf17",
+      "name" : "Incendiary Rocket",
+      "uid" : "PSTO5GAZNO3MQZ6LULC",
+      "value_1" : "125"
+    },
+    "VA9TGSIL3LTP2ZFUB63" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fammo.rocket.hv.png?alt=media&token=c4b3028b-1ad6-4620-95cb-96ff29c7035c",
+      "name" : "High Velocity Rocket",
+      "uid" : "VA9TGSIL3LTP2ZFUB63",
+      "value_1" : "125"
+    },
+    "BNXC4ARN79V9DIBX343" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fammo.shotgun.fire.png?alt=media&token=f0babb0d-8f9c-46ac-80c4-6fef30cb7fc6",
+      "name" : "12 Gauge Incendiary Shell",
+      "uid" : "BNXC4ARN79V9DIBX343",
+      "value_1" : "75"
+    },
+    "6MRWHQP035ZGRMBY0EY" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fammo.shotgun.png?alt=media&token=8f6291ee-5887-46f3-a9ad-7f69fbb7b36f",
+      "name" : "12 Gauge Buckshot",
+      "uid" : "6MRWHQP035ZGRMBY0EY",
+      "value_1" : "75"
+    },
+    "1B8W6NN6CL4I3KXEX40" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fammo.shotgun.slug.png?alt=media&token=3be9c8cb-4d50-41b5-a42e-01dfc1ed6446",
+      "name" : "12 Gauge Slug",
+      "uid" : "1B8W6NN6CL4I3KXEX40",
+      "value_1" : "75"
+    },
+    "D1H6DHFNY9EFM2YJK7B" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fautoturret.png?alt=media&token=6084f310-2730-4446-88d6-852b7db7952d",
+      "name" : "Auto Turret",
+      "uid" : "D1H6DHFNY9EFM2YJK7B",
+      "value_1" : "500"
+    },
+    "OUN85648X27J11C571I" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Faxe.salvaged.png?alt=media&token=8b38a94f-827d-4159-ab7e-a477ffaa74a2",
+      "name" : "Salvaged Axe",
+      "uid" : "OUN85648X27J11C571I",
+      "value_1" : "125"
+    }
+    ,
+    "2OMA2G93CK87ZZINWGT" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fbarricade.concrete.png?alt=media&token=01585d01-050f-4022-bf52-5508142e8838",
+      "name" : "Concrete Barricade",
+      "uid" : "2OMA2G93CK87ZZINWGT",
+      "value_1" : "20"
+    }
+    ,
+    "FW8G862FDSHPTQYABPQ" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fbarricade.metal.png?alt=media&token=b327d3d3-09de-49d9-b164-d13174820730",
+      "name" : "Metal Barricade",
+      "uid" : "FW8G862FDSHPTQYABPQ",
+      "value_1" : "125"
+    }
+    ,
+    "XD0LVIM05YKHHGJ949U" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fchainsaw.png?alt=media&token=e0ffcc59-e4a8-412c-90e6-a71b1a0e64fc",
+      "name" : "Chainsaw",
+      "uid" : "XD0LVIM05YKHHGJ949U",
+      "value_1" : "125"
+    }
+    ,
+    "D2EGICUEZOLDRLEOVJJ" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fcoffeecan.helmet.png?alt=media&token=8f279172-a5e8-42f2-90aa-b1931b44bedd",
+      "name" : "Coffee Can Helmet",
+      "uid" : "D2EGICUEZOLDRLEOVJJ",
+      "value_1" : "75"
+    }
+    ,
+    "A1JZ8H5H7ASJIDQO4J0" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Felectric.andswitch.png?alt=media&token=3ca6fddc-cbf8-4565-a1c6-6683dea232f0",
+      "name" : "AND Switch",
+      "uid" : "A1JZ8H5H7ASJIDQO4J0",
+      "value_1" : "20"
+    }
+    ,
+    "419CM128FCW7KYB70MS" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Felectric.battery.rechargable.large.png?alt=media&token=62813f35-ecce-442b-90f0-bc9c94aa1729",
+      "name" : "Large Rechargable Battery",
+      "uid" : "419CM128FCW7KYB70MS",
+      "value_1" : "75"
+    }
+    ,
+    "SRVKFK5EEPSTO5GAZNO" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Felectric.battery.rechargable.medium.png?alt=media&token=34d04707-adec-495a-8ea0-ba176996b75f",
+      "name" : "Medium Rechargable Battery",
+      "uid" : "SRVKFK5EEPSTO5GAZNO",
+      "value_1" : "75"
+    }
+    ,
+    "3MQZ6LULCVA9TGSIL3L" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Felectric.counter.png?alt=media&token=dbe6c9e3-4345-4433-89d1-812c915cd952",
+      "name" : "Counter",
+      "uid" : "3MQZ6LULCVA9TGSIL3L",
+      "value_1" : "75"
+    }
+    ,
+    "TP2ZFUB63BNXC4ARN79" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Felectric.hbhfsensor.png?alt=media&token=c5d66478-21df-4434-a580-9314b0925637",
+      "name" : "HBHF Sensor",
+      "uid" : "TP2ZFUB63BNXC4ARN79",
+      "value_1" : "75"
+    }
+    ,
+    "V9DIBX3436MRWHQP035" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Felectric.fuelgenerator.small.png?alt=media&token=480ab5b2-aebc-4d8a-a64c-e2a6138b5e63",
+      "name" : "Small Generator",
+      "uid" : "V9DIBX3436MRWHQP035",
+      "value_1" : "75"
+    }
+     ,
+    "B80E81BI66XN6MU4S4U" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Felectric.rf.broadcaster.png?alt=media&token=ef31f8d0-1dab-4b30-bda5-8c52e4278cb7",
+      "name" : "RF Broadcaster",
+      "uid" : "B80E81BI66XN6MU4S4U",
+      "value_1" : "20"
+    }
+     ,
+   "XF650DBR6NROWZ9OPV2" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Felectric.rf.receiver.png?alt=media&token=66c3aebc-609f-443b-ab8f-c6d638d8e4af",
+      "name" : "RF Receiver",
+      "uid" : "XF650DBR6NROWZ9OPV2",
+      "value_1" : "20"
+    }
+    ,
+   "YJU7LYUN9FFEI727S11" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fflamethrower.png?alt=media&token=1b7fcb02-0a49-4979-a3bb-b1f3550f675a",
+     "name" : "Flame Thrower",
+     "uid" : "YJU7LYUN9FFEI727S11",
+     "value_1" : "125"
+   }
+    ,
+   "CEGBS2XMABQ9DMT8H8Z" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Ffloor.ladder.hatch.png?alt=media&token=034eb875-dfbb-4503-8cd2-a4ea52daa92a",
+     "name" : "Ladder Hatch",
+     "uid" : "CEGBS2XMABQ9DMT8H8Z",
+     "value_1" : "125"
+   }
+    ,
+   "IXWG3F58Q8GCOM2HYTQ" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Ffurnace.large.png?alt=media&token=c4c27fc4-8372-4ccd-8181-52768e45c918",
+     "name" : "Large Furnace",
+     "uid" : "IXWG3F58Q8GCOM2HYTQ",
+     "value_1" : "125"
+   }
+    ,
+   "YAKZRXDAUWIW05YKQRP" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fgenerator.wind.scrap.png?alt=media&token=46fff6c3-8712-4660-9886-9a464ce7b3b3",
+     "name" : "Wind Turbine",
+     "uid" : "YAKZRXDAUWIW05YKQRP",
+     "value_1" : "125"
+   }
+    ,
+   "T9EJ4DCNQSM3E9YLN1L" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fgrenade.f1.png?alt=media&token=bb816a25-5e9c-4436-92c3-0d167da7235d",
+     "name" : "F1 Grenade",
+     "uid" : "T9EJ4DCNQSM3E9YLN1L",
+     "value_1" : "75"
+   }
+    ,
+   "OYVJTAATZ8R5Q7J1KRN" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fhazmatsuit.png?alt=media&token=894ffec1-5c4b-45fc-9ce6-66a73d71cb24",
+     "name" : "Hazmat suit",
+     "uid" : "OYVJTAATZ8R5Q7J1KRN",
+     "value_1" : "125"
+   }
+    ,
+   "0O4T042ALW128PL67TY" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fheavy.plate.helmet.png?alt=media&token=b80be8da-7af2-4901-8a10-f786461b04b5",
+     "name" : "Heavy Plate Helmet",
+     "uid" : "0O4T042ALW128PL67TY",
+     "value_1" : "125"
+   }
+    ,
+   "BH9VSSRVKPU6OOZSUO5" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fheavy.plate.jacket.png?alt=media&token=45ddd170-5bfb-410f-9a09-e21338fe8ef2",
+     "name" : "Heavy Plate Jacket",
+     "uid" : "BH9VSSRVKPU6OOZSUO5",
+     "value_1" : "125"
+   }
+    ,
+   "PB9XP3WQZ7VUMM4AJ3G" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fheavy.plate.pants.png?alt=media&token=c52e66c7-d4a0-4d66-b2f5-f4f18d82e7e4",
+     "name" : "Heavy Plate Pants",
+     "uid" : "PB9XP3WQZ7VUMM4AJ3G",
+     "value_1" : "125"
+   }
+    ,
+   "2IV3VTP20F4CGDLXXCD" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fhoodie.png?alt=media&token=50cb3d2f-b176-4b6d-9f8e-dc2b69150e7b",
+     "name" : "Hoodie",
+     "uid" : "2IV3VTP20F4CGDLXXCD",
+     "value_1" : "75"
+   }
+    ,
+   "K0N7I59NSL73436WRWH" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Ficepick.salvaged.png?alt=media&token=537a0284-3a12-4617-bc46-3ea00dce9015",
+     "name" : "Salvaged Icepick",
+     "uid" : "K0N7I59NSL73436WRWH",
+     "value_1" : "125"
+   }
+    ,
+   "ZP135ZH1MB80E81BI66" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Flargemedkit.png?alt=media&token=a62a5318-d7ab-429f-b1be-04fe35e363e2",
+     "name" : "Large Medkit",
+     "uid" : "ZP135ZH1MB80E81BI66",
+     "value_1" : "75"
+   }
+    ,
+   "XN6MU4S4UXF650DBR6N" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Flocker.png?alt=media&token=d613e6b2-2550-4634-b08a-873efa9952e2",
+     "name" : "Locker",
+     "uid" : "XN6MU4S4UXF650DBR6N",
+     "value_1" : "75"
+   }
+    ,
+   "ROWZ9OPV2YJU7LYUN9F" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Flongsword.png?alt=media&token=b2c368b5-d517-4c7f-a839-fbc9d0a2ee24",
+     "name" : "Longsword",
+     "uid" : "ROWZ9OPV2YJU7LYUN9F",
+     "value_1" : "75"
+   }
+    ,
+   "FEI727S11CEGBS2XMAB" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fpistol.python.png?alt=media&token=190ef0e0-d784-460e-b75b-7d7e5797c975",
+     "name" : "Python Revolver",
+     "uid" : "FEI727S11CEGBS2XMAB",
+     "value_1" : "125"
+   }
+    ,
+   "Q9DMT8H8ZIXWG3F58Q8" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fpistol.semiauto.png?alt=media&token=55c0174d-2904-4576-9730-89c412fd1a05",
+     "name" : "Semi-Automatic Pistol",
+     "uid" : "Q9DMT8H8ZIXWG3F58Q8",
+     "value_1" : "125"
+   }
+    ,
+   "GCOM2HYTQYAKZRXDAUW" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Frf_pager.png?alt=media&token=e9b88912-62c5-481e-8b87-5bae248b5e8f",
+     "name" : "RF Pager",
+     "uid" : "GCOM2HYTQYAKZRXDAUW",
+     "value_1" : "20"
+   }
+    ,
+   "IW05YKQRPT9EJ4DCNQS" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Frifle.semiauto.png?alt=media&token=8c4c3057-9f4f-4030-aebf-14e293f18253",
+     "name" : "Semi-Automatic Rifle",
+     "uid" : "IW05YKQRPT9EJ4DCNQS",
+     "value_1" : "125"
+   }
+    ,
+   "M3E9YLN1LOYVJTAATZ8" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Froadsign.jacket.png?alt=media&token=0f451c78-6386-43a6-9619-e5f6e48c7ed6",
+     "name" : "Road Sign Jacket",
+     "uid" : "M3E9YLN1LOYVJTAATZ8",
+     "value_1" : "75"
+   }
+    ,
+   "R5Q7J1KRN0O4T042ALW" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Froadsign.kilt.png?alt=media&token=85b5d6fb-6752-4b93-9d5a-9a07c0f06c7a",
+     "name" : "Road Sign Kilt",
+     "uid" : "R5Q7J1KRN0O4T042ALW",
+     "value_1" : "75"
+   }
+    ,
+   "128PL67TYBH9VSSRVKP" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Frocket.launcher.png?alt=media&token=f044fda4-7e3f-4d8d-b392-da9614926102",
+     "name" : "Rocket Launcher",
+     "uid" : "128PL67TYBH9VSSRVKP",
+     "value_1" : "500"
+   }
+    ,
+   "U6OOZSUO5PB9XP3WQZ7" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fsearchlight.png?alt=media&token=6709bb12-977c-41f9-8f81-3c9f99bf7e62",
+     "name" : "Search Light",
+     "uid" : "U6OOZSUO5PB9XP3WQZ7",
+     "value_1" : "75"
+   }
+    ,
+   "VUMM4AJ3G2IV3VTP20F" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fshoes.boots.png?alt=media&token=b37ac31b-75ba-4280-8d58-08875cff73cc",
+     "name" : "Boots",
+     "uid" : "VUMM4AJ3G2IV3VTP20F",
+     "value_1" : "75"
+   }
+    ,
+   "4CGDLXXCDK0N7I59NSL" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fshotgun.pump.png?alt=media&token=680d8813-42e8-41c8-9c18-dec90175df31",
+     "name" : "Pump Shotgun",
+     "uid" : "4CGDLXXCDK0N7I59NSL",
+     "value_1" : "125"
+   }
+    ,
+   "73436WRWHZP135ZH1MB" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fsmall.oil.refinery.png?alt=media&token=9302977b-7e9c-4c6e-8d74-94e4133e8962",
+     "name" : "Small Oil Refinery",
+     "uid" : "73436WRWHZP135ZH1MB",
+     "value_1" : "75"
+   }
+    ,
+   "80E81BI66XN6MU4S4UX" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fsmg.2.png?alt=media&token=448e9562-7d31-473e-b453-7390829b1a99",
+     "name" : "Custom SMG",
+     "uid" : "80E81BI66XN6MU4S4UX",
+     "value_1" : "125"
+   }
+    ,
+   "F650DBR6NROWZ9OPV2Y" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fsmg.thompson.png?alt=media&token=5b0de6fc-14d9-4bfc-8ff7-3e8868706880",
+     "name" : "Thompson",
+     "uid" : "F650DBR6NROWZ9OPV2Y",
+     "value_1" : "125"
+   }
+    ,
+   "JU7LYUN9FFEI727S11C" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fsyringe.medical.png?alt=media&token=d7927d83-0eb3-4bc4-af3c-6d833c05f9bb",
+     "name" : "Medical Syringe",
+     "uid" : "JU7LYUN9FFEI727S11C",
+     "value_1" : "75"
+   }
+    ,
+   "EGBS2XMABQ9DMT8H8ZI" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Ftrap.landmine.png?alt=media&token=aae1dcfd-ff73-4285-b109-a758102850d3",
+     "name" : "Land Mine",
+     "uid" : "EGBS2XMABQ9DMT8H8ZI",
+     "value_1" : "125"
+   }
+    ,
+   "XWG3F58Q8GCOM2HYTQY" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fwall.external.high.stone.png?alt=media&token=c16db20b-d383-466a-9ddf-f5fc00b8ddf7",
+     "name" : "High External Stone Wall",
+     "uid" : "XWG3F58Q8GCOM2HYTQY",
+     "value_1" : "500"
+   }
+   
+    ,
+   "AKZRXDAUWIW05YKQRPT" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fwall.frame.cell.gate.png?alt=media&token=81f75bee-3167-4b27-845b-8d88d3998864",
+     "name" : "Prison Cell Gate",
+     "uid" : "AKZRXDAUWIW05YKQRPT",
+     "value_1" : "75"
+   }
+    ,
+   "9EJ4DCNQSM3E9YLN1LO" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fwall.frame.cell.png?alt=media&token=866ce0f5-dee5-4d30-a109-722dcd79e509",
+     "name" : "Prison Cell Wall",
+     "uid" : "9EJ4DCNQSM3E9YLN1LO",
+     "value_1" : "75"
+   }
+    ,
+   "YVJTAATZ8R5Q7J1KRN0" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fwater.catcher.large.png?alt=media&token=818e9908-1191-4713-ac7d-b81bad314012",
+     "name" : "Large Water Catcher",
+     "uid" : "YVJTAATZ8R5Q7J1KRN0",
+     "value_1" : "75"
+   }
+    ,
+   "O4T042ALW128PL67TYB" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fweapon.mod.muzzleboost.png?alt=media&token=6fedf201-f868-4a38-8827-7f0da5e8e4d4",
+     "name" : "Muzzle Boost",
+     "uid" : "O4T042ALW128PL67TYB",
+     "value_1" : "125"
+   }
+    ,
+   "H9VSSRVKPU6OOZSUO5P" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Fweapon.mod.muzzlebrake.png?alt=media&token=8dc43aa8-a5d9-4718-920a-751431493b06",
+     "name" : "Muzzle Brake",
+     "uid" : "H9VSSRVKPU6OOZSUO5P",
+     "value_1" : "125"
+   }
+    ,
+   "N5WVQ31HWDHEMPZEFLS" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2FammoRocketSam.png?alt=media&token=ce6c2bb6-0574-4a25-bd02-0394e30a3a8d",
+     "name" : "SAM ammo",
+     "uid" : "N5WVQ31HWDHEMPZEFLS",
+     "value_1" : "75"
+   }
+    ,
+   "P9KXBOKDZ5548XSXIRR" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/image_level3%2Froadsign.gloves.png?alt=media&token=ae13e42f-eb0b-410f-9db0-18d427178a07",
+     "name" : "Roadsign Gloves",
+     "uid" : "P9KXBOKDZ5548XSXIRR",
+     "value_1" : "29"
+   }
+
+   
+
+
+}
+
+

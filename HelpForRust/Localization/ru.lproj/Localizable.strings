@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  HelpForRust
+
+  Created by Сергей Гриневич on 11/02/2020.
+  Copyright © 2020 Grinevich Sergey. All rights reserved.
+*/
+
+
+//MARK: Blueprints
+"Attention" = "Внимание";
+"Clear the list of learned blueprints?" = "Очистить список изученных чертежей?";
+
+"A short click on the blueprint will show you the information. Long press - add the blueprint as learned." = "Короткое нажатие на чертеж покажет Вам информацию. Длительное нажатие - добавить чертеж, как изученный.";
+"Click on the blueprint" = "Нажмите на чертеж";
+"Clear" = "Сбросить";
+"Chance - " = "Шанс - ";
+
+//MARK: Purchase
+"Advertisement is an important part of the application development. You can disable ads for support, development and comfortable use of the application. Hope for your understanding." = "Реклама является важной частью развития приложения. Для поддержки, развития и комфортного использования приложения Вы можете отключить рекламу. Надеемся на Ваше понимание.";
+"Restore Purchases" = "Восстановить покупки";
+"Remove Ads" = "Отключить рекламу";
+
+
+//MARK : RaidCalc
+"Doors" = "Двери";
+"Other" = "Другое";
+"Walls" = "Стены";
+"Windows" = "Окна";
+"Basic items" = "Основные предметы";
+"Compound items" = "Составные предметы";
+"Choose what you want to destroy" = "Выберите, что хотите разрушить";
+"Internet Connection not Available!" = "Соединение с интернетом отсутствует!";
+

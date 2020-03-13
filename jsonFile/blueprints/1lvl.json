@@ -1,0 +1,495 @@
+{
+  
+  "Level_1" : {
+    "30S60T3AYYPFYEMWKWM" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fammo.pistol.png?alt=media&token=fdc2181f-d490-4e06-8074-0a8ea1e886d5",
+      "name" : "Pistol Bullet",
+      "uid" : "30S60T3AYYPFYEMWKWM",
+      "value_1" : "75"
+    },
+    "P7YXS53JYFJGOR1GHNU" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Farrow.fire.png?alt=media&token=9990b455-0080-46f9-ac4e-58510d45475f",
+      "name" : "Fire Arrow",
+      "uid" : "P7YXS53JYFJGOR1GHNU",
+      "value_1" : "20"
+    },
+       "QBMZDQMF1776AZUZKTT" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fbarricade.sandbags.png?alt=media&token=bc5398c5-502e-445b-9069-6c695e3cc86b",
+      "name" : "Sandbag Barricade",
+      "uid" : "QBMZDQMF1776AZUZKTT",
+      "value_1" : "20"
+    },
+       "4683KUPE23I15EL090R" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fbarricade.woodwire.png?alt=media&token=93d82c5f-63a8-4f96-83fb-24bc7949b612",
+      "name" : "Barbed Wooden Barricade",
+      "uid" : "4683KUPE23I15EL090R",
+      "value_1" : "75"
+    },
+       "APO8V7X0I084GEU9QLI" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fbed.png?alt=media&token=ebdf0715-1e89-48b5-a4a1-06dc6742648b",
+      "name" : "Bed",
+      "uid" : "APO8V7X0I084GEU9QLI",
+      "value_1" : "75"
+    },
+       "Q2CRJP52MOAOSXQCIJH" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fbucket.helmet.png?alt=media&token=bba4e11b-2a30-4b8d-bb95-323d6f687741",
+      "name" : "Bucket Helmet",
+      "uid" : "Q2CRJP52MOAOSXQCIJH",
+      "value_1" : "75"
+    },
+       "L16BW54FIKEV61QDFTD" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fceilinglight.png?alt=media&token=23c31000-9247-4d44-a764-25674b8218ca",
+      "name" : "Ceiling Light",
+      "uid" : "L16BW54FIKEV61QDFTD",
+      "value_1" : "20"
+    },
+       "GQNBL22LR0JXIZBTCJF" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fchair.png?alt=media&token=f0b665a2-6260-4b55-8992-1978aa3a32d4",
+      "name" : "Chair",
+      "uid" : "GQNBL22LR0JXIZBTCJF",
+      "value_1" : "20"
+    },
+       "SGWLSWU2DOTU0HDYZLQ" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fdropbox.png?alt=media&token=c0a0f9eb-85ac-4a97-a5aa-b30e29d2d870",
+      "name" : "Drop Box",
+      "uid" : "SGWLSWU2DOTU0HDYZLQ",
+      "value_1" : "75"
+    },
+       "391NKKJNCHMYGGRKMGX" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectric.audioalarm.png?alt=media&token=c7c1b454-1909-4603-aeba-fd36227f5e3c",
+      "name" : "Audio Alarm",
+      "uid" : "391NKKJNCHMYGGRKMGX",
+      "value_1" : "20"
+    },
+       "H31PHVOIRZNMEEW2BV8" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectric.battery.rechargable.small.png?alt=media&token=091c0305-ce3a-4e35-85c9-91fb5aa863f9",
+      "name" : "Small Rechargable Battery",
+      "uid" : "H31PHVOIRZNMEEW2BV8",
+      "value_1" : "20"
+    },
+       "UANVNLHUS7W485DPP45" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectric.blocker.png?alt=media&token=cda0aeac-3912-4dd4-854e-23149f53db0e",
+      "name" : "Blocker",
+      "uid" : "UANVNLHUS7W485DPP45",
+      "value_1" : "20"
+    },
+       "CSFZAX1FKDZVWVYOJO9" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectric.doorcontroller.png?alt=media&token=b6dec1c0-be04-46e7-934f-9bd52271f395",
+      "name" : "Door Controller",
+      "uid" : "CSFZAX1FKDZVWVYOJO9",
+      "value_1" : "75"
+    },
+       "RHTVXR9TE30S60T3AYY" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectric.flasherlight.png?alt=media&token=33208412-8bdb-4760-963d-be37f37b287e",
+      "name" : "Flasher Light",
+      "uid" : "RHTVXR9TE30S60T3AYY",
+      "value_1" : "20"
+    },
+       "PFYEMWKWMP7YXS53JYF" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectric.laserdetector.png?alt=media&token=a0134336-49f9-4d57-ac54-77f398a840ec",
+      "name" : "Laser Detector",
+      "uid" : "PFYEMWKWMP7YXS53JYF",
+      "value_1" : "75"
+    },
+       "JGOR1GHNUQBMZDQMF17" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectric.orswitch.png?alt=media&token=9db88704-745a-404d-973a-3ae5024bca81",
+      "name" : "OR Switch",
+      "uid" : "JGOR1GHNUQBMZDQMF17",
+      "value_1" : "20"
+    },
+       "76AZUZKTT4683KUPE23" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectric.pressurepad.png?alt=media&token=c8e5ee98-0d4e-4769-b131-8ea86cc669d2",
+      "name" : "Pressure Pad",
+      "uid" : "76AZUZKTT4683KUPE23",
+      "value_1" : "20"
+    },
+       "I15EL090RAPO8V7X0I0" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectric.random.switch.png?alt=media&token=8e94713a-7b41-471e-b698-6a5b9b3781cf",
+      "name" : "RAND Switch",
+      "uid" : "I15EL090RAPO8V7X0I0",
+      "value_1" : "20"
+    },
+       "84GEU9QLIQ2CRJP52MO" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectric.sirenlight.png?alt=media&token=07d77514-21ea-4d08-bf6f-8d1eee8bfd3c",
+      "name" : "Siren Light",
+      "uid" : "84GEU9QLIQ2CRJP52MO",
+      "value_1" : "20"
+    },
+       "AOSXQCIJHL16BW54FIK" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectric.solarpanel.large.png?alt=media&token=301b67ab-ebb1-4864-b1e0-fb9625445024",
+      "name" : "Large Solar Panel",
+      "uid" : "AOSXQCIJHL16BW54FIK",
+      "value_1" : "75"
+    },
+   
+      "4I3KXEX40D1H6DHFNY9" : {
+     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectric.splitter.png?alt=media&token=3479fe0c-3c4a-43b7-a9b2-b71e0e85f146",
+     "name" : "Splitter",
+     "uid" : "4I3KXEX40D1H6DHFNY9",
+     "value_1" : "20"
+   },
+      
+      "EFM2YJK7BOUN85648X2" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectric.switch.png?alt=media&token=8b5e929c-ed4f-4529-8510-a6ac2e5943a5",
+      "name" : "Switch",
+      "uid" : "EFM2YJK7BOUN85648X2",
+      "value_1" : "20"
+    },
+      
+      "7J11C571I2OMA2G93CK" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectric.teslacoil.png?alt=media&token=60a25a82-1e34-4871-bd98-b8e907f5255a",
+      "name" : "Tesla Coil",
+      "uid" : "7J11C571I2OMA2G93CK",
+      "value_1" : "20"
+    },
+      
+      "87ZZINWGTFW8G862FDS" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectric.timer.png?alt=media&token=073014a9-b618-42a0-98e6-54a7857168c5",
+      "name" : "Timer",
+      "uid" : "87ZZINWGTFW8G862FDS",
+      "value_1" : "20"
+    },
+      
+      "HPTQYABPQXD0LVIM05Y" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectric.xorswitch.png?alt=media&token=71ff5312-b632-4677-830c-e53825ed560d",
+      "name" : "XOR Switch",
+      "uid" : "HPTQYABPQXD0LVIM05Y",
+      "value_1" : "20"
+    },
+      
+      "KHHGJ949UD2EGICUEZO" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectrical.branch.png?alt=media&token=204892b1-374a-4a12-b8d4-2584218358a0",
+      "name" : "Electrical Branch",
+      "uid" : "KHHGJ949UD2EGICUEZO",
+      "value_1" : "20"
+    },
+      
+      "LDRLEOVJJA1JZ8H5H7A" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectrical.combiner.png?alt=media&token=766138a5-39cd-4c28-a2da-24bf49477a01",
+      "name" : "Root Combiner",
+      "uid" : "LDRLEOVJJA1JZ8H5H7A",
+      "value_1" : "75"
+    },
+      
+      "SJIDQO4J0419CM128FC" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Felectrical.memorycell.png?alt=media&token=1e7c3548-e69c-4020-935a-0ee48d01ebff",
+      "name" : "Memory Cell",
+      "uid" : "SJIDQO4J0419CM128FC",
+      "value_1" : "75"
+    },
+      
+      "W7KYB70MSSRVKFK5EEP" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fexplosive.satchel.png?alt=media&token=5ff6d29f-1e6e-41ce-93a3-12af6cd13794",
+      "name" : "Satchel Charge",
+      "uid" : "W7KYB70MSSRVKFK5EEP",
+      "value_1" : "125"
+    },
+      
+      "STO5GAZNO3MQZ6LULCV" : {
+      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fflameturret.png?alt=media&token=9d5ba260-5278-4a79-9f04-2253960d4c36",
+      "name" : "Flame Turret",
+      "uid" : "STO5GAZNO3MQZ6LULCV",
+      "value_1" : "75"
+    },
+      
+    "WTLZSMW3RRI8R7FPCOF" : {
+       "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fflameturret.png?alt=media&token=d2fd22d1-a074-4189-a472-a9ce1b569cc2",
+       "name" : "Flame Turret",
+       "uid" : "WTLZSMW3RRI8R7FPCOF",
+       "value_1" : "75"
+     },
+       
+    "IZRPLYWCR8C9HJU9AGN" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fflare.png?alt=media&token=a4ac9c68-f629-4721-b59f-b61299016f9c",
+         "name" : "Flare",
+         "uid" : "IZRPLYWCR8C9HJU9AGN",
+         "value_1" : "20"
+       },
+    "J4FS5JF8T00Z2SNSDMM" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Ffloor.grill.png?alt=media&token=a5096353-6601-4498-96f8-fa7d90d02d72",
+         "name" : "Floor grill",
+         "uid" : "J4FS5JF8T00Z2SNSDMM",
+         "value_1" : "75"
+       },
+    "XZ1VDNI7VWAUX7ET2TK" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Ffridge.png?alt=media&token=11bf37e2-8eb6-477c-9eee-dcba5f4f88f0",
+         "name" : "Fridge",
+         "uid" : "XZ1VDNI7VWAUX7ET2TK",
+         "value_1" : "20"
+       },
+    "3IH1O0QTBT1X97N2JEB" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fgates.external.high.wood.png?alt=media&token=f408eb9a-c523-4e58-a9d8-4a40d51f3fa6",
+         "name" : "High External Wooden Gate",
+         "uid" : "3IH1O0QTBT1X97N2JEB",
+         "value_1" : "125"
+       },
+    "JV5KBIYVFG3HLQJ5BBA" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fgrenade.beancan.png?alt=media&token=48e888ae-b161-47fb-ac35-9a403d3cebf5",
+         "name" : "Beancan Grenade",
+         "uid" : "JV5KBIYVFG3HLQJ5BBA",
+         "value_1" : "75"
+       },
+    "EUZ4PYX8BD7OZUJ68M6" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fguntrap.png?alt=media&token=0a39343a-3a56-4a26-bd6a-9ac6cb0c3ac7",
+         "name" : "Shotgun Trap",
+         "uid" : "EUZ4PYX8BD7OZUJ68M6",
+         "value_1" : "125"
+       },
+    "9IG4DVVEKTCQBS4M4C8" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fhammer.salvaged.png?alt=media&token=6e2002cb-8ec6-422f-91fc-cbbe2feb57a2",
+         "name" : "Salvaged Hammer",
+         "uid" : "9IG4DVVEKTCQBS4M4C8",
+         "value_1" : "75"
+       },
+    "L9PELPMU6GMNTA6QSEJ" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fhat.miner.png?alt=media&token=f7c08436-bf04-4d0a-8793-c116ee0d9aad",
+         "name" : "Miners Hat",
+         "uid" : "L9PELPMU6GMNTA6QSEJ",
+         "value_1" : "20"
+       },
+    
+    "W2UGDDCG5AFQ98KDE9Q" : {
+         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fhatchet.png?alt=media&token=c921a02c-eae1-4243-bc4d-fdcd12bf6fe2",
+         "name" : "Hatchet",
+         "uid" : "W2UGDDCG5AFQ98KDE9Q",
+         "value_1" : "75"
+       },
+    "AVUH9OHBKRFF66PV4N1" : {
+          "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fjacket.png?alt=media&token=31778497-a6b9-4105-9fc5-9e6d2b5efde3",
+          "name" : "Jacket",
+          "uid" : "AVUH9OHBKRFF66PV4N1",
+          "value_1" : "20"
+        },
+     
+     "VW2JF01NS5B3PMMLPEJ" : {
+           "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fjacket.snow.png?alt=media&token=7762dab0-656b-4087-916b-d11567ef931f",
+           "name" : "Snow Jacket - Red",
+           "uid" : "VW2JF01NS5B3PMMLPEJ",
+           "value_1" : "20"
+         },
+      
+      "OZIHTMNIZJ43QIXQKT0" : {
+            "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fknife.combat.png?alt=media&token=d85a50a3-8198-4944-b06f-0c6bb60c67f2",
+            "name" : "Combat Knife",
+            "uid" : "OZIHTMNIZJ43QIXQKT0",
+            "value_1" : "75"
+          },
+       
+       "OOFGY4DWAWCPXPNJWT9" : {
+             "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fladder.wooden.wall.png?alt=media&token=c154f85c-a688-446b-86d8-1be2b4e19510",
+             "name" : "Wooden Ladder",
+             "uid" : "OOFGY4DWAWCPXPNJWT9",
+             "value_1" : "125"
+           },
+        "Y5A7FRR67EUH1CZ3GMF" : {
+              "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fmace.png?alt=media&token=c1a291e3-994c-4989-80a5-a885c882f319",
+              "name" : "Mace",
+              "uid" : "Y5A7FRR67EUH1CZ3GMF",
+              "value_1" : "75"
+            },
+         "1XYX0QLQBTJUXZTAVG5" : {
+               "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fpants.png?alt=media&token=cdbe2502-ff1c-45bf-a757-665db5b06eaa",
+               "name" : "Pants",
+               "uid" : "1XYX0QLQBTJUXZTAVG5",
+               "value_1" : "75"
+             },
+          
+          "80YU75L0HLIQS3IJPWS" : {
+                "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fpickaxe.png?alt=media&token=a975c59f-7e0a-4d64-9dd6-1c0bc55d8b80",
+                "name" : "Pickaxe",
+                "uid" : "80YU75L0HLIQS3IJPWS",
+                "value_1" : "75"
+              },
+           
+           "DO1ESOH2998B1W1MVV6" : {
+                 "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fpistol.revolver.png?alt=media&token=c73abef3-81ee-4961-adea-511024a6ef71",
+                 "name" : "Revolver",
+                 "uid" : "DO1ESOH2998B1W1MVV6",
+                 "value_1" : "75"
+               },
+            
+            "8A5MWRG45J36GN2B2TC" : {
+                  "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Frf.detonator.png?alt=media&token=ba4be0b9-314e-49a4-bda7-8d1f80ab5a00",
+                  "name" : "RF Transmitter",
+                  "uid" : "8A5MWRG45J36GN2B2TC",
+                  "value_1" : "20"
+                },
+             
+             "RQAX9Z2K2A6IGWBSNKS" : {
+                   "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Friot.helmet.png?alt=media&token=872a7703-3adb-4ddb-94ca-dbac7dd88e6c",
+                   "name" : "Riot Helmet",
+                   "uid" : "RQAX9Z2K2A6IGWBSNKS",
+                   "value_1" : "75"
+                 },
+              
+              "4ETKR74OPCQUZSEKLJN" : {
+                    "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fsalvaged.cleaver.png?alt=media&token=1dbe7e04-40b1-41d2-9bd6-996292eac68d",
+                    "name" : "Salvaged Cleaver",
+                    "uid" : "4ETKR74OPCQUZSEKLJN",
+                    "value_1" : "75"
+                  },
+               
+               "38DY76HKMGX83SFHVFI" : {
+                     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fsalvaged.sword.png?alt=media&token=9e4457dd-514d-4e05-b6d5-f540b630bc1d",
+                     "name" : "Salvaged Sword",
+                     "uid" : "38DY76HKMGX83SFHVFI",
+                     "value_1" : "20"
+                   },
+                
+                "RPDM44NT2LZK1DVDLHU" : {
+                      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fshirt.collared.png?alt=media&token=b86b6984-ad46-4b9e-9310-056be64701fb",
+                      "name" : "Shirt",
+                      "uid" : "RPDM44NT2LZK1DVDLHU",
+                      "value_1" : "75"
+                    },
+                 
+                 "IYNUYV3FQVW2JF01NS5" : {
+                       "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fshirt.tanktop.png?alt=media&token=88f91f49-11ee-49aa-8240-e01cd11d8b1e",
+                       "name" : "Tank Top",
+                       "uid" : "IYNUYV3FQVW2JF01NS5",
+                       "value_1" : "20"
+                     },
+                  
+                  "B3PMMLPEJOZIHTMNIZJ" : {
+                        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fshotgun.double.png?alt=media&token=dedaa087-00f6-4863-9d13-9e4506565e6a",
+                        "name" : "Double Barrel Shotgun",
+                        "uid" : "B3PMMLPEJOZIHTMNIZJ",
+                        "value_1" : "125"
+                      },
+                   
+                   "43QIXQKT0OOFGY4DWAW" : {
+                         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fshotgun.waterpipe.png?alt=media&token=f8250585-9428-48bc-9b0b-860c2e67dc0a",
+                         "name" : "Waterpipe Shotgun",
+                         "uid" : "43QIXQKT0OOFGY4DWAW",
+                         "value_1" : "75"
+                       },
+                    
+                    "CPXPNJWT9Y5A7FRR67E" : {
+                          "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fshutter.metal.embrasure.b.png?alt=media&token=17db2ca7-8b8c-4776-93dc-7e50e515b447",
+                          "name" : "Metal horizontal embrasure",
+                          "uid" : "CPXPNJWT9Y5A7FRR67E",
+                          "value_1" : "20"
+                        },
+                     
+                     "UH1CZ3GMF1XYX0QLQBT" : {
+                           "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fshutter.metal.embrasure.png?alt=media&token=19e3ed63-bc3b-4b41-b38c-685f29def98a",
+                           "name" : "Metal Vertical embrasure",
+                           "uid" : "UH1CZ3GMF1XYX0QLQBT",
+                           "value_1" : "20"
+                         },
+                      
+                      "JUXZTAVG52U81V5C00R" : {
+                            "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Ftarget.reactive.png?alt=media&token=07cd5d1c-77f3-40f7-9b36-56ac3f9cc8ea",
+                            "name" : "Reactive Target",
+                            "uid" : "JUXZTAVG52U81V5C00R",
+                            "value_1" : "20"
+                          },
+                       
+                       "H0GOYLXOR80YU75L0HL" : {
+                             "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Ftool.binoculars.png?alt=media&token=a52cea17-6ce3-4305-9a49-50028359d38e",
+                             "name" : "Binoculars",
+                             "uid" : "H0GOYLXOR80YU75L0HL",
+                             "value_1" : "75"
+                           },
+                        
+                        "IQS3IJPWSDO1ESOH299" : {
+                              "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Ftrap.bear.png?alt=media&token=bc9257c5-3987-4646-a944-59ba1652f5e8",
+                              "name" : "Snap Trap",
+                              "uid" : "IQS3IJPWSDO1ESOH299",
+                              "value_1" : "75"
+                            },
+                         
+                         "8B1W1MVV68A5MWRG45J" : {
+                               "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Ftshirt.long.png?alt=media&token=488de8af-16d4-4725-92a4-71ea1a638e30",
+                               "name" : "Longsleeve T-Shirt",
+                               "uid" : "8B1W1MVV68A5MWRG45J",
+                               "value_1" : "20"
+                             },
+                          
+                          "36GN2B2TCRQAX9Z2K2A" : {
+                                "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Ftshirt.png?alt=media&token=76f25d0d-6a96-4353-b6e2-ddf143cb004a",
+                                "name" : "T-Shirt",
+                                "uid" : "36GN2B2TCRQAX9Z2K2A",
+                                "value_1" : "20"
+                              },
+                           
+                           "6IGWBSNKS4ETKR74OPC" : {
+                                 "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fwall.external.high.png?alt=media&token=29f80e7f-b7fa-4df1-8f2d-d5d8969dc281",
+                                 "name" : "High External Wooden Wall",
+                                 "uid" : "6IGWBSNKS4ETKR74OPC",
+                                 "value_1" : "125"
+                               },
+                            
+                            "QUZSEKLJN38DY76HKMG" : {
+                                  "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fwall.frame.fence.gate.png?alt=media&token=7a68de87-7b34-463b-b35f-20d73c810595",
+                                  "name" : "Chainlink Fence Gate",
+                                  "uid" : "QUZSEKLJN38DY76HKMG",
+                                  "value_1" : "20"
+                                },
+                             
+                             "X83SFHVFIRPDM44NT2L" : {
+                                   "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fwall.frame.fence.png?alt=media&token=edde50ce-bf1d-4fca-96dd-ed455e26dd94",
+                                   "name" : "Chainlink Fence",
+                                   "uid" : "X83SFHVFIRPDM44NT2L",
+                                   "value_1" : "20"
+                                 },
+                              
+                              "ZK1DVDLHUIYNUYV3FQV" : {
+                                    "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fwall.frame.garagedoor.png?alt=media&token=a4064d44-7df0-4ea7-b9df-714f2e07cfd6",
+                                    "name" : "Garage Door",
+                                    "uid" : "ZK1DVDLHUIYNUYV3FQV",
+                                    "value_1" : "75"
+                                  },
+                               
+                               "W2JF01NS5B3PMMLPEJO" : {
+                                     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fwall.window.bars.metal.png?alt=media&token=a6522f04-45f4-4116-b98f-60d5b1515420",
+                                     "name" : "Metal Window Bars",
+                                     "uid" : "W2JF01NS5B3PMMLPEJO",
+                                     "value_1" : "75"
+                                   },
+                                
+                                "N38DY76HKMGX83SFHVF" : {
+                                      "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fwall.window.glass.reinforced.png?alt=media&token=9082850b-fa1c-41c0-b4df-139bbf993aee",
+                                      "name" : "Reinforced Glass Window",
+                                      "uid" : "N38DY76HKMGX83SFHVF",
+                                      "value_1" : "75"
+                                    },
+                                 
+                                 "ISPDN44NT2LZK1DVELH" : {
+                                       "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fwater.catcher.small.png?alt=media&token=175c6923-1003-47df-bd21-cc6f5fff0dab",
+                                       "name" : "Small Water Catcher",
+                                       "uid" : "ISPDN44NT2LZK1DVELH",
+                                       "value_1" : "20"
+                                     },
+                                  
+                                  "UIYNUYW4FQVW2JF01NS" : {
+                                        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fweapon.mod.flashlight.png?alt=media&token=bc0b6efd-77c4-41ea-9f9f-ae3cc878e644",
+                                        "name" : "Weapon flashlight",
+                                        "uid" : "UIYNUYW4FQVW2JF01NS",
+                                        "value_1" : "75"
+                                      },
+                                   
+                                   "5B3PMMLPEJO0IITMOIZ" : {
+                                         "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2Fweapon.mod.silencer.png?alt=media&token=321cd7a5-1d4a-4efa-8686-7776c29a3bb3",
+                                         "name" : "Silencer",
+                                         "uid" : "5B3PMMLPEJO0IITMOIZ",
+                                         "value_1" : "75"
+                                       },
+                                    
+                                    "J53RJXQKT1POGGY4DXA" : {
+                                          "imageURL" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Images_Level1%2FwatchTower.png?alt=media&token=cee5eb3e-eeab-423c-9848-3b921627e2e9",
+                                          "name" : "Watchtower Wood",
+                                          "uid" : "J53RJXQKT1POGGY4DXA",
+                                          "value_1" : "75"
+                                        }
+                                     
+                                   
+                                       
+    
+      
+
+
+  }
+}
+
+

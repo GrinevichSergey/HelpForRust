@@ -1,0 +1,703 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3707161623BF945500DEDA3D /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3707161523BF945500DEDA3D /* EmptyTableViewCell.swift */; };
+		3707161823C17F2D00DEDA3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3707161723C17F2D00DEDA3D /* GoogleService-Info.plist */; };
+		3707161B23C46ABF00DEDA3D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3707161A23C46ABF00DEDA3D /* Roboto-Regular.ttf */; };
+		3707161D23C46FE300DEDA3D /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3707161C23C46FE200DEDA3D /* Roboto-Bold.ttf */; };
+		3707162323C9B47400DEDA3D /* PurchaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3707162223C9B47400DEDA3D /* PurchaseVC.swift */; };
+		370A3F6E23E63E9800C1381C /* TestConnectionNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370A3F6D23E63E9800C1381C /* TestConnectionNetwork.swift */; };
+		370A3F7423E8925D00C1381C /* BlueprintsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370A3F7323E8925D00C1381C /* BlueprintsVC.swift */; };
+		370A3F7623E892BA00C1381C /* BlueprintsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370A3F7523E892BA00C1381C /* BlueprintsCollectionViewCell.swift */; };
+		370A3F7823E8952C00C1381C /* AmmoGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370A3F7723E8952C00C1381C /* AmmoGroup.swift */; };
+		370A3F7A23E8E63100C1381C /* AddBlueprintsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370A3F7923E8E63100C1381C /* AddBlueprintsVC.swift */; };
+		370A3F8023E995DF00C1381C /* headerBannerReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370A3F7F23E995DF00C1381C /* headerBannerReusableView.swift */; };
+		377A485023F2E49600F16093 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 377A485223F2E49600F16093 /* Localizable.strings */; };
+		377A485723FB109700F16093 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377A485623FB109700F16093 /* Items.swift */; };
+		378B7C4823A44919009D1606 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C4723A44919009D1606 /* AppDelegate.swift */; };
+		378B7C4A23A44919009D1606 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C4923A44919009D1606 /* SceneDelegate.swift */; };
+		378B7C4E23A4491B009D1606 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 378B7C4D23A4491B009D1606 /* Assets.xcassets */; };
+		378B7C5123A4491B009D1606 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 378B7C5023A4491B009D1606 /* Preview Assets.xcassets */; };
+		378B7C5423A4491B009D1606 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 378B7C5223A4491B009D1606 /* LaunchScreen.storyboard */; };
+		378B7C6023A449D4009D1606 /* FurnaceInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C5F23A449D4009D1606 /* FurnaceInfoVC.swift */; };
+		378B7C6223A44AA4009D1606 /* TabBarMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C6123A44AA4009D1606 /* TabBarMenuController.swift */; };
+		378B7C6723A4E177009D1606 /* FurnaceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C6623A4E177009D1606 /* FurnaceInfo.swift */; };
+		378B7C6923A4E3CD009D1606 /* FurnaceInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C6823A4E3CD009D1606 /* FurnaceInfoTableViewCell.swift */; };
+		378B7C6C23A4E841009D1606 /* imageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C6B23A4E841009D1606 /* imageExtensions.swift */; };
+		378B7C7223A6A4EE009D1606 /* RaidCalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C7123A6A4EE009D1606 /* RaidCalculatorVC.swift */; };
+		378B7C7423A6E4F2009D1606 /* SubjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C7323A6E4F2009D1606 /* SubjectCollectionViewCell.swift */; };
+		378B7C7623A81DEA009D1606 /* WeaponTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C7523A81DEA009D1606 /* WeaponTableViewCell.swift */; };
+		378B7C7823AC4279009D1606 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C7723AC4279009D1606 /* Subject.swift */; };
+		378B7C7A23AD522A009D1606 /* CompoundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C7923AD522A009D1606 /* CompoundCollectionViewCell.swift */; };
+		378B7C7E23AD80F6009D1606 /* headerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C7D23AD80F6009D1606 /* headerView.swift */; };
+		378B7C8223AEA48C009D1606 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C8123AEA48C009D1606 /* MainCollectionViewCell.swift */; };
+		378B7C8423AF42FB009D1606 /* AddWeaponVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C8323AF42FB009D1606 /* AddWeaponVC.swift */; };
+		378B7C8623B16971009D1606 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C8523B16971009D1606 /* Weapon.swift */; };
+		A1B7C8B33CDED6EBBAA3B67E /* Pods_HelpForRust.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCE1CABA5091C2AFC9BA0FB /* Pods_HelpForRust.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		09248E1FF46E159317BCC8FB /* Pods-HelpForRust.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpForRust.debug.xcconfig"; path = "Target Support Files/Pods-HelpForRust/Pods-HelpForRust.debug.xcconfig"; sourceTree = "<group>"; };
+		3707161523BF945500DEDA3D /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
+		3707161723C17F2D00DEDA3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3707161A23C46ABF00DEDA3D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		3707161C23C46FE200DEDA3D /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		3707162223C9B47400DEDA3D /* PurchaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseVC.swift; sourceTree = "<group>"; };
+		370A3F6D23E63E9800C1381C /* TestConnectionNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConnectionNetwork.swift; sourceTree = "<group>"; };
+		370A3F7323E8925D00C1381C /* BlueprintsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintsVC.swift; sourceTree = "<group>"; };
+		370A3F7523E892BA00C1381C /* BlueprintsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintsCollectionViewCell.swift; sourceTree = "<group>"; };
+		370A3F7723E8952C00C1381C /* AmmoGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmmoGroup.swift; sourceTree = "<group>"; };
+		370A3F7923E8E63100C1381C /* AddBlueprintsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBlueprintsVC.swift; sourceTree = "<group>"; };
+		370A3F7F23E995DF00C1381C /* headerBannerReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerBannerReusableView.swift; sourceTree = "<group>"; };
+		377A485123F2E49600F16093 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		377A485323F2E4B000F16093 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		377A485623FB109700F16093 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		378B7C4423A44919009D1606 /* HelpForRust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpForRust.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		378B7C4723A44919009D1606 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		378B7C4923A44919009D1606 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		378B7C4D23A4491B009D1606 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		378B7C5023A4491B009D1606 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		378B7C5323A4491B009D1606 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		378B7C5523A4491B009D1606 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		378B7C5F23A449D4009D1606 /* FurnaceInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnaceInfoVC.swift; sourceTree = "<group>"; };
+		378B7C6123A44AA4009D1606 /* TabBarMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMenuController.swift; sourceTree = "<group>"; };
+		378B7C6623A4E177009D1606 /* FurnaceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnaceInfo.swift; sourceTree = "<group>"; };
+		378B7C6823A4E3CD009D1606 /* FurnaceInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnaceInfoTableViewCell.swift; sourceTree = "<group>"; };
+		378B7C6B23A4E841009D1606 /* imageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageExtensions.swift; sourceTree = "<group>"; };
+		378B7C7123A6A4EE009D1606 /* RaidCalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaidCalculatorVC.swift; sourceTree = "<group>"; };
+		378B7C7323A6E4F2009D1606 /* SubjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCollectionViewCell.swift; sourceTree = "<group>"; };
+		378B7C7523A81DEA009D1606 /* WeaponTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponTableViewCell.swift; sourceTree = "<group>"; };
+		378B7C7723AC4279009D1606 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		378B7C7923AD522A009D1606 /* CompoundCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundCollectionViewCell.swift; sourceTree = "<group>"; };
+		378B7C7D23AD80F6009D1606 /* headerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerView.swift; sourceTree = "<group>"; };
+		378B7C8123AEA48C009D1606 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		378B7C8323AF42FB009D1606 /* AddWeaponVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeaponVC.swift; sourceTree = "<group>"; };
+		378B7C8523B16971009D1606 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		95D3385BA12563D6A1A9F2B4 /* Pods-HelpForRust.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpForRust.release.xcconfig"; path = "Target Support Files/Pods-HelpForRust/Pods-HelpForRust.release.xcconfig"; sourceTree = "<group>"; };
+		DDCE1CABA5091C2AFC9BA0FB /* Pods_HelpForRust.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelpForRust.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		378B7C4123A44919009D1606 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B7C8B33CDED6EBBAA3B67E /* Pods_HelpForRust.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3707161E23C9B42300DEDA3D /* Purchase */ = {
+			isa = PBXGroup;
+			children = (
+				3707162123C9B44300DEDA3D /* controller */,
+				3707162023C9B43D00DEDA3D /* view */,
+				3707161F23C9B43700DEDA3D /* modal */,
+			);
+			path = Purchase;
+			sourceTree = "<group>";
+		};
+		3707161F23C9B43700DEDA3D /* modal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = modal;
+			sourceTree = "<group>";
+		};
+		3707162023C9B43D00DEDA3D /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		3707162123C9B44300DEDA3D /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				3707162223C9B47400DEDA3D /* PurchaseVC.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		37091A5323F2D7F80043863B /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				377A485223F2E49600F16093 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		370A3F6F23E8920000C1381C /* Blueprints */ = {
+			isa = PBXGroup;
+			children = (
+				370A3F7223E8922C00C1381C /* controller */,
+				370A3F7123E8921E00C1381C /* view */,
+				370A3F7023E8921700C1381C /* modal */,
+			);
+			path = Blueprints;
+			sourceTree = "<group>";
+		};
+		370A3F7023E8921700C1381C /* modal */ = {
+			isa = PBXGroup;
+			children = (
+				370A3F7723E8952C00C1381C /* AmmoGroup.swift */,
+			);
+			path = modal;
+			sourceTree = "<group>";
+		};
+		370A3F7123E8921E00C1381C /* view */ = {
+			isa = PBXGroup;
+			children = (
+				370A3F7523E892BA00C1381C /* BlueprintsCollectionViewCell.swift */,
+				370A3F7F23E995DF00C1381C /* headerBannerReusableView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		370A3F7223E8922C00C1381C /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				370A3F7323E8925D00C1381C /* BlueprintsVC.swift */,
+				370A3F7923E8E63100C1381C /* AddBlueprintsVC.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		378B7C3B23A44919009D1606 = {
+			isa = PBXGroup;
+			children = (
+				378B7C4623A44919009D1606 /* HelpForRust */,
+				378B7C4523A44919009D1606 /* Products */,
+				6D4ED22D481B478F69E9B055 /* Pods */,
+				C2A45F11E41D18E6C45E209C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		378B7C4523A44919009D1606 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				378B7C4423A44919009D1606 /* HelpForRust.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		378B7C4623A44919009D1606 /* HelpForRust */ = {
+			isa = PBXGroup;
+			children = (
+				37091A5323F2D7F80043863B /* Localization */,
+				370A3F6F23E8920000C1381C /* Blueprints */,
+				3707161E23C9B42300DEDA3D /* Purchase */,
+				378B7C6D23A6A118009D1606 /* Raid calculator */,
+				378B7C6A23A4E816009D1606 /* helpers */,
+				378B7C6323A44B37009D1606 /* scene */,
+				378B7C5B23A44965009D1606 /* Furnace Info */,
+				378B7C4723A44919009D1606 /* AppDelegate.swift */,
+				378B7C4D23A4491B009D1606 /* Assets.xcassets */,
+				378B7C5223A4491B009D1606 /* LaunchScreen.storyboard */,
+				378B7C5523A4491B009D1606 /* Info.plist */,
+				3707161723C17F2D00DEDA3D /* GoogleService-Info.plist */,
+				378B7C4F23A4491B009D1606 /* Preview Content */,
+			);
+			path = HelpForRust;
+			sourceTree = "<group>";
+		};
+		378B7C4F23A4491B009D1606 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				378B7C5023A4491B009D1606 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		378B7C5B23A44965009D1606 /* Furnace Info */ = {
+			isa = PBXGroup;
+			children = (
+				378B7C5E23A44997009D1606 /* controller */,
+				378B7C5D23A44992009D1606 /* view */,
+				378B7C5C23A4497E009D1606 /* modal */,
+			);
+			path = "Furnace Info";
+			sourceTree = "<group>";
+		};
+		378B7C5C23A4497E009D1606 /* modal */ = {
+			isa = PBXGroup;
+			children = (
+				378B7C6623A4E177009D1606 /* FurnaceInfo.swift */,
+			);
+			path = modal;
+			sourceTree = "<group>";
+		};
+		378B7C5D23A44992009D1606 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				378B7C6823A4E3CD009D1606 /* FurnaceInfoTableViewCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		378B7C5E23A44997009D1606 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				378B7C5F23A449D4009D1606 /* FurnaceInfoVC.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		378B7C6323A44B37009D1606 /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				378B7C6123A44AA4009D1606 /* TabBarMenuController.swift */,
+				378B7C4923A44919009D1606 /* SceneDelegate.swift */,
+			);
+			path = scene;
+			sourceTree = "<group>";
+		};
+		378B7C6A23A4E816009D1606 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3707161A23C46ABF00DEDA3D /* Roboto-Regular.ttf */,
+				3707161C23C46FE200DEDA3D /* Roboto-Bold.ttf */,
+				378B7C6B23A4E841009D1606 /* imageExtensions.swift */,
+				370A3F6D23E63E9800C1381C /* TestConnectionNetwork.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		378B7C6D23A6A118009D1606 /* Raid calculator */ = {
+			isa = PBXGroup;
+			children = (
+				378B7C7023A6A3E7009D1606 /* controller */,
+				378B7C6F23A6A3E3009D1606 /* view */,
+				378B7C6E23A6A12F009D1606 /* modal */,
+			);
+			path = "Raid calculator";
+			sourceTree = "<group>";
+		};
+		378B7C6E23A6A12F009D1606 /* modal */ = {
+			isa = PBXGroup;
+			children = (
+				378B7C7723AC4279009D1606 /* Subject.swift */,
+				378B7C8523B16971009D1606 /* Weapon.swift */,
+				377A485623FB109700F16093 /* Items.swift */,
+			);
+			path = modal;
+			sourceTree = "<group>";
+		};
+		378B7C6F23A6A3E3009D1606 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				378B7C7323A6E4F2009D1606 /* SubjectCollectionViewCell.swift */,
+				378B7C7523A81DEA009D1606 /* WeaponTableViewCell.swift */,
+				378B7C7923AD522A009D1606 /* CompoundCollectionViewCell.swift */,
+				378B7C8123AEA48C009D1606 /* MainCollectionViewCell.swift */,
+				3707161523BF945500DEDA3D /* EmptyTableViewCell.swift */,
+				378B7C7D23AD80F6009D1606 /* headerView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		378B7C7023A6A3E7009D1606 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				378B7C7123A6A4EE009D1606 /* RaidCalculatorVC.swift */,
+				378B7C8323AF42FB009D1606 /* AddWeaponVC.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		6D4ED22D481B478F69E9B055 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				09248E1FF46E159317BCC8FB /* Pods-HelpForRust.debug.xcconfig */,
+				95D3385BA12563D6A1A9F2B4 /* Pods-HelpForRust.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C2A45F11E41D18E6C45E209C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDCE1CABA5091C2AFC9BA0FB /* Pods_HelpForRust.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		378B7C4323A44919009D1606 /* HelpForRust */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 378B7C5823A4491B009D1606 /* Build configuration list for PBXNativeTarget "HelpForRust" */;
+			buildPhases = (
+				46487511C7799EFA1B769601 /* [CP] Check Pods Manifest.lock */,
+				378B7C4023A44919009D1606 /* Sources */,
+				378B7C4123A44919009D1606 /* Frameworks */,
+				378B7C4223A44919009D1606 /* Resources */,
+				4DB378DBDA31B9BB1D8065CC /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelpForRust;
+			productName = HelpForRust;
+			productReference = 378B7C4423A44919009D1606 /* HelpForRust.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		378B7C3C23A44919009D1606 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Grinevich Sergey";
+				TargetAttributes = {
+					378B7C4323A44919009D1606 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = 378B7C3F23A44919009D1606 /* Build configuration list for PBXProject "HelpForRust" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ru,
+			);
+			mainGroup = 378B7C3B23A44919009D1606;
+			productRefGroup = 378B7C4523A44919009D1606 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				378B7C4323A44919009D1606 /* HelpForRust */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		378B7C4223A44919009D1606 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				378B7C5423A4491B009D1606 /* LaunchScreen.storyboard in Resources */,
+				3707161823C17F2D00DEDA3D /* GoogleService-Info.plist in Resources */,
+				3707161D23C46FE300DEDA3D /* Roboto-Bold.ttf in Resources */,
+				377A485023F2E49600F16093 /* Localizable.strings in Resources */,
+				3707161B23C46ABF00DEDA3D /* Roboto-Regular.ttf in Resources */,
+				378B7C5123A4491B009D1606 /* Preview Assets.xcassets in Resources */,
+				378B7C4E23A4491B009D1606 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46487511C7799EFA1B769601 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HelpForRust-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4DB378DBDA31B9BB1D8065CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HelpForRust/Pods-HelpForRust-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HelpForRust/Pods-HelpForRust-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		378B7C4023A44919009D1606 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				378B7C7623A81DEA009D1606 /* WeaponTableViewCell.swift in Sources */,
+				377A485723FB109700F16093 /* Items.swift in Sources */,
+				378B7C8623B16971009D1606 /* Weapon.swift in Sources */,
+				370A3F7A23E8E63100C1381C /* AddBlueprintsVC.swift in Sources */,
+				370A3F7423E8925D00C1381C /* BlueprintsVC.swift in Sources */,
+				378B7C7823AC4279009D1606 /* Subject.swift in Sources */,
+				3707162323C9B47400DEDA3D /* PurchaseVC.swift in Sources */,
+				378B7C6923A4E3CD009D1606 /* FurnaceInfoTableViewCell.swift in Sources */,
+				378B7C6023A449D4009D1606 /* FurnaceInfoVC.swift in Sources */,
+				378B7C7423A6E4F2009D1606 /* SubjectCollectionViewCell.swift in Sources */,
+				378B7C8223AEA48C009D1606 /* MainCollectionViewCell.swift in Sources */,
+				370A3F7623E892BA00C1381C /* BlueprintsCollectionViewCell.swift in Sources */,
+				370A3F6E23E63E9800C1381C /* TestConnectionNetwork.swift in Sources */,
+				378B7C6723A4E177009D1606 /* FurnaceInfo.swift in Sources */,
+				378B7C4823A44919009D1606 /* AppDelegate.swift in Sources */,
+				370A3F8023E995DF00C1381C /* headerBannerReusableView.swift in Sources */,
+				378B7C7223A6A4EE009D1606 /* RaidCalculatorVC.swift in Sources */,
+				3707161623BF945500DEDA3D /* EmptyTableViewCell.swift in Sources */,
+				370A3F7823E8952C00C1381C /* AmmoGroup.swift in Sources */,
+				378B7C8423AF42FB009D1606 /* AddWeaponVC.swift in Sources */,
+				378B7C7A23AD522A009D1606 /* CompoundCollectionViewCell.swift in Sources */,
+				378B7C6223A44AA4009D1606 /* TabBarMenuController.swift in Sources */,
+				378B7C4A23A44919009D1606 /* SceneDelegate.swift in Sources */,
+				378B7C7E23AD80F6009D1606 /* headerView.swift in Sources */,
+				378B7C6C23A4E841009D1606 /* imageExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		377A485223F2E49600F16093 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				377A485123F2E49600F16093 /* en */,
+				377A485323F2E4B000F16093 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		378B7C5223A4491B009D1606 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				378B7C5323A4491B009D1606 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		378B7C5623A4491B009D1606 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		378B7C5723A4491B009D1606 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		378B7C5923A4491B009D1606 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09248E1FF46E159317BCC8FB /* Pods-HelpForRust.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"HelpForRust/Preview Content\"";
+				DEVELOPMENT_TEAM = 5954Y94DDR;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = HelpForRust/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Grinevich.HelpForRust;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		378B7C5A23A4491B009D1606 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95D3385BA12563D6A1A9F2B4 /* Pods-HelpForRust.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"HelpForRust/Preview Content\"";
+				DEVELOPMENT_TEAM = 5954Y94DDR;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = HelpForRust/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Grinevich.HelpForRust;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		378B7C3F23A44919009D1606 /* Build configuration list for PBXProject "HelpForRust" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				378B7C5623A4491B009D1606 /* Debug */,
+				378B7C5723A4491B009D1606 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		378B7C5823A4491B009D1606 /* Build configuration list for PBXNativeTarget "HelpForRust" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				378B7C5923A4491B009D1606 /* Debug */,
+				378B7C5A23A4491B009D1606 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 378B7C3C23A44919009D1606 /* Project object */;
+}

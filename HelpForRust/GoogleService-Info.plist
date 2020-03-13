@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>23703470135-t71jna10diqtstrtd8bm7ednjk8miiri.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.23703470135-t71jna10diqtstrtd8bm7ednjk8miiri</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCgqPCC5MApZuAndU7gU0O0qNLUChAsfeM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>23703470135</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Grinevich.HelpForRust</string>
+	<key>PROJECT_ID</key>
+	<string>helpforrust</string>
+	<key>STORAGE_BUCKET</key>
+	<string>helpforrust.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:23703470135:ios:e48b7716000a8b1563ffb2</string>
+	<key>DATABASE_URL</key>
+	<string>https://helpforrust.firebaseio.com</string>
+</dict>
+</plist>
