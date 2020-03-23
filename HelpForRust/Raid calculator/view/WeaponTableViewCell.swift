@@ -21,26 +21,31 @@ class WeaponTableViewCell: UITableViewCell {
 //
     
     
+    
     var section = [NSLocalizedString("Basic items", comment: ""), NSLocalizedString("Compound items", comment: "")]
     
     fileprivate let headerId = "headerId"
     fileprivate let cellMainId = "cellMainId"
     fileprivate let cellCompoundId = "cellCompoundId"
     
-    public var weapon_id = Int()
-    
+
     override func prepareForReuse() {
         self.raidImageView.image = nil
+        insideCollectionRaidView.collectionViewLayout.invalidateLayout()
+        insideCollectionRaidView.dataSource = nil
+        insideCollectionRaidView.dataSource = self
+        insideCollectionRaidView.delegate = nil
+        insideCollectionRaidView.delegate = self
     }
     
     var weaponItemsTest = [ItemsWeaponsDTO]()
-    var sortedItems = [ItemsWeaponsDTO]()
-    var itemsCompound  = [ItemsCompoundDTO]()
-    var weaponsItems = [ItemsWeapons]()
-    var stepperValue = Double()
-    var ImageCache = [String:UIImage]()
 
+
+   
+    var ImageCache = [String:UIImage]()
     
+    var compound : Set <Compound> = []
+
     lazy var containerInsideView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -92,7 +97,9 @@ class WeaponTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-    
+        
+
+        
         // backgroundColor = UIColor(red: 68/255, green: 67/255, blue: 63/255, alpha: 1.0)
         //MARK: constraint ImageView
         addSubview(raidImageView)
@@ -168,7 +175,7 @@ extension WeaponTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         if section == 0 {
             returnValue = weaponItemsTest.count
         } else if section == 1 {
-            returnValue = itemsCompound.count
+            returnValue = compound.count
         }
         
         return returnValue
@@ -176,18 +183,13 @@ extension WeaponTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     
     //2 ячейки
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        var cell = UICollectionViewCell()
-        
-        let cellMain = collectionView.dequeueReusableCell(withReuseIdentifier: cellMainId, for: indexPath) as! MainCollectionViewCell
-        //
-        let cellCompound = collectionView.dequeueReusableCell(withReuseIdentifier: cellCompoundId, for: indexPath) as! CompoundCollectionViewCell
+      
         
         let section = indexPath.section
         
         if section == 0 {
-            
-        
+            let cellMain = collectionView.dequeueReusableCell(withReuseIdentifier: cellMainId, for: indexPath) as! MainCollectionViewCell
+
             let url = URL(string: weaponItemsTest[indexPath.row].items.imageUrl!)
             
             cellMain.mainImageView.af.cancelImageRequest()
@@ -196,40 +198,35 @@ extension WeaponTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
             if let value = weaponItemsTest[indexPath.row].weapons.value, let valueItems = valueLabel.text {
                 cellMain.mainTextLabel.text = String(value * (Int(valueItems) ?? 0))
             }
-            
-            cell = cellMain
+             
+            return cellMain
             
         } else if section == 1 {
+            let cellCompound = collectionView.dequeueReusableCell(withReuseIdentifier: cellCompoundId, for: indexPath) as! CompoundCollectionViewCell
             
-            for itemsValue in weaponItemsTest {
-                
-                if itemsValue.items.id == itemsCompound[indexPath.row].compound.items_id {
-                    if let value = itemsCompound[indexPath.row].compound.value_compound, let valueItems = valueLabel.text  {
-                        cellCompound.labelCompound.text = String(value * (itemsValue.weapons.value ?? 0) * (Int(valueItems) ?? 0))
-                        
-                    }
-                }
+//            let dictItem = Array(dict)[indexPath.row]
+//            let image = dictItem.key
+//            let value = dictItem.value
+            let compoundArray = Array(compound)
 
-            }
-           
+            cellCompound.labelCompound.text = String(compoundArray[indexPath.row].valueSum)
+    
             
-            let url = URL(string: itemsCompound[indexPath.row].items.imageUrl!)
+            let url = URL(string: compoundArray[indexPath.row].imageUrl)
             
             cellCompound.compoundImageView.af.cancelImageRequest()
-            cellCompound.compoundImageView.af.setImage(withURL: url!, cacheKey: itemsCompound[indexPath.row].items.imageUrl!)
+            cellCompound.compoundImageView.af.setImage(withURL: url!, cacheKey: compoundArray[indexPath.row].imageUrl)
+     
             
-
-            cell = cellCompound
+            return cellCompound
             
+            
+        } else {
+            return UICollectionViewCell()
         }
         
-        return cell
-        
     }
-    
-    
-    
-    
+
     
     
     //размер ячеек коллекции

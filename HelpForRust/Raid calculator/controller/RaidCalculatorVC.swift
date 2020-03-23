@@ -25,8 +25,11 @@ class RaidCalculatorVC: UIViewController {
     var weaponDTOs = [WeaponSubjectDTO]()
     var itemsDtOs = [ItemsWeaponsDTO]()
     var compoundItemsDtOs = [ItemsCompoundDTO]()
-    var filterCompoundItemsDtOs = [ItemsCompoundDTO]()
-    var testCompoundItemsDtOs = [ItemsCompoundDTO]()
+    
+    var dict : Set <Compound> = []
+    var dictFilter : Set <Compound> = []
+    var arrayCleaned = [Compound]()
+    
     var filteredItemsDtOs = [ItemsWeaponsDTO]()
     var subjectId : String?
     var timer: Timer?
@@ -120,10 +123,14 @@ class RaidCalculatorVC: UIViewController {
         weaponDTOs.removeAll()
         
         let ref = Database.database().reference().child("RaidCalculator").child("WeaponsSubject").queryOrdered(byChild: "subject_id").queryEqual(toValue: subject)
-        
-        ref.observe( .value, with: { [weak self] (snaphot) in
+//        ref.observeSingleEvent(of:of: .value) { (<#DataSnapshot#>) in
+//            <#code#>
+//        }
+        var _index = UInt(NSNotFound)
+        _index = ref.observe( .value, with: { [weak self] (snaphot) in
             guard let self = self else { return }
-            
+            ref.removeObserver(withHandle: _index)
+//            ref?.removeObserver(withHandle: index)
             if let value = snaphot.value {
                 if let dictionary = value as? [Any] {
                     for weapon in dictionary {
@@ -148,23 +155,26 @@ class RaidCalculatorVC: UIViewController {
     
     func observeWeaponsSubject()  {
        
-        
+        self.weaponDTOs.removeAll()
         for weapon in weaponItems {
-
-            let ref = Database.database().reference().child("RaidCalculator").child("Weapons").child(String(weapon.weapons_id!))
-            
-            ref.observe( .value, with: { [weak self] (snapshot) in
+            let id = weapon.weapons_id.map({ "\($0)" }) ?? ""
+            let ref = Database.database().reference().child("RaidCalculator").child("Weapons").child(id)
+            var _index = UInt(NSNotFound)
+            _index = ref.observe( .value, with: { [weak self] (snapshot) in
                 guard let self = self else { return }
+                ref.removeObserver(withHandle: _index)
                 if let value = snapshot.value {
                     if let dictionary = value as? [String : Any]  {
                         
                         let weapons = Weapons(dictionary: dictionary)
                    
-                        self.filteredItems(weapon: weapons)
+                        self.filteredItems(weapon: weapons, subjectValue: weapon)
 //
 //                        print(self.compound.count)
 //                        print(self.filteredItemsDtOs.count)
-                        let dtoS = WeaponSubjectDTO(weapon: weapons, subject: weapon, items: self.filteredItemsDtOs, compound: self.testCompoundItemsDtOs)
+          
+                        self.dict = Set(self.arrayCleaned)
+                        let dtoS = WeaponSubjectDTO(weapon: weapons, subject: weapon, items: self.filteredItemsDtOs, dict: self.dict)
                         
                         self.weaponDTOs.append(dtoS)
                         self.weaponTableView.reloadData()
@@ -185,47 +195,100 @@ class RaidCalculatorVC: UIViewController {
                 }
         
                 }, withCancel: nil)
-            
+
               
             
         }
         
     }
     
-    fileprivate func filteredItems(weapon: Weapons) {
+    fileprivate func filteredItems(weapon: Weapons, subjectValue: WeaponsSubject) {
         
-        testCompoundItemsDtOs.removeAll()
+
+        dict.removeAll()
         
         filteredItemsDtOs = itemsDtOs.filter({ (items) -> Bool in
             return items.weapons.weapons_id == weapon.id
         })
         
-        for compound in filteredItemsDtOs {
-            
-            filterCompoundItemsDtOs = compoundItemsDtOs.filter({ (item) -> Bool in
-                return item.compound.items_id == compound.weapons.items_id
-            })
-            
-            testCompoundItemsDtOs.append(contentsOf: filterCompoundItemsDtOs)
+
+        for itemsValue in filteredItemsDtOs {
+            for compoundValues in compoundItemsDtOs {
+                
+                if itemsValue.items.id == compoundValues.compound.items_id {
+                    
+                    let compoundDtos = Compound(imageUrl: compoundValues.items.imageUrl!, valueSum: (compoundValues.compound.value_compound! * itemsValue.weapons.value! * subjectValue.value!), id_compound: compoundValues.items.id!)
+                    
+                    dict.insert(compoundDtos)
+                    
+                }
+            }
             
         }
         
         
+        for dictValues in dict {
+            
+            for compoundValues in compoundItemsDtOs {
+                
+                if dictValues.id_compound == compoundValues.compound.items_id {
+                    
+                    let compoundDtos = Compound(imageUrl: compoundValues.items.imageUrl!, valueSum: dictValues.valueSum * compoundValues.compound.value_compound!, id_compound: compoundValues.items.id!)
+                    
+                    dict.insert(compoundDtos)
+                    
+                    
+                }
+            }
+            
+            
+        }
+        
+        
+        let touchesArray = Array(dict)
+
+        arrayCleaned = touchesArray.uniqueValues(value: {$0.id_compound})
+
+        
+//        let numbers = [1, 1, 2, 3, 4, 4] // Here it is values 2,3
+//        var repeats: Set<Int> = []
+//        var uniques: [Int] = []
+//        for (index, number) in numbers.enumerated() {
+//            if numbers[(numbers.index(index, offsetBy: 1, limitedBy: numbers.endIndex) ?? numbers.endIndex)..<numbers.endIndex].contains(number) {
+//                repeats.insert(number)
+//            } else if !repeats.contains(number) {
+//                uniques.append(number)
+//            }
+//        }
+//
+//        uniques   // 2,3
+
         
     }
     
-
+//    private func uniq<S: Sequence, T: Hashable> (source: S) -> [T] where S.Iterator.Element == T {
+//        var buffer = [T]() // возвращаемый массив
+//        var added = Set<T>() // набор - уникальные значения
+//        for elem in source {
+//            if !added.contains(elem) {
+//                buffer.append(elem)
+//                added.insert(elem)
+//            }
+//        }
+//        return buffer
+//    }
     
+
     
     fileprivate func observeItemsWeapons() {
         
         let refItems = Database.database().reference().child("RaidCalculator").child("ItemsWeapons")
-        
-        refItems.observe( .value, with: { [weak self] (snapshot) in
+        var _index = UInt(NSNotFound)
+        _index = refItems.observe( .value, with: { [weak self] (snapshot) in
     
-            
+           
             guard let self = self else { return }
-            
+            refItems.removeObserver(withHandle: _index)
             if let value = snapshot.value {
                 
                 if let dictionary = value as? [Any] {
@@ -254,14 +317,16 @@ class RaidCalculatorVC: UIViewController {
         
         itemsDtOs.removeAll()
 
+        var _index = UInt(NSNotFound)
+        
         let ref = Database.database().reference().child("RaidCalculator").child("Items").child(String(weaponItems.items_id!))
         
-        ref.observe( .value, with: { [weak self]  (snapshot) in
+        _index = ref.observe( .value, with: { [weak self]  (snapshot) in
             
           //  print(snapshot)
-    
+            ref.removeObserver(withHandle: _index)
             guard let self = self else { return }
-            
+    
             if let value = snapshot.value {
                 if let dictionary = value as? [String: Any] {
                     let items = Items(dictionary: dictionary)
@@ -281,14 +346,16 @@ class RaidCalculatorVC: UIViewController {
     
     fileprivate func observeItemsCompound() {
     
+          var _index = UInt(NSNotFound)
         
         let refItems = Database.database().reference().child("RaidCalculator").child("ItemsCompound")
         
-        refItems.observe( .value, with: { [weak self] (snapshot) in
-            
+        _index = refItems.observe( .value, with: { [weak self] (snapshot) in
+     
 
             guard let self = self else { return }
             
+            refItems.removeObserver(withHandle: _index)
             
             if let value = snapshot.value {
                 if let dictionary = value as? [Any] {
@@ -311,14 +378,14 @@ class RaidCalculatorVC: UIViewController {
     
     fileprivate func observeItemsForCompound(compoundItems: ItemsCompound) {
            
-           itemsDtOs.removeAll()
-
+        itemsDtOs.removeAll()
+        var _index = UInt(NSNotFound)
         let ref = Database.database().reference().child("RaidCalculator").child("Items").child(String(compoundItems.items_compound_id!))
            
-           ref.observe( .value, with: { [weak self]  (snapshot) in
- 
+           _index = ref.observe( .value, with: { [weak self]  (snapshot) in
+        
                guard let self = self else { return }
-               
+            ref.removeObserver(withHandle: _index)
                if let value = snapshot.value {
                    if let dictionary = value as? [String: Any] {
                        let items = Items(dictionary: dictionary)
@@ -345,7 +412,7 @@ class RaidCalculatorVC: UIViewController {
 //        let group = DispatchGroup()
 //        group.enter()
 //
-//        refItems.observe( .value, with: { [weak self] (snapshot) in
+//        refItems.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
 //
 //            guard let self = self else { return }
 //
@@ -434,18 +501,21 @@ class RaidCalculatorVC: UIViewController {
             subjectArrayFiltering(type: subjectType)
             weaponItems.removeAll()
             weaponDTOs.removeAll()
+//            subjectCollectionView.reloadData()
             reload(tableView: weaponTableView)
         case 1:
             subjectType = segment.titleForSegment(at: segment.selectedSegmentIndex)!
             subjectArrayFiltering(type: subjectType)
             weaponItems.removeAll()
             weaponDTOs.removeAll()
+//             subjectCollectionView.reloadData()
             reload(tableView: weaponTableView)
         case 2:
             subjectType = segment.titleForSegment(at: segment.selectedSegmentIndex)!
             subjectArrayFiltering(type: subjectType)
             weaponItems.removeAll()
             weaponDTOs.removeAll()
+//             subjectCollectionView.reloadData()
             reload(tableView: weaponTableView)
             
             
@@ -454,6 +524,7 @@ class RaidCalculatorVC: UIViewController {
             subjectArrayFiltering(type: subjectType)
             weaponItems.removeAll()
             weaponDTOs.removeAll()
+//             subjectCollectionView.reloadData()
             reload(tableView: weaponTableView)
         default:
             break
@@ -534,9 +605,14 @@ class RaidCalculatorVC: UIViewController {
     
     private func observeSubjectRaidCalculator() {
         
+        var _index = UInt(NSNotFound)
+        
         let ref = Database.database().reference().child("RaidCalculator").child("Subject")
         
-        ref.observe( .value , with: { [weak self] (snapshot) in
+        _index = ref.observe( .value , with: { [weak self] (snapshot) in
+            
+            ref.removeObserver(withHandle: _index)
+            
             guard let self = self else { return }
             // print(snapshot)
             
@@ -666,9 +742,8 @@ extension RaidCalculatorVC: UITableViewDelegate, UITableViewDataSource {
             //   weaponItemsFilter.insert(Weapon(dictionary: [:]), at: Int(arc4random_uniform(UInt32(weaponItemsFilter.count))))
                         
             cellWeapor.weaponItemsTest = weaponDTOs[indexPath.row].items
-            cellWeapor.itemsCompound = weaponDTOs[indexPath.row].compound
-            cellWeapor.insideCollectionRaidView.reloadData()
-
+            cellWeapor.compound = weaponDTOs[indexPath.row].compound
+     
             let url = URL(string: weaponDTOs[indexPath.row].weapon.imageUrl!)
             
             cellWeapor.raidImageView.af.cancelImageRequest()
@@ -677,9 +752,11 @@ extension RaidCalculatorVC: UITableViewDelegate, UITableViewDataSource {
     
             if let value = weaponDTOs[indexPath.row].subject.value {
                 cellWeapor.valueLabel.text = String(Int(value) * Int(stepperCalc.value))
-                
-                cellWeapor.stepperValue = stepperCalc.value
+            
             }
+            
+            
+            cellWeapor.insideCollectionRaidView.reloadData()
 
             cell = cellWeapor
             
@@ -734,18 +811,16 @@ extension RaidCalculatorVC: UICollectionViewDataSource, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+    
+
+            
         stepperCalc.isHidden = false
         stepperCalc.value = 1
         labelStepper.text = String(Int(stepperCalc.value))
         labelStepper.isHidden = false
         
-        if !purchaseRustHelpRemoveAds {
-            if interstitial.isReady {
-                interstitial = createAndLoadInterstitial()
-                
-            }
-        }
         
+    
         
         if let id = subjectArrayFilter[indexPath.row].id {
             //weaponItemsFiltering(subject_id: id)
@@ -755,7 +830,12 @@ extension RaidCalculatorVC: UICollectionViewDataSource, UICollectionViewDelegate
         reload(tableView: weaponTableView)
         
         
-        
+        if !purchaseRustHelpRemoveAds {
+            if interstitial.isReady {
+                interstitial = createAndLoadInterstitial()
+                
+            }
+        }
     }
     
     
@@ -948,4 +1028,20 @@ extension RaidCalculatorVC {
     
 }
 
-
+extension Array
+ {
+    func uniqueValues<V:Equatable>( value:(Element)->V) -> [Element]
+    {
+        var result:[Element] = []
+        for element in self
+        {
+            if !result.contains(where: { value($0) == value(element) })
+            {
+                result.append(element)
+                
+            }
+        }
+        return result
+    }
+    
+}

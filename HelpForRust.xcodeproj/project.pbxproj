@@ -39,6 +39,7 @@
 		378B7C8223AEA48C009D1606 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C8123AEA48C009D1606 /* MainCollectionViewCell.swift */; };
 		378B7C8423AF42FB009D1606 /* AddWeaponVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C8323AF42FB009D1606 /* AddWeaponVC.swift */; };
 		378B7C8623B16971009D1606 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C8523B16971009D1606 /* Weapon.swift */; };
+		37FDEB7D2424FA78008E138E /* sumValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FDEB7C2424FA78008E138E /* sumValue.swift */; };
 		A1B7C8B33CDED6EBBAA3B67E /* Pods_HelpForRust.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCE1CABA5091C2AFC9BA0FB /* Pods_HelpForRust.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		378B7C8123AEA48C009D1606 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		378B7C8323AF42FB009D1606 /* AddWeaponVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeaponVC.swift; sourceTree = "<group>"; };
 		378B7C8523B16971009D1606 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		37FDEB7C2424FA78008E138E /* sumValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sumValue.swift; sourceTree = "<group>"; };
 		95D3385BA12563D6A1A9F2B4 /* Pods-HelpForRust.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpForRust.release.xcconfig"; path = "Target Support Files/Pods-HelpForRust/Pods-HelpForRust.release.xcconfig"; sourceTree = "<group>"; };
 		DDCE1CABA5091C2AFC9BA0FB /* Pods_HelpForRust.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelpForRust.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -287,6 +289,7 @@
 				378B7C7723AC4279009D1606 /* Subject.swift */,
 				378B7C8523B16971009D1606 /* Weapon.swift */,
 				377A485623FB109700F16093 /* Items.swift */,
+				37FDEB7C2424FA78008E138E /* sumValue.swift */,
 			);
 			path = modal;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				378B7C6023A449D4009D1606 /* FurnaceInfoVC.swift in Sources */,
 				378B7C7423A6E4F2009D1606 /* SubjectCollectionViewCell.swift in Sources */,
 				378B7C8223AEA48C009D1606 /* MainCollectionViewCell.swift in Sources */,
+				37FDEB7D2424FA78008E138E /* sumValue.swift in Sources */,
 				370A3F7623E892BA00C1381C /* BlueprintsCollectionViewCell.swift in Sources */,
 				370A3F6E23E63E9800C1381C /* TestConnectionNetwork.swift in Sources */,
 				378B7C6723A4E177009D1606 /* FurnaceInfo.swift in Sources */,

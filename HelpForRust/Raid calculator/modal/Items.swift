@@ -76,13 +76,45 @@ class ItemsCompound: NSObject {
 }
 
 
-class ItemsCompoundDTO {
+class ItemsCompoundDTO : Hashable  {
+  
     var items: Items
     var compound: ItemsCompound
+    
+    
     
     init(items: Items, compound: ItemsCompound) {
         self.items = items
         self.compound = compound
     }
     
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(items)
+        hasher.combine(compound)
+    }
+
+    
+    static func == (lhs: ItemsCompoundDTO, rhs: ItemsCompoundDTO) -> Bool {
+        return lhs.items == rhs.items && lhs.compound == rhs.compound
+      }
+  
 }
+
+
+class ItemsCompoundDTOSum {
+    
+    var items: Items
+    var compound: ItemsCompound
+    var sumCompound : Int
+    var sumSompoundToCompound: Int
+    
+    init(items: Items, compound: ItemsCompound, sumCompound: Int,  sumSompoundToCompound: Int) {
+        self.items = items
+        self.compound = compound
+        self.sumCompound = sumCompound
+        self.sumSompoundToCompound = sumSompoundToCompound
+    }
+    
+    
+}
+

@@ -43,7 +43,7 @@ class BlueprintsCollectionViewCell: UICollectionViewCell{
             self.value = value
             
 //            let ref = Database.database().reference().child("Blueprints").child("Level").child(valueLevelPublic).child(id)
-//            ref.observeSingleEvent(of: .value) { (snapshot) in
+//            ref.observeSingleEvent(of:of: .value) { (snapshot) in
 //
 //
 //

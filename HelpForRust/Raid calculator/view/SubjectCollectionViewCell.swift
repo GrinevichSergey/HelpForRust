@@ -59,7 +59,7 @@ class SubjectCollectionViewCell: UICollectionViewCell {
             
 //            let ref = Database.database().reference().child("RaidCalculator").child("Subject").child(String(id))
 //
-//            ref.observeSingleEvent(of: .value, with: { (snapshot) in
+//            ref.observeSingleEvent(of:of: .value, with: { (snapshot) in
 //
 //                if let dictionary = snapshot.value as? [String: AnyObject],
 //                    let imageUrl = dictionary["imageUrl"]  as? String,
