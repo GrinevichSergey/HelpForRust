@@ -74,10 +74,10 @@ class WeaponSubjectDTO {
     var weapon : Weapons
     var subject : WeaponsSubject
     var items: [ItemsWeaponsDTO]
-    var compound: Set <Compound>
+    var compound: [Int: Compound]
 
     
-    init(weapon: Weapons, subject: WeaponsSubject, items: [ItemsWeaponsDTO], dict: Set<Compound>) {
+    init(weapon: Weapons, subject: WeaponsSubject, items: [ItemsWeaponsDTO], dict: [Int: Compound]) {
         self.weapon = weapon
         self.subject = subject
         self.items = items

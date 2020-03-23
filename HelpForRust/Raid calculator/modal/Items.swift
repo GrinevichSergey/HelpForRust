@@ -61,7 +61,7 @@ class ItemsCompound: NSObject {
     var id: Int?
     var items_id: Int?
     var items_compound_id: Int?
-    var value_compound : Int?
+    var value_compound : Double?
     
     
     init(dictionary: [String: Any]) {
@@ -69,7 +69,7 @@ class ItemsCompound: NSObject {
         id = dictionary["id"] as? Int
         items_id = dictionary["items_id"] as? Int
         items_compound_id = dictionary["items_compound_id"] as? Int
-        value_compound = dictionary["value_compound"] as? Int
+        value_compound = dictionary["value_compound"] as? Double
         
     }
     

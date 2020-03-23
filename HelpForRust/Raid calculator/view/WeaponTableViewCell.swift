@@ -44,7 +44,7 @@ class WeaponTableViewCell: UITableViewCell {
    
     var ImageCache = [String:UIImage]()
     
-    var compound : Set <Compound> = []
+    var compound = [Int: Compound]()
 
     lazy var containerInsideView: UIView = {
         let view = UIView()
@@ -209,13 +209,14 @@ extension WeaponTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
 //            let value = dictItem.value
             let compoundArray = Array(compound)
 
-            cellCompound.labelCompound.text = String(compoundArray[indexPath.row].valueSum)
+            cellCompound.labelCompound.text = String(format: "%.0f", compoundArray[indexPath.row].value.valueSum)
+          
     
             
-            let url = URL(string: compoundArray[indexPath.row].imageUrl)
+            let url = URL(string: compoundArray[indexPath.row].value.imageUrl)
             
             cellCompound.compoundImageView.af.cancelImageRequest()
-            cellCompound.compoundImageView.af.setImage(withURL: url!, cacheKey: compoundArray[indexPath.row].imageUrl)
+            cellCompound.compoundImageView.af.setImage(withURL: url!, cacheKey: compoundArray[indexPath.row].value.imageUrl)
      
             
             return cellCompound

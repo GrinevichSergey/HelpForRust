@@ -12,27 +12,26 @@ class Compound: Hashable {
     
     
     var imageUrl: String
-    var valueSum: Int
-    var id_compound: Int
+    var valueSum: Double
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(imageUrl)
         hasher.combine(valueSum)
-        hasher.combine(id_compound)
+        
         
     }
-   
-
-    init(imageUrl : String, valueSum: Int, id_compound: Int) {
+    
+    
+    init(imageUrl : String, valueSum: Double) {
         
         self.imageUrl = imageUrl
         self.valueSum = valueSum
-        self.id_compound = id_compound
+        
         
     }
     
     static func == (lhs: Compound, rhs: Compound) -> Bool {
-           return lhs.imageUrl == rhs.imageUrl && lhs.valueSum == rhs.valueSum && lhs.id_compound == rhs.id_compound
-         }
+        return lhs.imageUrl == rhs.imageUrl && lhs.valueSum == rhs.valueSum
+    }
 }
 

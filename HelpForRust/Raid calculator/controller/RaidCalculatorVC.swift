@@ -26,8 +26,8 @@ class RaidCalculatorVC: UIViewController {
     var itemsDtOs = [ItemsWeaponsDTO]()
     var compoundItemsDtOs = [ItemsCompoundDTO]()
     
-    var dict : Set <Compound> = []
-    var dictFilter : Set <Compound> = []
+    var dict = [Int: Compound]()
+    var dictFilter = [Int: Compound]()
     var arrayCleaned = [Compound]()
     
     var filteredItemsDtOs = [ItemsWeaponsDTO]()
@@ -173,7 +173,8 @@ class RaidCalculatorVC: UIViewController {
 //                        print(self.compound.count)
 //                        print(self.filteredItemsDtOs.count)
           
-                        self.dict = Set(self.arrayCleaned)
+                        //self.dict = Set(self.arrayCleaned)
+                        
                         let dtoS = WeaponSubjectDTO(weapon: weapons, subject: weapon, items: self.filteredItemsDtOs, dict: self.dict)
                         
                         self.weaponDTOs.append(dtoS)
@@ -217,9 +218,9 @@ class RaidCalculatorVC: UIViewController {
                 
                 if itemsValue.items.id == compoundValues.compound.items_id {
                     
-                    let compoundDtos = Compound(imageUrl: compoundValues.items.imageUrl!, valueSum: (compoundValues.compound.value_compound! * itemsValue.weapons.value! * subjectValue.value!), id_compound: compoundValues.items.id!)
+                    let compoundDtos = Compound(imageUrl: compoundValues.items.imageUrl!, valueSum: (compoundValues.compound.value_compound! * Double(itemsValue.weapons.value!) * Double(subjectValue.value!)))
                     
-                    dict.insert(compoundDtos)
+                    dict[compoundValues.items.id!] = compoundDtos
                     
                 }
             }
@@ -231,39 +232,15 @@ class RaidCalculatorVC: UIViewController {
             
             for compoundValues in compoundItemsDtOs {
                 
-                if dictValues.id_compound == compoundValues.compound.items_id {
-                    
-                    let compoundDtos = Compound(imageUrl: compoundValues.items.imageUrl!, valueSum: dictValues.valueSum * compoundValues.compound.value_compound!, id_compound: compoundValues.items.id!)
-                    
-                    dict.insert(compoundDtos)
-                    
-                    
+                if dictValues.key == compoundValues.compound.items_id {
+       
+                    dict[compoundValues.items.id!] = Compound(imageUrl: compoundValues.items.imageUrl!, valueSum: (dictValues.value.valueSum * compoundValues.compound.value_compound!) + (dict[compoundValues.items.id!]?.valueSum ?? 0))
+
                 }
             }
             
-            
         }
-        
-        
-        let touchesArray = Array(dict)
-
-        arrayCleaned = touchesArray.uniqueValues(value: {$0.id_compound})
-
-        
-//        let numbers = [1, 1, 2, 3, 4, 4] // Here it is values 2,3
-//        var repeats: Set<Int> = []
-//        var uniques: [Int] = []
-//        for (index, number) in numbers.enumerated() {
-//            if numbers[(numbers.index(index, offsetBy: 1, limitedBy: numbers.endIndex) ?? numbers.endIndex)..<numbers.endIndex].contains(number) {
-//                repeats.insert(number)
-//            } else if !repeats.contains(number) {
-//                uniques.append(number)
-//            }
-//        }
-//
-//        uniques   // 2,3
-
-        
+ 
     }
     
 //    private func uniq<S: Sequence, T: Hashable> (source: S) -> [T] where S.Iterator.Element == T {
@@ -1028,20 +1005,20 @@ extension RaidCalculatorVC {
     
 }
 
-extension Array
- {
-    func uniqueValues<V:Equatable>( value:(Element)->V) -> [Element]
-    {
-        var result:[Element] = []
-        for element in self
-        {
-            if !result.contains(where: { value($0) == value(element) })
-            {
-                result.append(element)
-                
-            }
-        }
-        return result
-    }
-    
-}
+//extension Array
+// {
+//    func uniqueValues<V:Equatable>( value:(Element)->V) -> [Element]
+//    {
+//        var result:[Element] = []
+//        for element in self
+//        {
+//            if !result.contains(where: { value($0) == value(element) })
+//            {
+//                result.append(element)
+//
+//            }
+//        }
+//        return result
+//    }
+//
+//}
