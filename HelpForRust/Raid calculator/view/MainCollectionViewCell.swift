@@ -12,6 +12,7 @@ import Firebase
 class MainCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
+         super.prepareForReuse()
          self.mainImageView.image = nil
      }
 

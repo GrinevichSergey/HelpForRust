@@ -44,6 +44,7 @@ class CompoundCollectionViewCell: UICollectionViewCell {
     
     
     override func prepareForReuse() {
+         super.prepareForReuse()
         self.compoundImageView.image = nil
         self.compoundImageView.af.cancelImageRequest()
     }

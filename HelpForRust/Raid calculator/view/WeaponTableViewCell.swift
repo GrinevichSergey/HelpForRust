@@ -30,6 +30,7 @@ class WeaponTableViewCell: UITableViewCell {
     
 
     override func prepareForReuse() {
+        super.prepareForReuse()
         self.raidImageView.image = nil
         insideCollectionRaidView.collectionViewLayout.invalidateLayout()
         insideCollectionRaidView.dataSource = nil
@@ -45,6 +46,7 @@ class WeaponTableViewCell: UITableViewCell {
     var ImageCache = [String:UIImage]()
     
     var compound = [Int: Compound]()
+    var stepperValue = Double()
 
     lazy var containerInsideView: UIView = {
         let view = UIView()
@@ -209,10 +211,10 @@ extension WeaponTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
 //            let value = dictItem.value
             let compoundArray = Array(compound)
 
-            cellCompound.labelCompound.text = String(format: "%.0f", compoundArray[indexPath.row].value.valueSum)
-          
-    
             
+            cellCompound.labelCompound.text = String(format: "%.0f", compoundArray[indexPath.row].value.valueSum * stepperValue)
+            
+    
             let url = URL(string: compoundArray[indexPath.row].value.imageUrl)
             
             cellCompound.compoundImageView.af.cancelImageRequest()

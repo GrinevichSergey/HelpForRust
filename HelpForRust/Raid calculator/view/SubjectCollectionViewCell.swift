@@ -20,8 +20,10 @@ class SubjectCollectionViewCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
+        super.prepareForReuse()
         self.subjectImageView.image = nil
     }
+
     
 //    var ImageCache = [String:UIImage]()
     
@@ -41,6 +43,8 @@ class SubjectCollectionViewCell: UICollectionViewCell {
             self.subjectImageView.alpha = isSelected ? 0.75 : 1.0
         }
     }
+    
+    
 
     
     

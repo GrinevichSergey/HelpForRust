@@ -126,23 +126,42 @@ class RaidCalculatorVC: UIViewController {
 //        ref.observeSingleEvent(of:of: .value) { (<#DataSnapshot#>) in
 //            <#code#>
 //        }
-        var _index = UInt(NSNotFound)
-        _index = ref.observe( .value, with: { [weak self] (snaphot) in
+       // var _index = UInt(NSNotFound)
+        ref.observe( .value, with: { [weak self] (snaphot) in
             guard let self = self else { return }
-            ref.removeObserver(withHandle: _index)
-//            ref?.removeObserver(withHandle: index)
-            if let value = snaphot.value {
-                if let dictionary = value as? [Any] {
-                    for weapon in dictionary {
-                        if let weaponDict = weapon as? [String : Any] {
-                            let weapon = WeaponsSubject(dictionary: weaponDict)
-                            self.weaponItems.append(weapon)
-                        
-                        }
+            
+            print(snaphot)
+            
+           // ref.removeObserver(withHandle: _index)
+            
+            if let snapDict = snaphot.value as? [String: Any] {
+                
+                for weapon in snapDict.values {
+                    if let weaponDict = weapon as? [String : Any] {
+                        let weapon = WeaponsSubject(dictionary: weaponDict)
+                        self.weaponItems.append(weapon)
                     }
-                    
+                }
+ 
+            } else {
+                
+                if let value = snaphot.value {
+                    if let dictionary = value as? [Any] {
+                        for weapon in dictionary {
+                            if let weaponDict = weapon as? [String : Any] {
+                                let weapon = WeaponsSubject(dictionary: weaponDict)
+                                self.weaponItems.append(weapon)
+                                
+                            }
+                        }
+                        
+                    }
                 }
             }
+            
+            
+//            ref?.removeObserver(withHandle: index)
+         
     
             self.observeWeaponsSubject()
       
@@ -451,6 +470,8 @@ class RaidCalculatorVC: UIViewController {
         //
         //        }
         
+    
+        
         reload(tableView: weaponTableView)
         
     }
@@ -460,10 +481,13 @@ class RaidCalculatorVC: UIViewController {
     func reload(tableView: UITableView) {
         
         DispatchQueue.main.async {
-            let contentOffset = tableView.contentOffset
+            //let contentOffset = tableView.contentOffset
             tableView.reloadData()
-            tableView.layoutIfNeeded()
-            tableView.setContentOffset(contentOffset, animated: false)
+//            tableView.layoutIfNeeded()
+//            tableView.setContentOffset(contentOffset, animated: true)
+//
+//
+
         }
         
         
@@ -726,6 +750,7 @@ extension RaidCalculatorVC: UITableViewDelegate, UITableViewDataSource {
             cellWeapor.raidImageView.af.cancelImageRequest()
             cellWeapor.raidImageView.af.setImage(withURL: url!, cacheKey: weaponDTOs[indexPath.row].weapon.imageUrl!)
             
+            cellWeapor.stepperValue = stepperCalc.value
     
             if let value = weaponDTOs[indexPath.row].subject.value {
                 cellWeapor.valueLabel.text = String(Int(value) * Int(stepperCalc.value))
@@ -733,7 +758,7 @@ extension RaidCalculatorVC: UITableViewDelegate, UITableViewDataSource {
             }
             
             
-            cellWeapor.insideCollectionRaidView.reloadData()
+          //  cellWeapor.insideCollectionRaidView.reloadData()
 
             cell = cellWeapor
             
@@ -786,18 +811,18 @@ extension RaidCalculatorVC: UICollectionViewDataSource, UICollectionViewDelegate
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return (collectionView.indexPathsForSelectedItems?.count ?? 0) < subjectArrayFilter.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     
-
-            
         stepperCalc.isHidden = false
         stepperCalc.value = 1
         labelStepper.text = String(Int(stepperCalc.value))
         labelStepper.isHidden = false
         
-        
-    
         
         if let id = subjectArrayFilter[indexPath.row].id {
             //weaponItemsFiltering(subject_id: id)
@@ -963,6 +988,8 @@ extension RaidCalculatorVC {
         subjectCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         subjectCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         // subjectCollectionView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+   
+        
         
         subjectCollectionView.delegate = self
         subjectCollectionView.dataSource = self
