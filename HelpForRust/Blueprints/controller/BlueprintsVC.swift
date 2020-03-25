@@ -189,12 +189,13 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
     func observeExercisesGroup(valueLevel: String) {
         //
         ammoGroup.removeAll()
+       var _index = UInt(NSNotFound)
         
         let ref = Database.database().reference().child("Blueprints").child("Level").child(valueLevel)
-        ref.observeSingleEvent(of: .value, with: { [weak self, weak ref] (snapshot) in
+        _index = ref.observe( .value, with: { [weak self] (snapshot) in
             
             guard let self = self else { return }
-            ref?.removeAllObservers()
+            ref.removeObserver(withHandle: _index)
             if let value = snapshot.value {
                 
                 if let dictionary = value as? [String: Any] {

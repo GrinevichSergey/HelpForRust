@@ -203,9 +203,9 @@ class RaidCalculatorVC: UIViewController {
                             return lhs.weapon.id! < rhs.weapon.id!
                         }
                         
-                        DispatchQueue.main.async {
+                       // DispatchQueue.main.async {
                             self.weaponTableView.reloadData()
-                        }
+                        //}
                         
                         
                         

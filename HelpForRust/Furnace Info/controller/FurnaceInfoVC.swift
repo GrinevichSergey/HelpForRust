@@ -134,20 +134,24 @@ class FurnaceInfoVC: UITableViewController {
     
     func observeFurnace()  {
         
+        var _index = UInt(NSNotFound)
+        
         let ref = Database.database().reference().child("FurnaceInfo")
-        ref.observe(.childAdded, with: {  [weak self] (snapshot) in
+        _index = ref.observe( .childAdded, with: {  [weak self] (snapshot) in
             
             guard let self = self else { return }
+            ref.removeObserver(withHandle: _index)
             
             if let dic = snapshot.value as? [String: AnyObject] {
                 let myFurnace = Furnace(dictionary: dic)
                 
                 self.furnaceInfoArray.append(myFurnace)
-      
+                
             }
             self.sortFurnaceInfo(type: self.typeFurnace)
-         
-        }, withCancel: nil)
+            
+            }, withCancel: nil)
+        
         
     }
     
