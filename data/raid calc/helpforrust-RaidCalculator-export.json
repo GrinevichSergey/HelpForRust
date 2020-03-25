@@ -1,0 +1,1798 @@
+
+{
+    "Subject" : {
+        "1" : {
+            "id" : 1,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FWoodenDoor_image.png?alt=media&token=608a49c7-3af5-4b61-871c-4b85bbf0d351",
+            "type" : "Двери"
+        },
+        "2" : {
+            "id" : 2,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FSheetMetalDoor_image.png?alt=media&token=2787acad-edd7-4241-8de3-efade96f488c",
+            "type" : "Двери"
+        }
+        ,
+        "3" : {
+            "id" : 3,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FArmoredDoor_image.png?alt=media&token=942fe507-2116-4b95-bca3-83cabdb32b14",
+            "type" : "Двери"
+        }
+        ,
+        "4" : {
+            "id" : 4,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FLadderHatch_image.png?alt=media&token=7f7e2fa7-8d23-4b29-a539-cd2e783edc3c",
+            "type" : "Двери"
+        }
+        ,
+        "5" : {
+            "id" : 5,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FPrisonCellGate_image.png?alt=media&token=e028b4b6-1680-45fe-a913-2f0943837e47",
+            "type" : "Двери"
+        }
+        ,
+        "6" : {
+            "id" : 6,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FChainlinkFenceGate_image.png?alt=media&token=2c4a6a87-34aa-46ff-be71-5c918ef88b20",
+            "type" : "Двери"
+        }
+        ,
+        "7" : {
+            "id" : 7,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FGarageDoor_image.png?alt=media&token=28d2efa4-f244-465b-87d7-380a52434339",
+            "type" : "Двери"
+        }
+        ,
+        "8" : {
+            "id" : 8,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FHighExternalWoodenGate_image.png?alt=media&token=9ea2f635-bd8c-4c2a-8e8e-12e3c60f7574",
+            "type" : "Двери"
+        }
+        ,
+        "9" : {
+            "id" : 9,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FHighExternalStoneGate_image.png?alt=media&token=8423c0f0-8a34-4bad-98c0-b4ec9b5a4626",
+            "type" : "Двери"
+        }
+        
+        ,
+        "10" : {
+            "id" : 10,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FReinforcedWindowBars_image.png?alt=media&token=1dbf9e1b-c5ea-4aec-ac31-8fc7d93542bc",
+            "type" : "Окна"
+        }
+        ,
+        "11" : {
+            "id" : 11,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FWoodenWindowBars_image.png?alt=media&token=d4ccbf8b-38f8-4116-b56c-de5a4a6284ca",
+            "type" : "Окна"
+        }
+        ,
+        "12" : {
+            "id" : 12,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FMetalWindowBars_image.png?alt=media&token=77d0233f-8205-4ebd-ab0b-162f733bf2e2",
+            "type" : "Окна"
+        }
+        ,
+        "13" : {
+            "id" : 13,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FMetalHorizontalEmbrasure_image.png?alt=media&token=d45caf5c-1f28-4d4a-a089-2d9d3b6cdbb4",
+            "type" : "Окна"
+        }
+        ,
+        "14" : {
+            "id" : 14,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FReinforcedGlassWindow_image.png?alt=media&token=357568e6-a6ff-477c-9d3e-18d72d34985d",
+            "type" : "Окна"
+        }
+        ,
+        "15" : {
+            "id" : 15,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FHighExternalWoodenWall_image.png?alt=media&token=c4f33b0f-78ac-428d-a7dd-fb81b0e39eba",
+            "type" : "Стены"
+        }
+        ,
+        "16" : {
+            "id" : 16,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FHighExternalStoneWall_image.png?alt=media&token=b4f589a0-9e16-49e8-a518-8c678a11010b",
+            "type" : "Стены"
+        }
+        ,
+        "17" : {
+            "id" : 17,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FArmoredWallStrongSide_image.png?alt=media&token=04c6996b-af22-4ea7-91ec-b7d45615f646",
+            "type" : "Стены"
+        }
+        ,
+        "18" : {
+            "id" : 18,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FStoneWallStrongSide_image.png?alt=media&token=27e6c78e-1b8f-459d-a5b6-9c2ff5ededf8",
+            "type" : "Стены"
+        }
+        ,
+        "19" : {
+            "id" : 19,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FMetalWallStrongSide_image.png?alt=media&token=c590d3ce-6f95-406e-ad46-a8bc7b56f5c1",
+            "type" : "Стены"
+        }
+        ,
+        "20" : {
+            "id" : 20,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FPrisonCellWall_image.png?alt=media&token=05436326-6307-4d72-8b19-4a7f94f8b7fc",
+            "type" : "Стены"
+        }
+        ,
+        "21" : {
+            "id" : 21,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FChainlinkFence_image.png?alt=media&token=3066e6e7-6e34-4bf0-8d4c-400d5fdb34ab",
+            "type" : "Стены"
+        }
+        ,
+        "22" : {
+            "id" : 22,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FWoodenWallStrongSide_image.png?alt=media&token=148b38f0-e91f-43ee-bcfb-e6bd92c38d3f",
+            "type" : "Стены"
+        }
+        ,
+        "23" : {
+            "id" : 23,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FMetalShopFront_image.png?alt=media&token=68013c24-384c-469a-8fbe-809f85c6dca8",
+            "type" : "Стены"
+        }
+        
+        
+    },
+    
+    "Weapons" : {
+        "1" : {
+            "id" : 1,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Weapons%2FBeancanGrenade_image.png?alt=media&token=fe61d69b-a600-4d8d-b8a7-95a8cc05d200",
+            "name" : "BeancanGrenade"
+        },
+        
+        "2" : {
+            "id" : 2,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Weapons%2FSatchelCharge_image.png?alt=media&token=924e7da6-e996-46f5-9327-88109fae98d8",
+            "name" : "SatchelCharge"
+        },
+        
+        "3" : {
+            "id" : 3,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Weapons%2FTimedExplosiveCharge_image.png?alt=media&token=2e1478d7-4fc8-4073-90b6-79bc2dcef198",
+            "name" : "TimedExplosiveCharge"
+        }
+        ,
+        
+        "4" : {
+            "id" : 4,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Weapons%2FRocket_image.png?alt=media&token=31270b9d-7c62-4fc0-a929-047b4f19c943",
+            "name" : "Rocket"
+        }
+        ,
+        
+        "5" : {
+            "id" : 5,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Weapons%2FHatchet_image.png?alt=media&token=54f30a86-61b0-4274-8c4d-42f302ade675",
+            "name" : "Hatchet"
+        }
+        ,
+        
+        "6" : {
+            "id" : 6,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Weapons%2FPickAxe_image.png?alt=media&token=072d4fd4-2f91-48d1-9db4-9347ec22da28",
+            "name" : "PickAxe"
+        }
+        ,
+        
+        "7" : {
+            "id" : 7,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Weapons%2FSalvagedSword_image.png?alt=media&token=70063f44-e8a6-4e20-9be0-5b09e6d62fd2",
+            "name" : "SalvagedSword"
+        }
+        ,
+        
+        "8" : {
+            "id" : 8,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Weapons%2Fammo.rifle.explosive.png?alt=media&token=f85f75b8-2119-4239-bde8-0a8d5e4c001f",
+            "name" : "ExplosiveRifleAmmo"
+        }
+        ,
+        
+        "9" : {
+            "id" : 9,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Weapons%2FHandmadeShell_image.png?alt=media&token=89d7b452-42ec-4f58-833c-2200933d4fa9",
+            "name" : "HandmadeShell"
+        }
+        ,
+        
+        "10" : {
+            "id" : 10,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Weapons%2F40mmHEGrenade_image.png?alt=media&token=e7df1c82-ea85-4ffd-9947-23e06a75eaf2",
+            "name" : "40mmHEGrenade"
+        }
+        ,
+        
+        "11" : {
+            "id" : 11,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Weapons%2F12GaugeIncendiaryShell_image.png?alt=media&token=b9581557-9010-42f1-aa83-b37451fc94b4",
+            "name" : "12GaugeIncendiaryShell"
+        }
+        
+        
+    },
+    
+    "WeaponsSubject" : {
+        
+        "1" : {
+            "id" : 1,
+            "subject_id" : 1,
+            "weapons_id" : 1,
+            "value" : 6
+        },
+        
+        "2" : {
+            "id" : 2,
+            "subject_id" : 1,
+            "weapons_id" : 2,
+            "value" : 2
+        },
+        "3" : {
+            "id" : 3,
+            "subject_id" : 1,
+            "weapons_id" : 3,
+            "value" : 1
+        },
+        "4" : {
+            "id" : 4,
+            "subject_id" : 1,
+            "weapons_id" : 4,
+            "value" : 1
+        },
+        
+        "5" : {
+            "id" : 5,
+            "subject_id" : 1,
+            "weapons_id" : 5,
+            "value" : 12
+        },
+        "6" : {
+            "id" : 6,
+            "subject_id" : 1,
+            "weapons_id" : 7,
+            "value" : 10
+        },
+        "7" : {
+            "id" : 7,
+            "subject_id" : 1,
+            "weapons_id" : 8,
+            "value" : 18
+        },
+        "8" : {
+            "id" : 8,
+            "subject_id" : 1,
+            "weapons_id" : 9,
+            "value" : 45
+        },
+        "9" : {
+            "id" : 9,
+            "subject_id" : 1,
+            "weapons_id" : 10,
+            "value" : 2
+        },
+        "10" : {
+            "id" : 10,
+            "subject_id" : 1,
+            "weapons_id" : 11,
+            "value" : 16
+        },
+        
+        
+        "11" : {
+            "id" : 11,
+            "subject_id" : 2,
+            "weapons_id" : 1,
+            "value" : 18
+        }
+        
+        ,
+        
+        
+        "12" : {
+            "id" : 12,
+            "subject_id" : 2,
+            "weapons_id" : 2,
+            "value" : 4
+        },
+        
+        "13" : {
+            "id" : 13,
+            "subject_id" : 2,
+            "weapons_id" : 3,
+            "value" : 1
+        }
+        ,
+        
+        "14" : {
+            "id" : 14,
+            "subject_id" : 2,
+            "weapons_id" : 4,
+            "value" : 2
+        },
+        
+        
+        "15" : {
+            "id" : 15,
+            "subject_id" : 2,
+            "weapons_id" : 8,
+            "value" : 63
+        }
+        ,
+        
+        "16" : {
+            "id" : 16,
+            "subject_id" : 2,
+            "weapons_id" : 10,
+            "value" : 7
+        }
+        ,
+        
+        "17" : {
+            "id" : 17,
+            "subject_id" : 3,
+            "weapons_id" : 1,
+            "value" : 56
+        }
+        ,
+        
+        "18" : {
+            "id" : 18,
+            "subject_id" : 3,
+            "weapons_id" : 2,
+            "value" : 12
+        }
+        ,
+        
+        "19" : {
+            "id" : 19,
+            "subject_id" : 3,
+            "weapons_id" : 3,
+            "value" : 2
+        }
+        ,
+        
+        "20" : {
+            "id" : 20,
+            "subject_id" : 3,
+            "weapons_id" : 4,
+            "value" : 4
+        }
+        ,
+        
+        "21" : {
+            "id" : 21,
+            "subject_id" : 3,
+            "weapons_id" : 8,
+            "value" : 200
+        }
+        ,
+        
+        "22" : {
+            "id" : 22,
+            "subject_id" : 3,
+            "weapons_id" : 10,
+            "value" : 20
+        }
+        ,
+        
+        "23" : {
+            "id" : 23,
+            "subject_id" : 4,
+            "weapons_id" : 1,
+            "value" : 18
+        }
+        ,
+        
+        "24" : {
+            "id" : 24,
+            "subject_id" : 4,
+            "weapons_id" : 2,
+            "value" : 4
+        }
+        ,
+        
+        "25" : {
+            "id" : 25,
+            "subject_id" : 4,
+            "weapons_id" : 3,
+            "value" : 1
+        }
+        ,
+        
+        "26" : {
+            "id" : 26,
+            "subject_id" : 4,
+            "weapons_id" : 4,
+            "value" : 2
+        }
+        ,
+        
+        "27" : {
+            "id" : 27,
+            "subject_id" : 4,
+            "weapons_id" : 8,
+            "value" : 66
+        }
+        ,
+        
+        "28" : {
+            "id" : 28,
+            "subject_id" : 4,
+            "weapons_id" : 10,
+            "value" : 7
+        }
+        ,
+        
+        "29" : {
+            "id" : 29,
+            "subject_id" : 5,
+            "weapons_id" : 1,
+            "value" : 18
+        }
+        
+        ,
+        
+        "30" : {
+            "id" : 30,
+            "subject_id" : 5,
+            "weapons_id" : 2,
+            "value" : 4
+        }
+        ,
+        
+        "31" : {
+            "id" : 31,
+            "subject_id" : 5,
+            "weapons_id" : 3,
+            "value" : 1
+        }
+        
+        ,
+        
+        "32" : {
+            "id" : 32,
+            "subject_id" : 5,
+            "weapons_id" : 4,
+            "value" : 2
+        }
+        
+        ,
+        
+        "33" : {
+            "id" : 33,
+            "subject_id" : 5,
+            "weapons_id" : 8,
+            "value" : 63
+        }
+        
+        ,
+        
+        "34" : {
+            "id" : 34,
+            "subject_id" : 5,
+            "weapons_id" : 10,
+            "value" : 7
+        }
+        
+        ,
+        
+        "35" : {
+            "id" : 35,
+            "subject_id" : 6,
+            "weapons_id" : 1,
+            "value" : 5
+        }
+        
+        ,
+        
+        "36" : {
+            "id" : 36,
+            "subject_id" : 6,
+            "weapons_id" : 2,
+            "value" : 1
+        }
+        ,
+        
+        "36" : {
+            "id" : 36,
+            "subject_id" : 6,
+            "weapons_id" : 3,
+            "value" : 1
+        }
+        
+        ,
+        
+        "37" : {
+            "id" : 37,
+            "subject_id" : 6,
+            "weapons_id" : 4,
+            "value" : 1
+        }
+        ,
+        
+        "36" : {
+            "id" : 36,
+            "subject_id" : 6,
+            "weapons_id" : 8,
+            "value" : 6
+        }
+        ,
+        
+        "37" : {
+            "id" : 37,
+            "subject_id" : 6,
+            "weapons_id" : 10,
+            "value" : 2
+        }
+        
+        ,
+        
+        "38" : {
+            "id" : 38,
+            "subject_id" : 7,
+            "weapons_id" : 1,
+            "value" : 42
+        }
+        ,
+        
+        "39" : {
+            "id" : 39,
+            "subject_id" : 7,
+            "weapons_id" : 2,
+            "value" :9
+        }
+        
+        ,
+        
+        "40" : {
+            "id" : 40,
+            "subject_id" : 7,
+            "weapons_id" : 3,
+            "value" :2
+        },
+        "41" : {
+            "id" : 41,
+            "subject_id" : 7,
+            "weapons_id" : 4,
+            "value" : 3
+        }
+        ,
+        "42" : {
+            "id" : 42,
+            "subject_id" : 7,
+            "weapons_id" : 8,
+            "value" : 150
+        },
+        "43" : {
+            "id" :43 ,
+            "subject_id" : 7,
+            "weapons_id" : 10,
+            "value" : 15
+        }
+        ,
+        "44" : {
+            "id" :44 ,
+            "subject_id" : 8,
+            "weapons_id" : 1,
+            "value" :26
+        },
+        "45" : {
+            "id" :45 ,
+            "subject_id" : 8,
+            "weapons_id" : 2,
+            "value" : 6
+        },
+        
+        "46" : {
+            "id" : 46,
+            "subject_id" : 8,
+            "weapons_id" : 3,
+            "value" : 2
+        },
+        "47" : {
+            "id" :47 ,
+            "subject_id" : 8,
+            "weapons_id" : 4,
+            "value" : 3
+        }
+        ,
+        "48" : {
+            "id" :48 ,
+            "subject_id" : 8,
+            "weapons_id" : 8,
+            "value" : 95
+        },
+        "49" : {
+            "id" :49 ,
+            "subject_id" : 8,
+            "weapons_id" : 10,
+            "value" : 12
+        }
+        ,
+        "50" : {
+            "id" :50 ,
+            "subject_id" : 8 ,
+            "weapons_id" : 11,
+            "value" : 77
+        },
+        "51" : {
+            "id" : 51,
+            "subject_id" : 9,
+            "weapons_id" : 1,
+            "value" : 46
+        }
+        ,
+        "52" : {
+            "id" :52 ,
+            "subject_id" : 9,
+            "weapons_id" : 2,
+            "value" : 10
+        },
+        "53" : {
+            "id" : 53,
+            "subject_id" : 9,
+            "weapons_id" : 3,
+            "value" :2
+        }
+        ,
+        "54" : {
+            "id" : 54,
+            "subject_id" : 9,
+            "weapons_id" :4 ,
+            "value" : 4
+        },
+        "55" : {
+            "id" : 55,
+            "subject_id" : 9,
+            "weapons_id" : 8,
+            "value" : 182
+        },
+        
+        "56" : {
+            "id" : 56,
+            "subject_id" : 9,
+            "weapons_id" : 10,
+            "value" : 20
+        }
+        
+        ,
+        
+        "57" : {
+            "id" : 57,
+            "subject_id" : 10,
+            "weapons_id" : 1,
+            "value" : 13
+        }
+        ,
+        
+        "58" : {
+            "id" : 58,
+            "subject_id" : 10,
+            "weapons_id" : 2,
+            "value" : 3
+        }
+        ,
+        
+        "59" : {
+            "id" : 59,
+            "subject_id" : 10,
+            "weapons_id" : 3,
+            "value" : 1
+        }
+        ,
+        
+        "60" : {
+            "id" : 60,
+            "subject_id" : 10,
+            "weapons_id" : 4,
+            "value" : 1
+        }
+        ,
+        
+        "61" : {
+            "id" : 61,
+            "subject_id" : 10,
+            "weapons_id" : 5,
+            "value" : 12
+        }
+        ,
+        
+        "62" : {
+            "id" : 62,
+            "subject_id" : 10,
+            "weapons_id" : 6,
+            "value" : 11
+        }
+        ,
+        
+        "63" : {
+            "id" : 63,
+            "subject_id" : 10,
+            "weapons_id" : 7,
+            "value" : 9
+        }
+        ,
+        
+        "64" : {
+            "id" : 64,
+            "subject_id" : 10,
+            "weapons_id" : 8,
+            "value" : 48
+        }
+        ,
+        
+        "64" : {
+            "id" : 64,
+            "subject_id" : 10,
+            "weapons_id" : 10,
+            "value" : 6
+        }
+        ,
+        
+        "65" : {
+            "id" : 65,
+            "subject_id" : 11,
+            "weapons_id" : 1,
+            "value" : 56
+        }
+        ,
+        
+        "66" : {
+            "id" : 66,
+            "subject_id" : 11,
+            "weapons_id" : 2,
+            "value" : 12
+        }
+        ,
+        
+        "67" : {
+            "id" : 67,
+            "subject_id" : 11,
+            "weapons_id" : 3,
+            "value" : 2
+        }
+        ,
+        
+        "68" : {
+            "id" : 68,
+            "subject_id" : 11,
+            "weapons_id" : 4,
+            "value" : 4
+        }
+        ,
+        
+        "69" : {
+            "id" : 69,
+            "subject_id" : 11,
+            "weapons_id" : 8,
+            "value" : 200
+        }
+        ,
+        
+        "70" : {
+            "id" : 70,
+            "subject_id" : 11,
+            "weapons_id" : 10,
+            "value" : 20
+        }
+        ,
+        
+        "71" : {
+            "id" : 71,
+            "subject_id" : 12,
+            "weapons_id" : 1,
+            "value" : 84
+        }
+        ,
+        
+        "72" : {
+            "id" : 72,
+            "subject_id" : 12,
+            "weapons_id" : 2,
+            "value" : 18
+        }
+        ,
+        
+        "73" : {
+            "id" : 73,
+            "subject_id" : 12,
+            "weapons_id" : 3,
+            "value" : 3
+        }
+        
+        ,
+        
+        "74" : {
+            "id" : 74,
+            "subject_id" : 12,
+            "weapons_id" : 4,
+            "value" : 6
+            
+        }
+        ,
+        
+        "75" : {
+            "id" : 75,
+            "subject_id" : 12,
+            "weapons_id" : 8,
+            "value" : 300
+        }
+        ,
+        
+        "76" : {
+            "id" : 76,
+            "subject_id" : 12,
+            "weapons_id" : 10,
+            "value" : 30
+        }
+        ,
+        
+        "77" : {
+            "id" : 77,
+            "subject_id" : 13,
+            "weapons_id" : 1,
+            "value" : 56
+        }
+        ,
+        
+        "78" : {
+            "id" : 78,
+            "subject_id" : 13,
+            "weapons_id" : 2,
+            "value" : 12
+        }
+        ,
+        
+        "79" : {
+            "id" : 79,
+            "subject_id" : 13,
+            "weapons_id" : 3,
+            "value" : 2
+        }
+        ,
+        
+        "80" : {
+            "id" : 80,
+            "subject_id" : 13,
+            "weapons_id" : 4,
+            "value" : 4
+        }
+        ,
+        
+        "81" : {
+            "id" : 81,
+            "subject_id" : 13,
+            "weapons_id" : 8,
+            "value" : 201
+        }
+        ,
+        
+        "82" : {
+            "id" : 82,
+            "subject_id" : 13,
+            "weapons_id" : 10,
+            "value" : 20
+        }
+        
+        ,
+        
+        "83" : {
+            "id" : 83,
+            "subject_id" : 14,
+            "weapons_id" : 1,
+            "value" : 59
+        }
+        ,
+        
+        "84" : {
+            "id" : 84,
+            "subject_id" : 14,
+            "weapons_id" : 2,
+            "value" : 13
+        },
+        
+        "85" : {
+            "id" : 85,
+            "subject_id" : 14,
+            "weapons_id" : 3,
+            "value" : 2
+        }
+        ,
+        
+        "86" : {
+            "id" : 86,
+            "subject_id" : 14,
+            "weapons_id" : 4,
+            "value" : 4
+        }
+        ,
+        
+        "87" : {
+            "id" : 87,
+            "subject_id" : 14,
+            "weapons_id" : 8,
+            "value" : 171
+        }
+        ,
+        
+        "88" : {
+            "id" : 88,
+            "subject_id" : 14,
+            "weapons_id" : 10,
+            "value" : 20
+        }
+        ,
+        
+        "89" : {
+            "id" : 89,
+            "subject_id" : 14,
+            "weapons_id" : 11,
+            "value" : 143
+        }
+        
+        
+        ,
+        
+        "90" : {
+            "id" : 90,
+            "subject_id" : 15,
+            "weapons_id" : 1,
+            "value" : 13
+        }
+        ,
+        
+        "91" : {
+            "id" : 91,
+            "subject_id" : 15,
+            "weapons_id" : 2,
+            "value" : 3
+        }
+        ,
+        
+        "92" : {
+            "id" : 92,
+            "subject_id" : 15,
+            "weapons_id" : 3,
+            "value" : 1
+        }
+        ,
+        
+        "93" : {
+            "id" : 93,
+            "subject_id" : 15,
+            "weapons_id" : 4,
+            "value" : 2
+        }
+        
+        ,
+        
+        "94" : {
+            "id" : 94,
+            "subject_id" : 15,
+            "weapons_id" : 5,
+            "value" : 12
+        }
+        
+        
+        ,
+        
+        "95" : {
+            "id" : 95,
+            "subject_id" : 15,
+            "weapons_id" : 7,
+            "value" : 9
+        }
+        
+        ,
+        
+        "96" : {
+            "id" : 96,
+            "subject_id" : 15,
+            "weapons_id" : 8,
+            "value" : 50
+        }
+        ,
+        
+        "97" : {
+            "id" : 97,
+            "subject_id" : 15,
+            "weapons_id" : 9,
+            "value" : 93
+        }
+        
+        ,
+        
+        "98" : {
+            "id" : 98,
+            "subject_id" : 15,
+            "weapons_id" : 10,
+            "value" : 6
+        }
+        ,
+        
+        "99" : {
+            "id" : 99,
+            "subject_id" : 15,
+            "weapons_id" : 11,
+            "value" : 39
+        }
+        ,
+        
+        "100" : {
+            "id" : 100,
+            "subject_id" : 16,
+            "weapons_id" : 1,
+            "value" : 46
+        }
+        ,
+        
+        "101" : {
+            "id" : 101,
+            "subject_id" : 16,
+            "weapons_id" : 2,
+            "value" : 10
+        }
+        ,
+        
+        "102" : {
+            "id" : 102,
+            "subject_id" : 16,
+            "weapons_id" : 3,
+            "value" : 2
+        }
+        ,
+        
+        "103" : {
+            "id" : 103,
+            "subject_id" : 16,
+            "weapons_id" : 4,
+            "value" : 4
+        }
+        ,
+        
+        "104" : {
+            "id" : 104,
+            "subject_id" : 16,
+            "weapons_id" : 8,
+            "value" : 188
+        }
+        ,
+        
+        "105" : {
+            "id" : 105,
+            "subject_id" : 16,
+            "weapons_id" : 10,
+            "value" : 20
+        }
+        
+        ,
+        
+        "106" : {
+            "id" : 106,
+            "subject_id" : 17,
+            "weapons_id" : 1,
+            "value" :112
+        }
+        
+        ,
+        
+        "107" : {
+            "id" : 107,
+            "subject_id" : 17,
+            "weapons_id" :2 ,
+            "value" :23
+        }
+        ,
+        
+        "108" : {
+            "id" : 108,
+            "subject_id" : 17,
+            "weapons_id" :3 ,
+            "value" :4
+        }
+        ,
+        
+        "109" : {
+            "id" : 109,
+            "subject_id" : 17,
+            "weapons_id" : 4,
+            "value" :8
+        }
+        ,
+        
+        "110" : {
+            "id" : 110,
+            "subject_id" : 17,
+            "weapons_id" : 8,
+            "value" :406
+        }
+        ,
+        
+        "111" : {
+            "id" : 111,
+            "subject_id" : 17,
+            "weapons_id" : 10,
+            "value" : 40
+        }
+        ,
+        
+        "112" : {
+            "id" : 112,
+            "subject_id" : 18,
+            "weapons_id" : 1,
+            "value" : 223
+        }
+        
+        ,
+        
+        "113" : {
+            "id" : 113,
+            "subject_id" : 18,
+            "weapons_id" :2 ,
+            "value" :46
+        }
+        ,
+        
+        "114" : {
+            "id" : 114,
+            "subject_id" : 18,
+            "weapons_id" :3 ,
+            "value" :8
+        }
+        ,
+        
+        "115" : {
+            "id" : 115,
+            "subject_id" : 18,
+            "weapons_id" : 4,
+            "value" :15
+        }
+        ,
+        
+        "116" : {
+            "id" : 116,
+            "subject_id" : 18,
+            "weapons_id" : 8,
+            "value" :800
+        }
+        ,
+        
+        "117" : {
+            "id" : 117,
+            "subject_id" : 18,
+            "weapons_id" : 10,
+            "value" : 80
+        }
+        ,
+        
+        "118" : {
+            "id" : 118,
+            "subject_id" : 19,
+            "weapons_id" : 1,
+            "value" : 18
+        }
+        
+        ,
+        
+        "119" : {
+            "id" : 119,
+            "subject_id" : 19,
+            "weapons_id" :2 ,
+            "value" : 4
+        }
+        ,
+        
+        "120" : {
+            "id" : 120,
+            "subject_id" : 19,
+            "weapons_id" :3 ,
+            "value" :1
+        }
+        ,
+        
+        "121" : {
+            "id" : 121,
+            "subject_id" : 19,
+            "weapons_id" : 4,
+            "value" :2
+        }
+        ,
+        
+        "122" : {
+            "id" : 122,
+            "subject_id" : 19,
+            "weapons_id" : 8,
+            "value" :63
+        }
+        ,
+        
+        "123" : {
+            "id" : 123,
+            "subject_id" : 19,
+            "weapons_id" : 10,
+            "value" : 7
+        }
+        
+        ,
+        "124" : {
+            "id" : 124,
+            "subject_id" : 20,
+            "weapons_id" : 1,
+            "value" : 6
+        }
+        
+        ,
+        
+        "125" : {
+            "id" : 125,
+            "subject_id" : 20,
+            "weapons_id" :2 ,
+            "value" : 2
+        }
+        ,
+        
+        "126" : {
+            "id" : 126,
+            "subject_id" : 20,
+            "weapons_id" :3 ,
+            "value" :1
+        }
+        ,
+        
+        "127" : {
+            "id" : 127,
+            "subject_id" : 20,
+            "weapons_id" : 4,
+            "value" :1
+        }
+        ,
+        
+        "128" : {
+            "id" : 128,
+            "subject_id" : 20,
+            "weapons_id" : 8,
+            "value" :20
+        }
+        ,
+        
+        "129" : {
+            "id" : 129,
+            "subject_id" : 20,
+            "weapons_id" : 10,
+            "value" : 2
+        }
+        
+        ,
+        "130" : {
+            "id" : 130,
+            "subject_id" : 21,
+            "weapons_id" : 1,
+            "value" : 84
+        }
+        
+        ,
+        
+        "131" : {
+            "id" : 131,
+            "subject_id" : 21,
+            "weapons_id" :2 ,
+            "value" : 18
+        }
+        ,
+        
+        "132" : {
+            "id" : 132,
+            "subject_id" : 21,
+            "weapons_id" :3 ,
+            "value" :3
+        }
+        ,
+        
+        "133" : {
+            "id" : 133,
+            "subject_id" : 21,
+            "weapons_id" : 4,
+            "value" :6
+        }
+        ,
+        
+        "134" : {
+            "id" : 134,
+            "subject_id" : 21,
+            "weapons_id" : 8,
+            "value" : 301
+        }
+        ,
+        
+        "135" : {
+            "id" : 135,
+            "subject_id" : 21,
+            "weapons_id" : 10,
+            "value" : 30
+        },
+        
+        "136" : {
+            "id" : 136,
+            "subject_id" : 22,
+            "weapons_id" : 1,
+            "value" : 26
+        }
+        
+        ,
+        
+        "137" : {
+            "id" : 137,
+            "subject_id" : 22,
+            "weapons_id" :2 ,
+            "value" : 6
+        }
+        ,
+        
+        "138" : {
+            "id" : 138,
+            "subject_id" : 22,
+            "weapons_id" :3 ,
+            "value" :2
+        }
+        ,
+        
+        "139" : {
+            "id" : 139,
+            "subject_id" : 22,
+            "weapons_id" : 4,
+            "value" :3
+        }
+        ,
+        
+        "140" : {
+            "id" : 140,
+            "subject_id" : 22,
+            "weapons_id" : 8,
+            "value" : 97
+        }
+        ,
+        
+        "141" : {
+            "id" : 141,
+            "subject_id" : 22,
+            "weapons_id" : 9,
+            "value" : 186
+        }
+        ,
+        "142" : {
+            "id" : 142,
+            "subject_id" : 22,
+            "weapons_id" : 10,
+            "value" : 12
+        }
+        ,
+        
+        "143" : {
+            "id" : 143,
+            "subject_id" : 22,
+            "weapons_id" : 11,
+            "value" : 77
+        }
+        ,
+        "144" : {
+            "id" : 144,
+            "subject_id" : 23,
+            "weapons_id" : 1,
+            "value" : 46
+        }
+        
+        ,
+        
+        "145" : {
+            "id" : 145,
+            "subject_id" : 23,
+            "weapons_id" :2 ,
+            "value" : 10
+        }
+        ,
+        
+        "146" : {
+            "id" : 146,
+            "subject_id" : 23,
+            "weapons_id" :3 ,
+            "value" :2
+        }
+        ,
+        
+        "147" : {
+            "id" : 147,
+            "subject_id" : 23,
+            "weapons_id" : 4,
+            "value" :4
+        }
+        ,
+        
+        "148" : {
+            "id" : 148,
+            "subject_id" : 23,
+            "weapons_id" : 8,
+            "value" : 187
+        }
+        ,
+        
+        "149" : {
+            "id" : 149,
+            "subject_id" : 23,
+            "weapons_id" : 10,
+            "value" : 20
+        }
+        
+        
+        
+    },
+    
+    "Items": {
+        
+        "1": {
+            "id": 1,
+            "name": "GunPowder",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Items%2FGunPowder_image.png?alt=media&token=aa65c986-e767-4ade-b3fe-1c6b76f69039"
+        },
+        "2": {
+            "id": 2,
+            "name": "MetalFragments",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Items%2FMetalFragments_image.png?alt=media&token=b5044950-8f14-4af4-9f1d-05dfee624853"
+        }
+        ,
+        "3": {
+            "id": 3,
+            "name": "Charcoal",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Items%2FCharcoal_image.png?alt=media&token=e78420a1-3358-4b7c-9bb2-c14aade24ab1"
+        }
+        ,
+        "4": {
+            "id": 4,
+            "name": "Sulfur",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Items%2FSulfur_icon.png?alt=media&token=cbf43c5a-6ce4-499d-b6c1-40402e2d6545"
+        }
+        ,
+        "5": {
+            "id": 5,
+            "name": "BeancanGrenade",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Items%2FBeancanGrenade_image.png?alt=media&token=306e0bc9-756a-4add-9ab0-4c0467c28485"
+        }
+        ,
+        "6": {
+            "id": 6,
+            "name": "SmallStash",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Items%2FSmallStash_image.png?alt=media&token=2edb8924-abba-45b1-83ea-22fb1e20ff9c"
+        }
+        ,
+        "7": {
+            "id": 7,
+            "name": "Rope",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Items%2FRope_image.png?alt=media&token=7bb979bb-ce03-4844-9524-c292308d7a55"
+        }
+        ,
+        "8": {
+            "id": 8,
+            "name": "Cloth",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Items%2FCloth_image.png?alt=media&token=16794de2-a739-41b5-ae5d-ce4290aed8a6"
+        }
+        ,
+        "9": {
+            "id": 9,
+            "name": "Explosives",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Items%2FExplosives_image.png?alt=media&token=d1cbcc4f-784b-413a-800d-b70c7bde6b48"
+        }
+        ,
+        "10": {
+            "id": 10,
+            "name": "TechTrash",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Items%2FTechTrash_image.png?alt=media&token=dacb20ba-5df3-424a-982a-abae021c1776"
+        }
+        ,
+        "11": {
+            "id": 11,
+            "name": "LowGradeFuel",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Items%2FLowGradeFuel_image.png?alt=media&token=ef9124f4-8b6e-4b2c-94e7-9d044fdff604"
+        }
+        ,
+        "12": {
+            "id": 12,
+            "name": "AnimalFat",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Items%2FAnimalFat_image.png?alt=media&token=288dab8c-8146-4ca3-979c-5310587226f4"
+        }
+        ,
+        "13": {
+            "id": 13,
+            "name": "MetalPipe",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Items%2FMetalPipe_image.png?alt=media&token=7279c0e8-6e26-4cbe-aae3-efeb1ed397fd"
+        }
+        ,
+        "14": {
+            "id": 14,
+            "name": "Wood",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Items%2FWood_image.png?alt=media&token=4fc31ce5-4a52-4a1f-8b68-661a3ab67826"
+        }
+        ,
+        "15": {
+            "id": 15,
+            "name": "MetalBlade",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Items%2FMetalBlade_image.png?alt=media&token=21938e60-84a3-4e10-a292-74053af03d67"
+        }
+        ,
+        "16": {
+            "id": 16,
+            "name": "Stone",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/Items%2FStone_image.png?alt=media&token=2309daee-998a-475d-b266-3a3a2fb6f8bf"
+        }
+        
+        
+    },
+    
+    "ItemsCompound": {
+        
+        "1": {
+            "id": 1,
+            "items_id": 1,
+            "items_compound_id": 3,
+            "value_compound": 3
+        },
+        
+        "2": {
+            "id": 2,
+            "items_id": 1,
+            "items_compound_id": 4,
+            "value_compound": 2
+        }
+        ,
+        
+        "3": {
+            "id": 3,
+            "items_id": 5,
+            "items_compound_id": 1,
+            "value_compound": 60
+        }
+        ,
+        "4": {
+            "id": 4,
+            "items_id": 5,
+            "items_compound_id": 2,
+            "value_compound": 20
+        }
+        ,
+        
+        "5": {
+            "id": 5,
+            "items_id": 6,
+            "items_compound_id": 8,
+            "value_compound": 10
+        }
+        
+        ,
+        
+        "7": {
+            "id": 7,
+            "items_id": 9,
+            "items_compound_id": 1,
+            "value_compound": 50
+        }
+        ,
+        "8": {
+            "id": 8,
+            "items_id": 9,
+            "items_compound_id": 11,
+            "value_compound": 3
+        }
+        ,
+        "9": {
+            "id": 9,
+            "items_id": 9,
+            "items_compound_id": 4,
+            "value_compound": 10
+        }
+        ,
+        "10": {
+            "id": 10,
+            "items_id": 9,
+            "items_compound_id": 2,
+            "value_compound": 20
+        }
+        
+        ,
+        "11": {
+            "id": 11,
+            "items_id": 11,
+            "items_compound_id": 12,
+            "value_compound": 0.75
+        }
+        ,
+        "12": {
+            "id": 12,
+            "items_id": 11,
+            "items_compound_id": 8,
+            "value_compound": 0.25
+        }
+        
+    },
+    
+    "ItemsWeapons": {
+        
+        "1": {
+            "id": 1,
+            "weapons_id" : 1,
+            "items_id" : 1,
+            "value": 60
+        },
+        
+        "2": {
+            "id": 2,
+            "weapons_id" : 1,
+            "items_id" : 2,
+            "value": 20
+        },
+        
+        "3": {
+            "id": 3,
+            "weapons_id": 2 ,
+            "items_id" : 5,
+            "value": 4
+        }
+        ,
+        "4": {
+            "id": 4,
+            "weapons_id": 2,
+            "items_id" : 6,
+            "value": 1
+        },
+        "5": {
+            "id": 5,
+            "weapons_id" :2,
+            "items_id" : 7,
+            "value": 1
+        },
+        
+        "6": {
+            "id": 6,
+            "weapons_id": 3,
+            "items_id" : 9,
+            "value": 20
+        }
+        ,
+        "7": {
+            "id": 7,
+            "weapons_id": 3,
+            "items_id" : 8,
+            "value": 5
+        },
+        "8": {
+            "id": 8,
+            "weapons_id": 3,
+            "items_id" : 10,
+            "value": 2
+        }
+        
+        ,
+        "9": {
+            "id": 9,
+            "weapons_id": 4,
+            "items_id" : 13,
+            "value": 2
+        }
+        
+        ,
+        "10": {
+            "id": 10,
+            "weapons_id": 4,
+            "items_id" : 1,
+            "value": 150
+        }
+        ,
+        "11": {
+            "id": 11,
+            "weapons_id": 4,
+            "items_id" : 9,
+            "value": 10
+        }
+        ,
+        "12": {
+            "id": 12,
+            "weapons_id": 5,
+            "items_id" : 2,
+            "value": 75
+        }
+        
+        ,
+        "13": {
+            "id": 13,
+            "weapons_id": 5,
+            "items_id" : 14,
+            "value": 100
+        }
+        
+        ,
+        "14": {
+            "id": 14,
+            "weapons_id": 7,
+            "items_id" : 2,
+            "value": 15
+        }
+        ,
+        "15": {
+            "id": 15,
+            "weapons_id": 7,
+            "items_id" : 15,
+            "value": 1
+        }
+        
+        ,
+        "17": {
+            "id": 17,
+            "weapons_id": 8,
+            "items_id" : 1,
+            "value": 10
+        }
+        ,
+        "18": {
+            "id": 18,
+            "weapons_id": 8,
+            "items_id" : 2,
+            "value": 5
+        }
+        ,
+        "19": {
+            "id": 19,
+            "weapons_id": 8,
+            "items_id" : 4,
+            "value": 5
+        }
+        ,
+        "20": {
+            "id": 20,
+            "weapons_id": 9,
+            "items_id" : 1,
+            "value": 5
+        }
+        ,
+        "21": {
+            "id": 21,
+            "weapons_id": 9,
+            "items_id" : 16,
+            "value": 5
+        }
+        ,
+        "22": {
+            "id": 22,
+            "weapons_id": 11,
+            "items_id" : 1,
+            "value": 5
+        }
+        ,
+        "23": {
+            "id": 23,
+            "weapons_id": 11,
+            "items_id" : 2,
+            "value": 2.5
+        }
+        ,
+        "24": {
+            "id": 24,
+            "weapons_id": 11,
+            "items_id" : 4,
+            "value": 10
+        }
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+}
+

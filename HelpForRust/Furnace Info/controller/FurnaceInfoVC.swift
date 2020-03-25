@@ -135,7 +135,9 @@ class FurnaceInfoVC: UITableViewController {
     func observeFurnace()  {
         
         let ref = Database.database().reference().child("FurnaceInfo")
-        ref.observe(.childAdded, with: { (snapshot) in
+        ref.observe(.childAdded, with: {  [weak self] (snapshot) in
+            
+            guard let self = self else { return }
             
             if let dic = snapshot.value as? [String: AnyObject] {
                 let myFurnace = Furnace(dictionary: dic)

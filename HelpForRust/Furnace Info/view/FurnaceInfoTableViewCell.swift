@@ -17,6 +17,12 @@ class FurnaceInfoTableViewCell: UITableViewCell {
         }
     }
     
+    override func prepareForReuse() {
+         super.prepareForReuse()
+         self.furnaceimageView.image = nil
+  
+     }
+    
     let furnaceimageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -30,23 +36,35 @@ class FurnaceInfoTableViewCell: UITableViewCell {
     
     func setupImageFurnace()  {
         
-        if let id = furnaceInfoArray?.id {
-            
-            let ref = Database.database().reference().child("FurnaceInfo").child(id)
-            
-            ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                
-                if let dictionary = snapshot.value as? [String: AnyObject] {
-                    if let imageUrl = dictionary["imageUrl"] as? String {
-                        self.furnaceimageView.loadImageCacheWidthUrlString(urlString: imageUrl)
-                    }
-                    
-                }
-                
-            }, withCancel: nil)
-            
-            
+        if let imageUrl = furnaceInfoArray?.imageUrl,
+        
+        let url = URL(string: imageUrl) {
+        
+        self.furnaceimageView.af.cancelImageRequest()
+        self.furnaceimageView.af.setImage(withURL: url, cacheKey: imageUrl)
+  
         }
+        
+            
+            
+        
+//        if let id = furnaceInfoArray?.id {
+//
+//            let ref = Database.database().reference().child("FurnaceInfo").child(id)
+//
+//            ref.observeSingleEvent(of: .value, with: { (snapshot) in
+//
+//                if let dictionary = snapshot.value as? [String: AnyObject] {
+//                    if let imageUrl = dictionary["imageUrl"] as? String {
+//                        self.furnaceimageView.loadImageCacheWidthUrlString(urlString: imageUrl)
+//                    }
+//
+//                }
+//
+//            }, withCancel: nil)
+//
+//
+//        }
         
     }
     

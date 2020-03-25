@@ -39,6 +39,7 @@
 		378B7C8223AEA48C009D1606 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C8123AEA48C009D1606 /* MainCollectionViewCell.swift */; };
 		378B7C8423AF42FB009D1606 /* AddWeaponVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C8323AF42FB009D1606 /* AddWeaponVC.swift */; };
 		378B7C8623B16971009D1606 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B7C8523B16971009D1606 /* Weapon.swift */; };
+		37E4D14C242B79AA00D42235 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E4D14B242B79A900D42235 /* StoreKit.framework */; };
 		37FDEB7D2424FA78008E138E /* sumValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FDEB7C2424FA78008E138E /* sumValue.swift */; };
 		A1B7C8B33CDED6EBBAA3B67E /* Pods_HelpForRust.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCE1CABA5091C2AFC9BA0FB /* Pods_HelpForRust.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		378B7C8123AEA48C009D1606 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		378B7C8323AF42FB009D1606 /* AddWeaponVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeaponVC.swift; sourceTree = "<group>"; };
 		378B7C8523B16971009D1606 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		37E4D14B242B79A900D42235 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		37FDEB7C2424FA78008E138E /* sumValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sumValue.swift; sourceTree = "<group>"; };
 		95D3385BA12563D6A1A9F2B4 /* Pods-HelpForRust.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpForRust.release.xcconfig"; path = "Target Support Files/Pods-HelpForRust/Pods-HelpForRust.release.xcconfig"; sourceTree = "<group>"; };
 		DDCE1CABA5091C2AFC9BA0FB /* Pods_HelpForRust.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelpForRust.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1B7C8B33CDED6EBBAA3B67E /* Pods_HelpForRust.framework in Frameworks */,
+				37E4D14C242B79AA00D42235 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +331,7 @@
 		C2A45F11E41D18E6C45E209C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37E4D14B242B79A900D42235 /* StoreKit.framework */,
 				DDCE1CABA5091C2AFC9BA0FB /* Pods_HelpForRust.framework */,
 			);
 			name = Frameworks;
@@ -643,6 +647,7 @@
 			baseConfigurationReference = 09248E1FF46E159317BCC8FB /* Pods-HelpForRust.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HelpForRust/Preview Content\"";
 				DEVELOPMENT_TEAM = 5954Y94DDR;
@@ -654,6 +659,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Grinevich.HelpForRust;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

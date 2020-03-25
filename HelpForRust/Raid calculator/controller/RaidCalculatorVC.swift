@@ -123,16 +123,16 @@ class RaidCalculatorVC: UIViewController {
         weaponDTOs.removeAll()
         
         let ref = Database.database().reference().child("RaidCalculator").child("WeaponsSubject").queryOrdered(byChild: "subject_id").queryEqual(toValue: subject)
-//        ref.observeSingleEvent(of:of: .value) { (<#DataSnapshot#>) in
-//            <#code#>
-//        }
-       // var _index = UInt(NSNotFound)
+        //        ref.observeSingleEvent(of:of: .value) { (<#DataSnapshot#>) in
+        //            <#code#>
+        //        }
+        // var _index = UInt(NSNotFound)
         ref.observe( .value, with: { [weak self] (snaphot) in
             guard let self = self else { return }
             
             print(snaphot)
             
-           // ref.removeObserver(withHandle: _index)
+            // ref.removeObserver(withHandle: _index)
             
             if let snapDict = snaphot.value as? [String: Any] {
                 
@@ -142,7 +142,7 @@ class RaidCalculatorVC: UIViewController {
                         self.weaponItems.append(weapon)
                     }
                 }
- 
+                
             } else {
                 
                 if let value = snaphot.value {
@@ -160,20 +160,20 @@ class RaidCalculatorVC: UIViewController {
             }
             
             
-//            ref?.removeObserver(withHandle: index)
-         
-    
+            //            ref?.removeObserver(withHandle: index)
+            
+            
             self.observeWeaponsSubject()
-      
+            
             }, withCancel: nil)
         
-
+        
     }
     
-   
+    
     
     func observeWeaponsSubject()  {
-       
+        
         self.weaponDTOs.removeAll()
         for weapon in weaponItems {
             let id = weapon.weapons_id.map({ "\($0)" }) ?? ""
@@ -186,19 +186,28 @@ class RaidCalculatorVC: UIViewController {
                     if let dictionary = value as? [String : Any]  {
                         
                         let weapons = Weapons(dictionary: dictionary)
-                   
+                        
                         self.filteredItems(weapon: weapons, subjectValue: weapon)
-//
-//                        print(self.compound.count)
-//                        print(self.filteredItemsDtOs.count)
-          
+                        //
+                        //                        print(self.compound.count)
+                        //                        print(self.filteredItemsDtOs.count)
+                        
                         //self.dict = Set(self.arrayCleaned)
                         
                         let dtoS = WeaponSubjectDTO(weapon: weapons, subject: weapon, items: self.filteredItemsDtOs, dict: self.dict)
                         
                         self.weaponDTOs.append(dtoS)
-                        self.weaponTableView.reloadData()
-                   
+                        
+                        self.weaponDTOs.sort { (lhs: WeaponSubjectDTO, rhs: WeaponSubjectDTO) -> Bool in
+                            // you can have additional code here
+                            return lhs.weapon.id! < rhs.weapon.id!
+                        }
+                        
+                        DispatchQueue.main.async {
+                            self.weaponTableView.reloadData()
+                        }
+                        
+                        
                         
                         //                        for weapon in dictionary {
                         //                            if let weaponDict = weapon.value as? String {
@@ -213,10 +222,10 @@ class RaidCalculatorVC: UIViewController {
                     
                     
                 }
-        
+                
                 }, withCancel: nil)
-
-              
+            
+            
             
         }
         
@@ -224,14 +233,14 @@ class RaidCalculatorVC: UIViewController {
     
     fileprivate func filteredItems(weapon: Weapons, subjectValue: WeaponsSubject) {
         
-
+        
         dict.removeAll()
         
         filteredItemsDtOs = itemsDtOs.filter({ (items) -> Bool in
             return items.weapons.weapons_id == weapon.id
         })
         
-
+        
         for itemsValue in filteredItemsDtOs {
             for compoundValues in compoundItemsDtOs {
                 
@@ -252,37 +261,37 @@ class RaidCalculatorVC: UIViewController {
             for compoundValues in compoundItemsDtOs {
                 
                 if dictValues.key == compoundValues.compound.items_id {
-       
+                    
                     dict[compoundValues.items.id!] = Compound(imageUrl: compoundValues.items.imageUrl!, valueSum: (dictValues.value.valueSum * compoundValues.compound.value_compound!) + (dict[compoundValues.items.id!]?.valueSum ?? 0))
-
+                    
                 }
             }
             
         }
- 
+        
     }
     
-//    private func uniq<S: Sequence, T: Hashable> (source: S) -> [T] where S.Iterator.Element == T {
-//        var buffer = [T]() // возвращаемый массив
-//        var added = Set<T>() // набор - уникальные значения
-//        for elem in source {
-//            if !added.contains(elem) {
-//                buffer.append(elem)
-//                added.insert(elem)
-//            }
-//        }
-//        return buffer
-//    }
+    //    private func uniq<S: Sequence, T: Hashable> (source: S) -> [T] where S.Iterator.Element == T {
+    //        var buffer = [T]() // возвращаемый массив
+    //        var added = Set<T>() // набор - уникальные значения
+    //        for elem in source {
+    //            if !added.contains(elem) {
+    //                buffer.append(elem)
+    //                added.insert(elem)
+    //            }
+    //        }
+    //        return buffer
+    //    }
     
-
+    
     
     fileprivate func observeItemsWeapons() {
         
         let refItems = Database.database().reference().child("RaidCalculator").child("ItemsWeapons")
         var _index = UInt(NSNotFound)
         _index = refItems.observe( .value, with: { [weak self] (snapshot) in
-    
-           
+            
+            
             guard let self = self else { return }
             refItems.removeObserver(withHandle: _index)
             if let value = snapshot.value {
@@ -294,8 +303,8 @@ class RaidCalculatorVC: UIViewController {
                             let weaponItems = ItemsWeapons(dictionary: weaponItemsDict)
                             //self.weaponsItems.append(weaponItems)
                             self.observeItems(weaponItems: weaponItems)
-                           // self.observeItemsCompound(items: weaponItems)
-
+                            // self.observeItemsCompound(items: weaponItems)
+                            
                             
                         }
                         
@@ -303,52 +312,52 @@ class RaidCalculatorVC: UIViewController {
                     
                 }
             }
-          
-        }, withCancel: nil)
-    
+            
+            }, withCancel: nil)
+        
         
     }
     
     fileprivate func observeItems(weaponItems: ItemsWeapons) {
         
         itemsDtOs.removeAll()
-
+        
         var _index = UInt(NSNotFound)
         
         let ref = Database.database().reference().child("RaidCalculator").child("Items").child(String(weaponItems.items_id!))
         
         _index = ref.observe( .value, with: { [weak self]  (snapshot) in
             
-          //  print(snapshot)
+            //  print(snapshot)
             ref.removeObserver(withHandle: _index)
             guard let self = self else { return }
-    
+            
             if let value = snapshot.value {
                 if let dictionary = value as? [String: Any] {
                     let items = Items(dictionary: dictionary)
-                  
+                    
                     let dto = ItemsWeaponsDTO(items: items, weapons: weaponItems)
                     self.itemsDtOs.append(dto)
-                   
-      
+                    
+                    
                 }
             }
-        
-          
+            
+            
             }, withCancel: nil)
-
+        
     }
     
     
     fileprivate func observeItemsCompound() {
-    
-          var _index = UInt(NSNotFound)
+        
+        var _index = UInt(NSNotFound)
         
         let refItems = Database.database().reference().child("RaidCalculator").child("ItemsCompound")
         
         _index = refItems.observe( .value, with: { [weak self] (snapshot) in
-     
-
+            
+            
             guard let self = self else { return }
             
             refItems.removeObserver(withHandle: _index)
@@ -358,10 +367,10 @@ class RaidCalculatorVC: UIViewController {
                     for compound in dictionary {
                         if let compoundDict  = compound as? [String: Any] {
                             let items = ItemsCompound(dictionary: compoundDict)
-                          //  self.compound.append(items)
+                            //  self.compound.append(items)
                             self.observeItemsForCompound(compoundItems: items)
                         }
-           
+                        
                     }
                 }
             }
@@ -373,89 +382,89 @@ class RaidCalculatorVC: UIViewController {
     
     
     fileprivate func observeItemsForCompound(compoundItems: ItemsCompound) {
-           
+        
         itemsDtOs.removeAll()
         var _index = UInt(NSNotFound)
         let ref = Database.database().reference().child("RaidCalculator").child("Items").child(String(compoundItems.items_compound_id!))
-           
-           _index = ref.observe( .value, with: { [weak self]  (snapshot) in
         
-               guard let self = self else { return }
-            ref.removeObserver(withHandle: _index)
-               if let value = snapshot.value {
-                   if let dictionary = value as? [String: Any] {
-                       let items = Items(dictionary: dictionary)
-                     
-                       let dto = ItemsCompoundDTO(items: items, compound: compoundItems)
-                       self.compoundItemsDtOs.append(dto)
-         
-                   }
-               }
+        _index = ref.observe( .value, with: { [weak self]  (snapshot) in
             
-
-               }, withCancel: nil)
-
-       }
+            guard let self = self else { return }
+            ref.removeObserver(withHandle: _index)
+            if let value = snapshot.value {
+                if let dictionary = value as? [String: Any] {
+                    let items = Items(dictionary: dictionary)
+                    
+                    let dto = ItemsCompoundDTO(items: items, compound: compoundItems)
+                    self.compoundItemsDtOs.append(dto)
+                    
+                }
+            }
+            
+            
+            }, withCancel: nil)
+        
+    }
     
     
     
-//    func observeItemsWeapons(id: Int) {
-//
-//        weaponsItems.removeAll()
-//
-//        let refItems = Database.database().reference().child("RaidCalculator").child("ItemsWeapons").queryOrdered(byChild: "weapons_id").queryEqual(toValue: id)
-//
-//        let group = DispatchGroup()
-//        group.enter()
-//
-//        refItems.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
-//
-//            guard let self = self else { return }
-//
-//            if let value = snapshot.value {
-//
-//                if let dictionary = value as? [Any] {
-//                    for weaponItems in dictionary {
-//                        if let weaponItemsDict = weaponItems as? [String: Any] {
-//                            let weaponItems = ItemsWeapons(dictionary: weaponItemsDict)
-//
-//                            self.weaponsItems.append(weaponItems)
-//                            // self.observeItemsMain(itemsWeapons: weaponItems)
-//
-//                        }
-//                    }
-//
-//                }
-//            }
-//
-//            //  self.observeItemsMain()
-//            group.leave()
-//            }, withCancel: nil)
-//
-//        group.notify(queue: DispatchQueue.main) {
-//            print(self.weaponsItems.count)
-//
-//        }
-//
-//
-//    }
-
-
-//     private func weaponItemsArraySorted() {
-//
-//
-//            sortedItems = weaponItemsTest.sorted {
-//                var isSorted = false
-//             if let first = $0.items.id, let second = $1.items.id {
-//                    isSorted = first < second
-//                }
-//                return isSorted
-//            }
-//
-//             self.insideCollectionRaidView.reloadData()
-//
-//        }
-     
+    //    func observeItemsWeapons(id: Int) {
+    //
+    //        weaponsItems.removeAll()
+    //
+    //        let refItems = Database.database().reference().child("RaidCalculator").child("ItemsWeapons").queryOrdered(byChild: "weapons_id").queryEqual(toValue: id)
+    //
+    //        let group = DispatchGroup()
+    //        group.enter()
+    //
+    //        refItems.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
+    //
+    //            guard let self = self else { return }
+    //
+    //            if let value = snapshot.value {
+    //
+    //                if let dictionary = value as? [Any] {
+    //                    for weaponItems in dictionary {
+    //                        if let weaponItemsDict = weaponItems as? [String: Any] {
+    //                            let weaponItems = ItemsWeapons(dictionary: weaponItemsDict)
+    //
+    //                            self.weaponsItems.append(weaponItems)
+    //                            // self.observeItemsMain(itemsWeapons: weaponItems)
+    //
+    //                        }
+    //                    }
+    //
+    //                }
+    //            }
+    //
+    //            //  self.observeItemsMain()
+    //            group.leave()
+    //            }, withCancel: nil)
+    //
+    //        group.notify(queue: DispatchQueue.main) {
+    //            print(self.weaponsItems.count)
+    //
+    //        }
+    //
+    //
+    //    }
+    
+    
+    //     private func weaponItemsArraySorted() {
+    //
+    //
+    //            sortedItems = weaponItemsTest.sorted {
+    //                var isSorted = false
+    //             if let first = $0.items.id, let second = $1.items.id {
+    //                    isSorted = first < second
+    //                }
+    //                return isSorted
+    //            }
+    //
+    //             self.insideCollectionRaidView.reloadData()
+    //
+    //        }
+    
     
     @objc func tapStepper(_ stepper: UIStepper) {
         labelStepper.text = String(Int(stepper.value))
@@ -470,7 +479,7 @@ class RaidCalculatorVC: UIViewController {
         //
         //        }
         
-    
+        
         
         reload(tableView: weaponTableView)
         
@@ -483,11 +492,11 @@ class RaidCalculatorVC: UIViewController {
         DispatchQueue.main.async {
             //let contentOffset = tableView.contentOffset
             tableView.reloadData()
-//            tableView.layoutIfNeeded()
-//            tableView.setContentOffset(contentOffset, animated: true)
-//
-//
-
+            //            tableView.layoutIfNeeded()
+            //            tableView.setContentOffset(contentOffset, animated: true)
+            //
+            //
+            
         }
         
         
@@ -502,21 +511,21 @@ class RaidCalculatorVC: UIViewController {
             subjectArrayFiltering(type: subjectType)
             weaponItems.removeAll()
             weaponDTOs.removeAll()
-//            subjectCollectionView.reloadData()
+            //            subjectCollectionView.reloadData()
             reload(tableView: weaponTableView)
         case 1:
             subjectType = segment.titleForSegment(at: segment.selectedSegmentIndex)!
             subjectArrayFiltering(type: subjectType)
             weaponItems.removeAll()
             weaponDTOs.removeAll()
-//             subjectCollectionView.reloadData()
+            //             subjectCollectionView.reloadData()
             reload(tableView: weaponTableView)
         case 2:
             subjectType = segment.titleForSegment(at: segment.selectedSegmentIndex)!
             subjectArrayFiltering(type: subjectType)
             weaponItems.removeAll()
             weaponDTOs.removeAll()
-//             subjectCollectionView.reloadData()
+            //             subjectCollectionView.reloadData()
             reload(tableView: weaponTableView)
             
             
@@ -525,7 +534,7 @@ class RaidCalculatorVC: UIViewController {
             subjectArrayFiltering(type: subjectType)
             weaponItems.removeAll()
             weaponDTOs.removeAll()
-//             subjectCollectionView.reloadData()
+            //             subjectCollectionView.reloadData()
             reload(tableView: weaponTableView)
         default:
             break
@@ -741,25 +750,25 @@ extension RaidCalculatorVC: UITableViewDelegate, UITableViewDataSource {
             let cellWeapor = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! WeaponTableViewCell
             
             //   weaponItemsFilter.insert(Weapon(dictionary: [:]), at: Int(arc4random_uniform(UInt32(weaponItemsFilter.count))))
-                        
+            
             cellWeapor.weaponItemsTest = weaponDTOs[indexPath.row].items
             cellWeapor.compound = weaponDTOs[indexPath.row].compound
-     
+            
             let url = URL(string: weaponDTOs[indexPath.row].weapon.imageUrl!)
             
             cellWeapor.raidImageView.af.cancelImageRequest()
             cellWeapor.raidImageView.af.setImage(withURL: url!, cacheKey: weaponDTOs[indexPath.row].weapon.imageUrl!)
             
             cellWeapor.stepperValue = stepperCalc.value
-    
+            
             if let value = weaponDTOs[indexPath.row].subject.value {
                 cellWeapor.valueLabel.text = String(Int(value) * Int(stepperCalc.value))
-            
+                
             }
             
             
-          //  cellWeapor.insideCollectionRaidView.reloadData()
-
+            //  cellWeapor.insideCollectionRaidView.reloadData()
+            
             cell = cellWeapor
             
         } else if weaponDTOs.count == 0 {
@@ -775,7 +784,7 @@ extension RaidCalculatorVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         //отступ ячеек
         let verticalPadding: CGFloat = 5
-
+        
         let maskLayer = CALayer()
         maskLayer.backgroundColor = UIColor.black.cgColor
         maskLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 0, dy: verticalPadding / 2)
@@ -817,7 +826,7 @@ extension RaidCalculatorVC: UICollectionViewDataSource, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-    
+        
         stepperCalc.isHidden = false
         stepperCalc.value = 1
         labelStepper.text = String(Int(stepperCalc.value))
@@ -894,7 +903,7 @@ extension RaidCalculatorVC: GADBannerViewDelegate, GADInterstitialDelegate {
     
     private func createAndLoadInterstitial() -> GADInterstitial? {
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-9023638698585769/5251204135")
-
+        
         guard let interstitial = interstitial else {
             return nil
         }
@@ -932,8 +941,8 @@ extension RaidCalculatorVC {
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 72/255, green: 71/255, blue: 66/255, alpha: 1.0)
         //add
-       //navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addSublectsItems))
-      //  navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addWeaponVC))
+        //navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addSublectsItems))
+        //  navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addWeaponVC))
         
         //MARK: setup  raidSubjectsTableView
         view.addSubview(weaponTableView)
@@ -988,7 +997,7 @@ extension RaidCalculatorVC {
         subjectCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         subjectCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         // subjectCollectionView.heightAnchor.constraint(equalToConstant: 80).isActive = true
-   
+        
         
         
         subjectCollectionView.delegate = self
@@ -1013,7 +1022,7 @@ extension RaidCalculatorVC {
         segmentView.heightAnchor.constraint(equalToConstant: 35).isActive = true
         
         
-       // let items = ["Двери", "Стены", "Окна", "Другое"]
+        // let items = ["Двери", "Стены", "Окна", "Другое"]
         let items = [NSLocalizedString("Doors", comment: ""), NSLocalizedString("Walls", comment: ""), NSLocalizedString("Windows", comment: ""), NSLocalizedString("Other", comment: "")]
         
         let segmentControl = UISegmentedControl(items: items)

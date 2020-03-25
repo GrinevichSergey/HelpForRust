@@ -78,7 +78,11 @@ class PurchaseVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
         text.lineBreakMode = .byWordWrapping
         text.textColor = .white
         text.textAlignment = .center
-        text.font = UIFont(name: "Roboto-Regular", size: 16)
+        
+        text.adjustsFontSizeToFitWidth = true
+        text.minimumScaleFactor = 0.01
+        
+        text.font = UIFont(name: "Roboto-Regular", size: 14)
 //        text.text = "Advertisement is an important part of the application development. You can disable ads for support, development and comfortable use of the application. Hope for your understanding."
         return text
     }()
@@ -130,6 +134,10 @@ class PurchaseVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
         return btn
     }()
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -215,8 +223,9 @@ extension PurchaseVC {
         container.addSubview(label)
         label.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 5).isActive = true
         label.rightAnchor.constraint(equalTo: container.rightAnchor).isActive = true
-        label.topAnchor.constraint(equalTo: container.topAnchor, constant: 16).isActive = true
+        label.topAnchor.constraint(equalTo: container.topAnchor).isActive = true
         label.bottomAnchor.constraint(equalTo: container.bottomAnchor).isActive = true
+     
         
         view.addSubview(removeAds)
         

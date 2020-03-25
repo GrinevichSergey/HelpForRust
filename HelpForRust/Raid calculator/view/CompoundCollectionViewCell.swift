@@ -41,10 +41,9 @@ class CompoundCollectionViewCell: UICollectionViewCell {
     //
     //      }
     
-    
-    
+ 
     override func prepareForReuse() {
-         super.prepareForReuse()
+        super.prepareForReuse()
         self.compoundImageView.image = nil
         self.compoundImageView.af.cancelImageRequest()
     }
@@ -82,7 +81,6 @@ class CompoundCollectionViewCell: UICollectionViewCell {
     }
     
     func setupComponent() {
-        
         
         addSubview(compoundImageView)
         compoundImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 6).isActive = true

@@ -39,6 +39,7 @@ class SubjectCollectionViewCell: UICollectionViewCell {
         didSet {
             //выделить цветом выбранную ячейку
             self.contentView.backgroundColor = isSelected ? UIColor(red: 218/255, green: 84/255, blue: 63/255, alpha: 1.0) : UIColor.clear
+            self.isUserInteractionEnabled = isSelected ? false : true
             //прозрачность
             self.subjectImageView.alpha = isSelected ? 0.75 : 1.0
         }

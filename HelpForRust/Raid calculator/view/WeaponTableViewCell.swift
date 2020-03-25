@@ -20,8 +20,7 @@ class WeaponTableViewCell: UITableViewCell {
 //    }
 //
     
-    
-    
+
     var section = [NSLocalizedString("Basic items", comment: ""), NSLocalizedString("Compound items", comment: "")]
     
     fileprivate let headerId = "headerId"
@@ -166,7 +165,20 @@ extension WeaponTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     
     //количество разделов
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return section.count
+        
+        var returnValue = Int()
+        let compoundArray = Array(compound)
+        
+        if compoundArray.count != 0 && weaponItemsTest.count != 0  {
+            returnValue = section.count
+        } else if weaponItemsTest.count != 0 && compoundArray.count == 0
+        {
+            returnValue = 1
+        } else if weaponItemsTest.count == 0 && compoundArray.count == 0 {
+            returnValue = 0
+        }
+        return returnValue
+        
     }
     
     
