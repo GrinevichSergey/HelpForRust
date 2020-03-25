@@ -210,8 +210,8 @@ class FurnaceInfoVC: UITableViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 72/255, green: 71/255, blue: 66/255, alpha: 1.0)
         
         view.backgroundColor = UIColor(red: 93/255, green: 95/255, blue: 92/255, alpha: 1.0)
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(presentImagePickerController))
-        navigationItem.rightBarButtonItem = addButton
+        //let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(presentImagePickerController))
+       // navigationItem.rightBarButtonItem = addButton
         
         let items = ["Железо", "Сера", "МВК"]
         
