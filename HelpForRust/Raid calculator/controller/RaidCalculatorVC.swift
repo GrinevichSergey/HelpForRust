@@ -175,6 +175,7 @@ class RaidCalculatorVC: UIViewController {
     func observeWeaponsSubject()  {
         
         self.weaponDTOs.removeAll()
+
         for weapon in weaponItems {
             let id = weapon.weapons_id.map({ "\($0)" }) ?? ""
             let ref = Database.database().reference().child("RaidCalculator").child("Weapons").child(id)
@@ -196,6 +197,7 @@ class RaidCalculatorVC: UIViewController {
                         
                         let dtoS = WeaponSubjectDTO(weapon: weapons, subject: weapon, items: self.filteredItemsDtOs, dict: self.dict)
                         
+                        
                         self.weaponDTOs.append(dtoS)
                         
                         self.weaponDTOs.sort { (lhs: WeaponSubjectDTO, rhs: WeaponSubjectDTO) -> Bool in
@@ -203,9 +205,9 @@ class RaidCalculatorVC: UIViewController {
                             return lhs.weapon.id! < rhs.weapon.id!
                         }
                         
-                       // DispatchQueue.main.async {
+                        DispatchQueue.main.async {
                             self.weaponTableView.reloadData()
-                        //}
+                        }
                         
                         
                         
@@ -491,6 +493,7 @@ class RaidCalculatorVC: UIViewController {
         
         DispatchQueue.main.async {
             //let contentOffset = tableView.contentOffset
+            self.weaponDTOs.removeAll()
             tableView.reloadData()
             //            tableView.layoutIfNeeded()
             //            tableView.setContentOffset(contentOffset, animated: true)
@@ -826,19 +829,24 @@ extension RaidCalculatorVC: UICollectionViewDataSource, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        
         stepperCalc.isHidden = false
         stepperCalc.value = 1
         labelStepper.text = String(Int(stepperCalc.value))
         labelStepper.isHidden = false
         
+        weaponDTOs.removeAll()
+    
+        weaponTableView.reloadData()
         
         if let id = subjectArrayFilter[indexPath.row].id {
             //weaponItemsFiltering(subject_id: id)
+           //
+                weaponItems.removeAll()
             observeWeapon(subject: id)
         }
+      
         
-        reload(tableView: weaponTableView)
+       // reload(tableView: weaponTableView)
         
         
         if !purchaseRustHelpRemoveAds {
