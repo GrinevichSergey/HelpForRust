@@ -31,9 +31,9 @@ class headerBannerReusableView: UICollectionReusableView {
             addSubview(label)
             label.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
             label.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-            label.text = "Internet Connection not Available!"
+            label.text = NSLocalizedString("Internet Connection not Available!", comment: "")
         }
-        
+         
     }
     
     required init?(coder: NSCoder) {

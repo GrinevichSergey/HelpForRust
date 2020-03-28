@@ -148,6 +148,8 @@ class FurnaceInfoVC: UITableViewController {
                 self.furnaceInfoArray.append(myFurnace)
                 
             }
+            
+     
             self.sortFurnaceInfo(type: self.typeFurnace)
             
             }, withCancel: nil)
@@ -174,15 +176,20 @@ class FurnaceInfoVC: UITableViewController {
     }
     
     func sortFurnaceInfo(type: String) {
-
+   
 //        furnaceFiltered = furnaceInfoArray.filter({ $0.type!.lowercased().contains(type) })
         //фильтрация массива в зависимости от типа
         furnaceFiltered = furnaceInfoArray.filter({ (furnace) -> Bool in
             return furnace.type == type
         })
+
         
         DispatchQueue.main.async {
+
             self.tableView.reloadData()
+            let indexPath = IndexPath(row: 0, section: 0)
+            self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+               
         }
         
 //        observeFurnace()
@@ -217,7 +224,7 @@ class FurnaceInfoVC: UITableViewController {
         //let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(presentImagePickerController))
        // navigationItem.rightBarButtonItem = addButton
         
-        let items = ["Железо", "Сера", "МВК"]
+        let items = [NSLocalizedString("iron", comment: ""), NSLocalizedString("sulfur", comment: ""), NSLocalizedString("MVK", comment: "")]
         
         let segmentControll = UISegmentedControl(items: items)
         segmentControll.selectedSegmentIndex = 0

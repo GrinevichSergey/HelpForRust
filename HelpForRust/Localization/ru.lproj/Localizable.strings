@@ -33,3 +33,8 @@
 "Choose what you want to destroy" = "Выберите, что хотите разрушить";
 "Internet Connection not Available!" = "Соединение с интернетом отсутствует!";
 
+
+//MARK: Furnace info
+"iron" = "железо";
+"sulfur" = "сера";
+"MVK" = "МВК";
