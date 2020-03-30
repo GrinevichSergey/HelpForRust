@@ -104,10 +104,15 @@ class RaidCalculatorVC: UIViewController {
     }()
     
     var indicator = UIActivityIndicatorView()
-
+    
     func activityIndicator() {
         indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        indicator.style = UIActivityIndicatorView.Style.medium
+        //indicator.style = UIActivityIndicatorView.Style.medium
+        if #available(iOS 13.0, *) {
+            indicator = UIActivityIndicatorView(style: .medium)
+        } else {
+            // Fallback on earlier versions
+        }
         indicator.center = self.view.center
         self.view.addSubview(indicator)
     }
@@ -135,7 +140,7 @@ class RaidCalculatorVC: UIViewController {
         
         stepperCalc.value = 1
         labelStepper.text = String(Int(stepperCalc.value))
-   
+        
         self.handlerReloadTable(tableView: weaponTableView)
         
     }
@@ -157,7 +162,7 @@ class RaidCalculatorVC: UIViewController {
         self.postRefHandle = self.query.observe( .value, with: { [weak self] (snaphot) in
             guard let self = self else { return }
             
-         //   print(snaphot)
+            //   print(snaphot)
             
             // ref.removeObserver(withHandle: _index)
             
@@ -202,15 +207,18 @@ class RaidCalculatorVC: UIViewController {
     func observeWeaponsSubject()  {
         
         self.weaponDTOs.removeAll()
-
+        
         for weapon in weaponItems {
+            
             let id = weapon.weapons_id.map({ "\($0)" }) ?? ""
             let ref = Database.database().reference().child("RaidCalculator").child("Weapons").child(id)
             var _index = UInt(NSNotFound)
             _index = ref.observe( .value, with: { [weak self] (snapshot) in
+                
                 guard let self = self else { return }
+                
                 ref.removeObserver(withHandle: _index)
-
+                
                 if let value = snapshot.value {
                     if let dictionary = value as? [String : Any]  {
                         
@@ -225,10 +233,9 @@ class RaidCalculatorVC: UIViewController {
                         
                         let dtoS = WeaponSubjectDTO(weapon: weapons, subject: weapon, items: self.filteredItemsDtOs, dict: self.dict)
                         
-                        
                         self.weaponDTOs.append(dtoS)
                         
-                    
+                        
                         
                         //                        for weapon in dictionary {
                         //                            if let weaponDict = weapon.value as? String {
@@ -252,19 +259,18 @@ class RaidCalculatorVC: UIViewController {
                     }
                     self.handlerReloadTable(tableView: self.weaponTableView)
                     
-                    self.indicator.stopAnimating()
-                    self.indicator.hidesWhenStopped = true
+                    
                 }
                 
-                
-                
-               
                 
                 }, withCancel: nil)
             
             
-            
         }
+        
+        
+        
+        
         
     }
     
@@ -527,16 +533,18 @@ class RaidCalculatorVC: UIViewController {
         
         DispatchQueue.main.async {
             //let contentOffset = tableView.contentOffset
-      
+            
             UIView.transition(with: tableView, duration: 1.0, options: .transitionCrossDissolve, animations: {
-         
+                
                 tableView.reloadData()
                 
-         
+                self.indicator.stopAnimating()
+                self.indicator.hidesWhenStopped = true
+                
             }, completion: nil)
             
-           
-      
+            
+            
             //            tableView.layoutIfNeeded()
             //            tableView.setContentOffset(contentOffset, animated: true)
             //
@@ -552,7 +560,8 @@ class RaidCalculatorVC: UIViewController {
     @objc func tapSegmentControl(segment: UISegmentedControl) -> Void {
         switch segment.selectedSegmentIndex {
         case 0:
-            subjectType = segment.titleForSegment(at: segment.selectedSegmentIndex)!
+            subjectType = "Двери"
+            //segment.titleForSegment(at: segment.selectedSegmentIndex)!
             subjectArrayFiltering(type: subjectType)
             weaponItems.removeAll()
             weaponDTOs.removeAll()
@@ -562,7 +571,7 @@ class RaidCalculatorVC: UIViewController {
             // reload(tableView: weaponTableView)
             handlerReloadTable(tableView: weaponTableView)
         case 1:
-            subjectType = segment.titleForSegment(at: segment.selectedSegmentIndex)!
+            subjectType = "Стены"
             subjectArrayFiltering(type: subjectType)
             weaponItems.removeAll()
             weaponDTOs.removeAll()
@@ -572,7 +581,7 @@ class RaidCalculatorVC: UIViewController {
             //reload(tableView: weaponTableView)
             handlerReloadTable(tableView: weaponTableView)
         case 2:
-            subjectType = segment.titleForSegment(at: segment.selectedSegmentIndex)!
+            subjectType = "Окна"
             subjectArrayFiltering(type: subjectType)
             weaponItems.removeAll()
             weaponDTOs.removeAll()
@@ -584,7 +593,7 @@ class RaidCalculatorVC: UIViewController {
             
             
         case 3:
-            subjectType = segment.titleForSegment(at: segment.selectedSegmentIndex)!
+            subjectType = "Другое"
             subjectArrayFiltering(type: subjectType)
             weaponItems.removeAll()
             weaponDTOs.removeAll()
@@ -895,15 +904,19 @@ extension RaidCalculatorVC: UICollectionViewDataSource, UICollectionViewDelegate
         
         if let id = subjectArrayFilter[indexPath.row].id {
             //weaponItemsFiltering(subject_id: id)
+            
             self.postsRef.removeObserver(withHandle: self.postRefHandle!)
             weaponDTOs.removeAll()
             weaponTableView.reloadData()
+            
+            self.indicator.stopAnimating()
+            self.indicator.hidesWhenStopped = true
+            
             self.activityIndicator()
             self.indicator.startAnimating()
             self.indicator.backgroundColor = .clear
-                           
+            
             observeWeapon(subject: id)
-    
             
             // reload(tableView: weaponTableView)
         }

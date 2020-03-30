@@ -99,13 +99,13 @@ class BlueprintsCollectionViewCell: UICollectionViewCell{
         didSet {
             //  выделить цветом выбранную ячейку
             if self.contentView.backgroundColor == .red {
-                
+             
                 return
                 
             } else {
                 self.contentView.backgroundColor = isSelected ? UIColor(red: 116/255, green: 132/255, blue: 87/255, alpha: 1) : UIColor(red: 56/255, green: 54/255, blue: 48/255, alpha: 1.0)
                 //прозрачность
-                self.bg.alpha =  isSelected ? 0.75 : 1.0
+             //   self.bg.alpha =  isSelected ? 0.75 : 1.0
             }
         }
     }

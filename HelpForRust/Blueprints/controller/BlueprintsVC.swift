@@ -14,14 +14,14 @@ import GoogleMobileAds
 
 class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
     
-   // var filtAmmoGroup = [AmmoGroup]()
+    // var filtAmmoGroup = [AmmoGroup]()
     var ammoGroup = [AmmoGroup]()
     var sortedAmmoGroup = [AmmoGroup]()
     var timer: Timer?
-//    var numbersItemCells: [String] = []
-//    var levelTag = 0
+    //    var numbersItemCells: [String] = []
+    //    var levelTag = 0
     var valueLevel_ = "Level_1"
-  //  var selectedId = String()
+    //  var selectedId = String()
     var selectedIndex = IndexPath()
     
     
@@ -41,12 +41,12 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
     
     
     override func viewWillAppear(_ animated: Bool) {
-
-     //  interstitial = createAndLoadInterstitial()
-    
+        
+        //  interstitial = createAndLoadInterstitial()
+        
         setupView()
         
-       
+        
     }
     
     
@@ -54,19 +54,19 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-9023638698585769/5251204135")
-
+        
         let request = GADRequest()
         interstitial.load(request)
-
+        
         // myarray = defaults.stringArray(forKey: "SavedStringArray") ?? [String]()
-                
-//        if
-//            let data = UserDefaults.standard.value(forKey: "SavedStringArray") as? Data,
-//            let configuration = try? JSONDecoder().decode(SaveArrayToUserDefault.self, from: data) {
-//           print(configuration)
-//            
-//        }
-//
+        
+        //        if
+        //            let data = UserDefaults.standard.value(forKey: "SavedStringArray") as? Data,
+        //            let configuration = try? JSONDecoder().decode(SaveArrayToUserDefault.self, from: data) {
+        //           print(configuration)
+        //
+        //        }
+        //
         observeExercisesGroup(valueLevel: valueLevel_)
         
         setupCollectionViewLayot()
@@ -79,7 +79,7 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
     lazy var adBannerView: GADBannerView = {
         let adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
         adBannerView.adUnitID = "ca-app-pub-9023638698585769/4959252606"
-       // adBannerView.delegate = self
+        // adBannerView.delegate = self
         adBannerView.rootViewController = self
         
         return adBannerView
@@ -129,6 +129,15 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
     }()
     
     
+    lazy var label_Value: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: "Roboto-Regular", size: 14)
+        label.text = "x75"
+        label.textColor = .white
+        return label
+    }()
+    
     
     lazy var dischargeBtn : UIButton = {
         
@@ -140,7 +149,7 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
         btn.titleLabel?.textColor = .white
         btn.setTitleColor(.white, for: .normal)
         btn.layer.cornerRadius = 5
-        
+        btn.isUserInteractionEnabled = false
         btn.addTarget(self, action: #selector(exploreTapBtn), for: .touchUpInside)
         return btn
         
@@ -189,7 +198,7 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
     func observeExercisesGroup(valueLevel: String) {
         //
         ammoGroup.removeAll()
-       var _index = UInt(NSNotFound)
+        var _index = UInt(NSNotFound)
         
         let ref = Database.database().reference().child("Blueprints").child("Level").child(valueLevel)
         _index = ref.observe( .value, with: { [weak self] (snapshot) in
@@ -208,18 +217,18 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
                     
                 }
             }
-        
-        
+            
+            
             //обновление
-         
-           // self.attempReloadofCollection()
-   
-          
+            
+            // self.attempReloadofCollection()
+            
+            
             
             self.bluePrintsArraySorted()
-           
             
-        }, withCancel: nil)
+            
+            }, withCancel: nil)
         
         
         
@@ -236,29 +245,31 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
             return isSorted
         }
         
+        let indexPath = IndexPath(row: 1, section: 1)
+        self.collectionView.scrollToItem(at: indexPath, at: .top, animated: false)
+        self.collectionView.reloadData()
         
-         self.collectionView.reloadData()
-         self.chanceObserver(lavel: self.valueLevel_)
-       // self.attempReloadofCollection()
+        self.chanceObserver(lavel: self.valueLevel_)
+        // self.attempReloadofCollection()
         
         
     }
     
-//    struct SaveArrayToUserDefault : Codable {
-//        var array : ConfuguratorArray?
-//    }
-//
+    //    struct SaveArrayToUserDefault : Codable {
+    //        var array : ConfuguratorArray?
+    //    }
+    //
     struct ConfuguratorArray: Codable {
         var level : String?
         var id: [String]?
     }
-
+    
     
     //var arrayColor = [SaveArrayToUserDefault]()
     
     //длительное нажатие collectionview
     @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
-       
+        
         
     }
     
@@ -269,20 +280,32 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
         case 0:
             
             valueLevel_ = "Level_1"
+            label_Value.text = "x75"
+            dischargeBtn.isUserInteractionEnabled = false
+            let dischargeBtnText = NSLocalizedString("Explore", comment: "")
+            dischargeBtn.setTitle(dischargeBtnText, for: .normal)
             observeExercisesGroup(valueLevel: valueLevel_)
-           // collectionView.reloadData()
-          
+            // collectionView.reloadData()
+            
         case 1:
             
             valueLevel_ = "Level_2"
+            label_Value.text = "x300"
+            dischargeBtn.isUserInteractionEnabled = false
+            let dischargeBtnText = NSLocalizedString("Explore", comment: "")
+            dischargeBtn.setTitle(dischargeBtnText, for: .normal)
             observeExercisesGroup(valueLevel: valueLevel_)
-           //  collectionView.reloadData()
- 
+            //  collectionView.reloadData()
+            
         case 2:
             
             valueLevel_ = "Level_3"
+            label_Value.text = "x1000"
+            dischargeBtn.isUserInteractionEnabled = false
+            let dischargeBtnText = NSLocalizedString("Explore", comment: "")
+            dischargeBtn.setTitle(dischargeBtnText, for: .normal)
             observeExercisesGroup(valueLevel: valueLevel_)
-         
+            
         default:
             
             break
@@ -291,11 +314,11 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
     
     fileprivate func chanceObserver(lavel : String) {
         
-          var studiedCount = 0
+        var studiedCount = 0
         
         let totalCount = sortedAmmoGroup.count
         var value = Float()
-//        var myarray = UserDefaults.standard.value(forKey: "SavedStringArray") as? [String: [String]] ?? [String: [String]]()
+        //        var myarray = UserDefaults.standard.value(forKey: "SavedStringArray") as? [String: [String]] ?? [String: [String]]()
         
         for item in sortedAmmoGroup {
             guard let id = item.id else {
@@ -303,12 +326,12 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
             }
             
             if UserDefaults.standard.bool(forKey: id) != false {
-                 
+                
                 studiedCount += 1
                 
             }
         }
-
+        
         //  print(totalCount)
         // print(studiedCount)
         studiedCount -= 1
@@ -319,21 +342,21 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
         switch lavel {
             
         case "Level_1":
-
+            
             chanceLabel.text = "\(chanceLabelText) \(result)%"
             
         case "Level_2":
-          
+            
             chanceLabel.text = "\(chanceLabelText) \(result)%"
             
         case "Level_3":
-
+            
             chanceLabel.text = "\(chanceLabelText) \(result)%"
             
         default:
             break
         }
-
+        
     }
     
     
@@ -352,7 +375,7 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
             adBannerView.load(GADRequest())
         }
         
-      
+        
         
     }
     
@@ -367,25 +390,25 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
         guard let id = item.id else { return }
         label_Value2.text = "x\(item.Value_1 ?? "")" 
         
-//        if UserDefaults.standard.bool(forKey: id) {
-//            UserDefaults.standard.set(true, forKey: id)
-//        }
-//
-//
-//        var myarray = UserDefaults.standard.value(forKey: "SavedStringArray") as? [String: [String]] ?? [String: [String]]()
-//
+        //        if UserDefaults.standard.bool(forKey: id) {
+        //            UserDefaults.standard.set(true, forKey: id)
+        //        }
+        //
+        //
+        //        var myarray = UserDefaults.standard.value(forKey: "SavedStringArray") as? [String: [String]] ?? [String: [String]]()
+        //
         if UserDefaults.standard.bool(forKey: id) {
-//
-//            cellBlueprint.contentView.backgroundColor = .clear
-//            cellBlueprint.bg.alpha = 1.0
-//
-//            if let index = myarray[valueLevel_]?.firstIndex(of: id) {
-//                myarray[valueLevel_]?.remove(at: index)
-//            }
-//
-//
-//            UserDefaults.standard.set(myarray, forKey: "SavedStringArray")
-//
+            //
+            //            cellBlueprint.contentView.backgroundColor = .clear
+            //            cellBlueprint.bg.alpha = 1.0
+            //
+            //            if let index = myarray[valueLevel_]?.firstIndex(of: id) {
+            //                myarray[valueLevel_]?.remove(at: index)
+            //            }
+            //
+            //
+            //            UserDefaults.standard.set(myarray, forKey: "SavedStringArray")
+            //
             //                let configuration = ConfuguratorArray(level: valueLevel_, id: myarray)
             //                if let data = try? JSONEncoder().encode(configuration) {
             //                    UserDefaults.standard.set(data, forKey: "SavedStringArray")
@@ -397,22 +420,25 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
             
             chanceObserver(lavel: valueLevel_)
             
+            let dischargeBtnText = NSLocalizedString("Explore", comment: "")
+            dischargeBtn.setTitle(dischargeBtnText, for: .normal)
+            
             print("delete")
             
         } else {
-//
-//            cellBlueprint.contentView.backgroundColor = .red
-//            cellBlueprint.bg.alpha = 0.75
+            //
+            //            cellBlueprint.contentView.backgroundColor = .red
+            //            cellBlueprint.bg.alpha = 0.75
             
-//            var array = myarray[valueLevel_, default: [String]()]//myarray[valueLevel_] ?? []
-//
-//            array.append(id)
-//
-//            myarray[valueLevel_] = array
-//
-//            //   myarray[valueLevel_]?.append(cell.id)
-//
-//            UserDefaults.standard.set(myarray, forKey: "SavedStringArray")
+            //            var array = myarray[valueLevel_, default: [String]()]//myarray[valueLevel_] ?? []
+            //
+            //            array.append(id)
+            //
+            //            myarray[valueLevel_] = array
+            //
+            //            //   myarray[valueLevel_]?.append(cell.id)
+            //
+            //            UserDefaults.standard.set(myarray, forKey: "SavedStringArray")
             
             //                let configuration = ConfuguratorArray(level: valueLevel_, id: myarray)
             //                if let data = try? JSONEncoder().encode(configuration) {
@@ -424,15 +450,19 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
             
             chanceObserver(lavel: valueLevel_)
             
+            let dischargeBtnText = NSLocalizedString("Remove", comment: "")
+            dischargeBtn.setTitle(dischargeBtnText, for: .normal)
+            
             print("completed")
         }
         UserDefaults.standard.synchronize()
         
-       // print("myarray",myarray)
+        // print("myarray",myarray)
+        
         
         collectionView.reloadData()
-//
-
+        
+        
     }
     
     
@@ -459,14 +489,14 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
     //сброс изученных
     @objc func clearArrayNavBarTap() {
         
-//        let alert = UIAlertController(title: NSLocalizedString("Attention", comment: "attention2") /*"Внимание!"*/, message: NSLocalizedString("A short click on the blueprint will show you the information. Long press - add the blueprint as learned.", comment: "short click blablabla"), preferredStyle: .alert)
-//
-//        let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.cancel) { (_) in
-//            alert.dismiss(animated: false, completion: nil
-//            )
-//        }
-//        alert.addAction(okAction)
-//        present(alert, animated: true, completion: nil)
+        //        let alert = UIAlertController(title: NSLocalizedString("Attention", comment: "attention2") /*"Внимание!"*/, message: NSLocalizedString("A short click on the blueprint will show you the information. Long press - add the blueprint as learned.", comment: "short click blablabla"), preferredStyle: .alert)
+        //
+        //        let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.cancel) { (_) in
+        //            alert.dismiss(animated: false, completion: nil
+        //            )
+        //        }
+        //        alert.addAction(okAction)
+        //        present(alert, animated: true, completion: nil)
         
         
         let alert = UIAlertController(title: NSLocalizedString("Attention", comment: "attention1") /*"Внимание!"*/, message: NSLocalizedString("Clear the list of learned blueprints?", comment: "clear the list of learned blueprints?") /*"Очистить список изученных чертежей?"*/, preferredStyle: .alert)
@@ -476,15 +506,17 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
                 guard let id = item.id else {return}
                 UserDefaults.standard.removeObject(forKey: id)
             }
-//            var myarray = UserDefaults.standard.value(forKey: "SavedStringArray") as? [String: [String]] ?? [String: [String]]()
-
-           // myarray.removeValue(forKey: self.valueLevel_)
-          //  UserDefaults.standard.set(myarray, forKey: "SavedStringArray")
+            //            var myarray = UserDefaults.standard.value(forKey: "SavedStringArray") as? [String: [String]] ?? [String: [String]]()
             
-
+            // myarray.removeValue(forKey: self.valueLevel_)
+            //  UserDefaults.standard.set(myarray, forKey: "SavedStringArray")
+            
+            
             //self.resetDefaults()
             self.observeExercisesGroup(valueLevel: self.valueLevel_)
             
+            let dischargeBtnText = NSLocalizedString("Explore", comment: "")
+            self.dischargeBtn.setTitle(dischargeBtnText, for: .normal)
             
             print("clear")
             
@@ -510,7 +542,7 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
         navigationController?.pushViewController(addBlueprints, animated: true)
     }
     
-
+    
     
     
     
@@ -548,13 +580,13 @@ extension BlueprintsVC: UICollectionViewDelegateFlowLayout, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-              return sortedAmmoGroup.count
-
-      
+        
+        return sortedAmmoGroup.count
+        
+        
     }
     
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         //  print(self.ammoGroup.count)
@@ -568,14 +600,16 @@ extension BlueprintsVC: UICollectionViewDelegateFlowLayout, UICollectionViewData
         cell.bg.image = UIImage(named: "test.png")
         
         //выбрасывает
-     
+        
         cell.furnaceInfoArray = sortedAmmoGroup[indexPath.row]
-//        let myarray = UserDefaults.standard.value(forKey: "SavedStringArray") as? [String: [String]] ?? [String: [String]]()
-
+        //        let myarray = UserDefaults.standard.value(forKey: "SavedStringArray") as? [String: [String]] ?? [String: [String]]()
+        
         if  UserDefaults.standard.bool(forKey: sortedAmmoGroup[indexPath.row].id!) {
             cell.contentView.backgroundColor = .red
             cell.bg.alpha = 0.75
-
+            
+        } else {
+            cell.bg.alpha = 1.0
         }
         
         return cell
@@ -591,9 +625,10 @@ extension BlueprintsVC: UICollectionViewDelegateFlowLayout, UICollectionViewData
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)  {
-
+        
         selectedIndex = indexPath
         
+        dischargeBtn.isUserInteractionEnabled = true
         
         if let name = sortedAmmoGroup[indexPath.row].name
         {
@@ -604,16 +639,25 @@ extension BlueprintsVC: UICollectionViewDelegateFlowLayout, UICollectionViewData
             label_Value2.text = "x\(value)"
         }
         
+        if  UserDefaults.standard.bool(forKey: sortedAmmoGroup[indexPath.row].id!) {
+            
+            let dischargeBtnText = NSLocalizedString("Remove", comment: "")
+            dischargeBtn.setTitle(dischargeBtnText, for: .normal)
+            
+        } else {
+            let dischargeBtnText = NSLocalizedString("Explore", comment: "")
+            dischargeBtn.setTitle(dischargeBtnText, for: .normal)
+        }
         
         
         if !purchaseRustHelpRemoveAds {
-
+            
             if interstitial.isReady {
                 interstitial.present(fromRootViewController: self)
-
+                
             }
         }
-
+        
         
         
         
@@ -645,61 +689,61 @@ extension UIBarButtonItem {
 
 //MARK : Banner
 extension BlueprintsVC: GADBannerViewDelegate, GADInterstitialDelegate {
-
+    
     // MARK: - GADBannerViewDelegate methods
-
+    
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         print("Banner loaded successfully")
-
+        
         // Reposition the banner ad to create a slide down effect
         let translateTransform = CGAffineTransform(translationX: 0, y: -bannerView.bounds.size.height)
         bannerView.transform = translateTransform
-
+        
         UIView.animate(withDuration: 0.5) {
             bannerView.transform = CGAffineTransform.identity
         }
-
-
+        
+        
     }
-
+    
     func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
         print("Fail to receive ads")
         print(error.localizedDescription)
-
+        
     }
-
+    
     // MARK: - Help methods
-
+    
     private func createAndLoadInterstitial() -> GADInterstitial? {
         
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-9023638698585769/5251204135")
-
+        
         guard let interstitial = interstitial else {
             return nil
         }
-
+        
         let request = GADRequest()
         //request.testDevices = ["PUT HERE THE ID", kGADSimulatorID]
-//        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers =
-//            [ "2077ef9a63d2b398840261c8221a0c9b" ]
-
+        //        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers =
+        //            [ "2077ef9a63d2b398840261c8221a0c9b" ]
+        
         interstitial.load(request)
         interstitial.delegate = self
-
+        
         return interstitial
     }
-
+    
     // MARK: - GADInterstitialDelegate methods
-
+    
     func interstitialDidReceiveAd(_ ad: GADInterstitial) {
         print("Interstitial loaded successfully")
         ad.present(fromRootViewController: self)
     }
-
+    
     func interstitialDidFail(toPresentScreen ad: GADInterstitial) {
         print("Fail to receive interstitial")
     }
-
+    
 }
 
 
@@ -715,7 +759,7 @@ extension BlueprintsVC {
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 72/255, green: 71/255, blue: 66/255, alpha: 1.0)
         
-       // navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBlueprints))
+        // navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBlueprints))
         
         navigationItem.rightBarButtonItem = UIBarButtonItem.menuButton(self, action: #selector(clearArrayNavBarTap), imageName: "delete")
         
@@ -774,14 +818,6 @@ extension BlueprintsVC {
             
         }()
         
-        let label_Value1: UILabel = {
-            let label = UILabel()
-            label.translatesAutoresizingMaskIntoConstraints = false
-            label.font = UIFont(name: "Roboto-Regular", size: 14)
-            label.text = "x75"
-            label.textColor = .white
-            return label
-        }()
         
         let view2 : UIView = {
             let view = UIView()
@@ -814,10 +850,10 @@ extension BlueprintsVC {
         image1.heightAnchor.constraint(equalToConstant: 20).isActive = true
         image1.widthAnchor.constraint(equalToConstant: 20).isActive = true
         
-        view1.addSubview(label_Value1)
-        label_Value1.leftAnchor.constraint(equalTo: image1.rightAnchor, constant: 3).isActive = true
-        label_Value1.centerYAnchor.constraint(equalTo: image1.centerYAnchor).isActive = true
-        label_Value1.rightAnchor.constraint(equalTo: view1.rightAnchor).isActive = true
+        view1.addSubview(label_Value)
+        label_Value.leftAnchor.constraint(equalTo: image1.rightAnchor, constant: 3).isActive = true
+        label_Value.centerYAnchor.constraint(equalTo: image1.centerYAnchor).isActive = true
+        label_Value.rightAnchor.constraint(equalTo: view1.rightAnchor).isActive = true
         // label1.widthAnchor.constraint(equalToConstant: 20).isActive = true
         
         
@@ -865,7 +901,7 @@ extension BlueprintsVC {
         refreshControll.addTarget(self, action: #selector(reloadCollectionView), for: .valueChanged)
         collectionView.refreshControl = refreshControll
         
-       
+        
     }
     
     
