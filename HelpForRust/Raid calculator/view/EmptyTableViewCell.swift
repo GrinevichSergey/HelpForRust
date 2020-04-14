@@ -31,11 +31,11 @@ class EmptyTableViewCell: UITableViewCell {
         emptyLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
 
         //проверка подключения интернета
-        if TestConnectionNetwork.isConnectedNetwork() {
-            emptyLabel.text = NSLocalizedString("Choose what you want to destroy", comment: "")
-        } else {
-             emptyLabel.text = NSLocalizedString("Internet Connection not Available!", comment: "") 
-        }
+       // if TestConnectionNetwork.isConnectedNetwork() {
+        emptyLabel.text = NSLocalizedString("Choose what you want to destroy", comment: "")
+//        } else {
+//             emptyLabel.text = NSLocalizedString("Internet Connection not Available!", comment: "")
+//        }
     }
     
     required init?(coder: NSCoder) {

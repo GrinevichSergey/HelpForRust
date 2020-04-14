@@ -57,14 +57,14 @@ class CompoundCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var labelCompound1 : UILabel = {
-         let label = UILabel()
-         label.translatesAutoresizingMaskIntoConstraints = false
-         label.backgroundColor = UIColor(red: 68/255, green: 67/255, blue: 63/255, alpha: 1.0)
-         label.textColor = UIColor(red: 134/255, green: 149/255, blue: 106/255, alpha: 1.0)
-         label.font = UIFont(name: "Roboto-Bold", size: 14)
-         return label
-     }()
+//    lazy var labelCompound1 : UILabel = {
+//         let label = UILabel()
+//         label.translatesAutoresizingMaskIntoConstraints = false
+//         label.backgroundColor = UIColor(red: 68/255, green: 67/255, blue: 63/255, alpha: 1.0)
+//         label.textColor = UIColor(red: 134/255, green: 149/255, blue: 106/255, alpha: 1.0)
+//         label.font = UIFont(name: "Roboto-Bold", size: 14)
+//         return label
+//     }()
     
     lazy var compoundImageView : UIImageView = {
         let image = UIImageView()
@@ -81,30 +81,28 @@ class CompoundCollectionViewCell: UICollectionViewCell {
     }
     
     func setupComponent() {
+      
+        let stackView = UIStackView()
+        stackView.axis = NSLayoutConstraint.Axis.horizontal
+        stackView.distribution = UIStackView.Distribution.equalSpacing
+        stackView.alignment = UIStackView.Alignment.center
+        stackView.spacing  = 2.0
+        stackView.addArrangedSubview(compoundImageView)
+        stackView.addArrangedSubview(labelCompound)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        addSubview(compoundImageView)
-        compoundImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 6).isActive = true
+        addSubview(stackView)
+        
+        stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 3).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        
         compoundImageView.widthAnchor.constraint(equalToConstant: 25).isActive = true
-        compoundImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        compoundImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        //  compoundImageView.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        compoundImageView.heightAnchor.constraint(equalToConstant: 25).isActive = true
+
+        labelCompound.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        labelCompound.widthAnchor.constraint(equalToConstant: 60).isActive = true
         
-        addSubview(labelCompound)
-        labelCompound.leftAnchor.constraint(equalTo: compoundImageView.rightAnchor, constant: 3).isActive = true
-        //labelCompound.heightAnchor.constraint(equalToConstant: 25).isActive = true
-        labelCompound.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        labelCompound.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        labelCompound.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        labelCompound.widthAnchor.constraint(equalToConstant: 35).isActive = true
-        
-        addSubview(labelCompound1)
-        labelCompound.leftAnchor.constraint(equalTo: labelCompound.rightAnchor, constant: 3).isActive = true
-        //labelCompound.heightAnchor.constraint(equalToConstant: 25).isActive = true
-        labelCompound.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        labelCompound.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        labelCompound.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        labelCompound.widthAnchor.constraint(equalToConstant: 35).isActive = true
-        
+  
         
     }
     

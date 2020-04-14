@@ -1,0 +1,1 @@
+../../../Target Support Files/SwiftyStoreKit/SwiftyStoreKit-umbrella.h

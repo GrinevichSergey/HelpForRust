@@ -55,27 +55,27 @@
         }
         
         ,
-              
-              "10" : {
-                  "id" : 10,
-                  "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FWoodenWindowBars_image.png?alt=media&token=d4ccbf8b-38f8-4116-b56c-de5a4a6284ca",
-                  "type" : "Окна"
-              }
+        
+        "10" : {
+            "id" : 10,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FWoodenWindowBars_image.png?alt=media&token=d4ccbf8b-38f8-4116-b56c-de5a4a6284ca",
+            "type" : "Окна"
+        }
         ,
-      
-      
-          "11" : {
-                    "id" : 11,
-                    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FMetalWindowBars_image.png?alt=media&token=77d0233f-8205-4ebd-ab0b-162f733bf2e2",
-                    "type" : "Окна"
-                }
-          ,
+        
+        
+        "11" : {
+            "id" : 11,
+            "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FMetalWindowBars_image.png?alt=media&token=77d0233f-8205-4ebd-ab0b-162f733bf2e2",
+            "type" : "Окна"
+        }
+        ,
         "12" : {
             "id" : 12,
             "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FReinforcedWindowBars_image.png?alt=media&token=1dbf9e1b-c5ea-4aec-ac31-8fc7d93542bc",
             "type" : "Окна"
         }
-  ,
+        ,
         "13" : {
             "id" : 13,
             "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FReinforcedGlassWindow_image.png?alt=media&token=357568e6-a6ff-477c-9d3e-18d72d34985d",
@@ -147,11 +147,6 @@
             "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/helpforrust.appspot.com/o/RaidCalculator%2FSubject%2FHighExternalStoneWall_image.png?alt=media&token=b4f589a0-9e16-49e8-a518-8c678a11010b",
             "type" : "Стены"
         }
-        
-        
-        
-        
-        
         
     },
     
@@ -1613,7 +1608,7 @@
             "id": 10,
             "items_id": 9,
             "items_compound_id": 2,
-            "value_compound": 20
+            "value_compound": 10
         }
         
         ,
@@ -1797,6 +1792,20 @@
             "weapons_id": 11,
             "items_id" : 4,
             "value": 10
+        }
+        ,
+        "25": {
+            "id": 25,
+            "weapons_id": 6,
+            "items_id" : 2,
+            "value": 125
+        }
+        ,
+        "26": {
+            "id": 26,
+            "weapons_id": 6,
+            "items_id" : 14,
+            "value": 100
         }
         
         

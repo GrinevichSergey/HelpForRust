@@ -23,7 +23,9 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
     var valueLevel_ = "Level_1"
     //  var selectedId = String()
     var selectedIndex = IndexPath()
-    
+    var selectedKey = String()
+   
+ 
     
     fileprivate let padding : CGFloat = 5
     let adBanner = "bannerCell"
@@ -32,32 +34,48 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
     var purchaseRustHelpRemoveAds = UserDefaults.standard.bool(forKey: "purchaseRustHelpRemoveAds")
     
     var valueColor = [String]()
-    //    var value2 = [String]()
-    //    var value3 = [String]()
-    
+
     var isSelected = Bool()
     var longPressed = false
     var refreshControll = UIRefreshControl()
     
+    let customView = UIView()
     
     override func viewWillAppear(_ animated: Bool) {
         
         //  interstitial = createAndLoadInterstitial()
-        
-        setupView()
-        
-        
+        purchaseRustHelpRemoveAds = UserDefaults.standard.bool(forKey: "purchaseRustHelpRemoveAds")
+        if purchaseRustHelpRemoveAds {
+            
+            collectionView.reloadData()
+            
+        }
+        //observeExercisesGroup(valueLevel: valueLevel_)
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-9023638698585769/5251204135")
+        setupView()
+
         
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-9023638698585769/5251204135")
         let request = GADRequest()
         interstitial.load(request)
         
+        if !purchaseRustHelpRemoveAds {
+            
+            adBannerView.load(GADRequest())
+            
+        }
+        
+        
+        observeExercisesGroup(valueLevel: valueLevel_)
+        
+        setupCollectionViewLayot()
+        
+   
         // myarray = defaults.stringArray(forKey: "SavedStringArray") ?? [String]()
         
         //        if
@@ -67,13 +85,6 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
         //
         //        }
         //
-        observeExercisesGroup(valueLevel: valueLevel_)
-        
-        setupCollectionViewLayot()
-        
-        adBannerView.load(GADRequest())
-        
-        
     }
     
     lazy var adBannerView: GADBannerView = {
@@ -183,7 +194,7 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
         vc.register(BlueprintsCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
         vc.register(headerBannerReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "bannerCell")
-        
+    
         return vc
     }()
     
@@ -197,39 +208,35 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
     
     func observeExercisesGroup(valueLevel: String) {
         //
-        ammoGroup.removeAll()
+        var ref = DatabaseReference()
         var _index = UInt(NSNotFound)
-        
-        let ref = Database.database().reference().child("Blueprints").child("Level").child(valueLevel)
-        _index = ref.observe( .value, with: { [weak self] (snapshot) in
-            
-            guard let self = self else { return }
-            ref.removeObserver(withHandle: _index)
-            if let value = snapshot.value {
+            ref = Database.database().reference().child("Blueprints").child("Level").child(valueLevel)
+            _index = ref.observe( .value, with: { [weak self] (snapshot) in
                 
-                if let dictionary = value as? [String: Any] {
-                    for blueprints in dictionary {
-                        if let blueDict = blueprints.value as? [String: Any] {
-                            let myAmmoGroup = AmmoGroup(dictionary: blueDict)
-                            self.ammoGroup.append(myAmmoGroup)
-                        }
-                    }
+                guard let self = self else { return }
+                ref.removeObserver(withHandle: _index)
+                self.ammoGroup.removeAll()
+                if let value = snapshot.value {
                     
+                    if let dictionary = value as? [String: Any] {
+                        for blueprints in dictionary {
+                            if let blueDict = blueprints.value as? [String: Any] {
+                                let myAmmoGroup = AmmoGroup(dictionary: blueDict)
+                                self.ammoGroup.append(myAmmoGroup)
+                            }
+                        }
+                        
+                    }
                 }
-            }
-            
-            
-            //обновление
-            
-            // self.attempReloadofCollection()
-            
-            
-            
-            self.bluePrintsArraySorted()
-            
-            
-            }, withCancel: nil)
-        
+                
+                
+                //обновление
+                
+                // self.attempReloadofCollection()
+                
+                self.bluePrintsArraySorted()
+                
+                }, withCancel: nil)
         
         
     }
@@ -250,6 +257,8 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
         self.collectionView.reloadData()
         
         self.chanceObserver(lavel: self.valueLevel_)
+        
+        customView.removeFromSuperview()
         // self.attempReloadofCollection()
         
         
@@ -283,8 +292,18 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
             label_Value.text = "x75"
             dischargeBtn.isUserInteractionEnabled = false
             let dischargeBtnText = NSLocalizedString("Explore", comment: "")
+            nameBlueprintsLabel.text = NSLocalizedString("Click on the blueprint", comment: "")
             dischargeBtn.setTitle(dischargeBtnText, for: .normal)
-            observeExercisesGroup(valueLevel: valueLevel_)
+            label_Value2.text = nil
+            if TestConnectionNetwork.isConnectedNetwork() {
+                observeExercisesGroup(valueLevel: valueLevel_)
+                customView.removeFromSuperview()
+            } else {
+                self.sortedAmmoGroup.removeAll()
+                collectionView.reloadData()
+                tapReloadNotInternetConnection()
+            }
+            
             // collectionView.reloadData()
             
         case 1:
@@ -293,9 +312,18 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
             label_Value.text = "x300"
             dischargeBtn.isUserInteractionEnabled = false
             let dischargeBtnText = NSLocalizedString("Explore", comment: "")
+            nameBlueprintsLabel.text = NSLocalizedString("Click on the blueprint", comment: "")
             dischargeBtn.setTitle(dischargeBtnText, for: .normal)
-            observeExercisesGroup(valueLevel: valueLevel_)
+            label_Value2.text = nil
             //  collectionView.reloadData()
+            if TestConnectionNetwork.isConnectedNetwork() {
+                observeExercisesGroup(valueLevel: valueLevel_)
+                customView.removeFromSuperview()
+            } else {
+                self.sortedAmmoGroup.removeAll()
+                collectionView.reloadData()
+                tapReloadNotInternetConnection()
+            }
             
         case 2:
             
@@ -303,8 +331,17 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
             label_Value.text = "x1000"
             dischargeBtn.isUserInteractionEnabled = false
             let dischargeBtnText = NSLocalizedString("Explore", comment: "")
+            nameBlueprintsLabel.text = NSLocalizedString("Click on the blueprint", comment: "")
             dischargeBtn.setTitle(dischargeBtnText, for: .normal)
-            observeExercisesGroup(valueLevel: valueLevel_)
+            label_Value2.text = nil
+            if TestConnectionNetwork.isConnectedNetwork() {
+                observeExercisesGroup(valueLevel: valueLevel_)
+                customView.removeFromSuperview()
+            } else {
+                self.sortedAmmoGroup.removeAll()
+                collectionView.reloadData()
+                tapReloadNotInternetConnection()
+            }
             
         default:
             
@@ -331,10 +368,7 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
                 
             }
         }
-        
-        //  print(totalCount)
-        // print(studiedCount)
-        studiedCount -= 1
+
         value = (1 / (Float(totalCount) - Float(studiedCount))) * 100
         let result = String(format: "%.2f", value)
         let chanceLabelText = NSLocalizedString("Chance - ", comment: "")
@@ -342,15 +376,15 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
         switch lavel {
             
         case "Level_1":
-            
+            guard value <= 100 else { return chanceLabel.text = NSLocalizedString("All studied", comment: "") }
             chanceLabel.text = "\(chanceLabelText) \(result)%"
             
         case "Level_2":
-            
+            guard value <= 100 else { return chanceLabel.text = NSLocalizedString("All studied", comment: "")}
             chanceLabel.text = "\(chanceLabelText) \(result)%"
             
         case "Level_3":
-            
+            guard value <= 100 else { return chanceLabel.text = NSLocalizedString("All studied", comment: "")}
             chanceLabel.text = "\(chanceLabelText) \(result)%"
             
         default:
@@ -372,7 +406,11 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
         
         
         if TestConnectionNetwork.isConnectedNetwork() == true {
-            adBannerView.load(GADRequest())
+            
+            if !purchaseRustHelpRemoveAds {
+                adBannerView.load(GADRequest())
+            }
+          
         }
         
         
@@ -384,7 +422,6 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
     @objc func exploreTapBtn() {
         
         //        numbersItemCells.removeAll()
-        
         
         let item = sortedAmmoGroup[selectedIndex.row]
         guard let id = item.id else { return }
@@ -459,15 +496,11 @@ class BlueprintsVC: UIViewController, UIGestureRecognizerDelegate {
         
         // print("myarray",myarray)
         
-        
+        selectedKey = id
         collectionView.reloadData()
-        
-        
+
     }
-    
-    
-    
-    
+
     //обновление
     private func attempReloadofCollection() {
         self.timer?.invalidate()
@@ -555,8 +588,9 @@ extension BlueprintsVC: UICollectionViewDelegateFlowLayout, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: adBanner, for: indexPath)
-        
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: adBanner, for: indexPath) as! headerBannerReusableView
+    
+      //  headerView.labelInternetConnection()
         headerView.addSubview(adBannerView)
         adBannerView.translatesAutoresizingMaskIntoConstraints = false
         adBannerView.centerXAnchor.constraint(equalTo: headerView.centerXAnchor).isActive = true
@@ -569,7 +603,12 @@ extension BlueprintsVC: UICollectionViewDelegateFlowLayout, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
-        return .init(width: view.frame.width, height: 50)
+        if !purchaseRustHelpRemoveAds {
+            return .init(width: view.frame.width, height: 50)
+        } else {
+            return CGSize(width: 0, height: 0)
+        }
+       
     }
     
     
@@ -577,6 +616,10 @@ extension BlueprintsVC: UICollectionViewDelegateFlowLayout, UICollectionViewData
         
         return CGSize(width: 65, height: 65)
         
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionView.collectionViewLayout.invalidateLayout();
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -589,8 +632,7 @@ extension BlueprintsVC: UICollectionViewDelegateFlowLayout, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        //  print(self.ammoGroup.count)
-        
+    
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! BlueprintsCollectionViewCell
         
         cell.contentView.backgroundColor = .clear
@@ -605,12 +647,23 @@ extension BlueprintsVC: UICollectionViewDelegateFlowLayout, UICollectionViewData
         //        let myarray = UserDefaults.standard.value(forKey: "SavedStringArray") as? [String: [String]] ?? [String: [String]]()
         
         if  UserDefaults.standard.bool(forKey: sortedAmmoGroup[indexPath.row].id!) {
-            cell.contentView.backgroundColor = .red
+            cell.contentView.backgroundColor = UIColor(red: 119/255, green: 131/255, blue: 92/255, alpha: 1.0)
             cell.bg.alpha = 0.75
             
         } else {
             cell.bg.alpha = 1.0
         }
+//       
+//       
+//        if selectedKey == sortedAmmoGroup[indexPath.row].id {
+//            cell.layer.borderWidth = 3.0
+//            cell.layer.borderColor = UIColor.darkGray.cgColor
+//            cell.bg.alpha = 0.75
+//        } else {
+//            cell.layer.borderWidth = 0
+//            cell.layer.borderColor =  UIColor.clear.cgColor
+//            cell.bg.alpha = 1.0
+//        }
         
         return cell
         
@@ -657,10 +710,7 @@ extension BlueprintsVC: UICollectionViewDelegateFlowLayout, UICollectionViewData
                 
             }
         }
-        
-        
-        
-        
+ 
         
     }
     
@@ -762,7 +812,6 @@ extension BlueprintsVC {
         // navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBlueprints))
         
         navigationItem.rightBarButtonItem = UIBarButtonItem.menuButton(self, action: #selector(clearArrayNavBarTap), imageName: "delete")
-        
         
         view.addSubview(collectionView)
         
@@ -900,10 +949,51 @@ extension BlueprintsVC {
         //refresh
         refreshControll.addTarget(self, action: #selector(reloadCollectionView), for: .valueChanged)
         collectionView.refreshControl = refreshControll
-        
-        
+        tapReloadNotInternetConnection()
+   
     }
     
+    func tapReloadNotInternetConnection()  {
+      
+        if !TestConnectionNetwork.isConnectedNetwork() {
+            
+            
+            customView.frame = CGRect.init(x: 0, y: 0, width: 50, height: 50)
+            customView.backgroundColor = .clear     //give color to the view
+            customView.center = self.view.center
+            self.view.addSubview(customView)
+            
+            
+            
+            let button = UIButton()
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.setImage(UIImage(named: "update"), for: .normal)
+            button.addTarget(self, action: #selector(ifNotInternetConnection), for: .touchUpInside)
+            button.startAnimatingPressActions()
+            
+            customView.addSubview(button)
+            
+            button.topAnchor.constraint(equalTo: customView.topAnchor).isActive = true
+            button.widthAnchor.constraint(equalToConstant: 30).isActive = true
+            button.heightAnchor.constraint(equalToConstant: 30).isActive = true
+            button.centerXAnchor.constraint(equalTo: customView.centerXAnchor).isActive = true
+            
+            let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.textAlignment = .center
+            label.text = NSLocalizedString("No internet connection", comment: "") 
+            label.font = UIFont(name: "Roboto-Regular", size: 12)
+            customView.addSubview(label)
+            
+            label.topAnchor.constraint(equalTo: button.bottomAnchor).isActive = true
+            label.centerXAnchor.constraint(equalTo: customView.centerXAnchor).isActive = true
+        }
+    }
+    
+    @objc func ifNotInternetConnection() {
+     //   print("reload")
+        observeExercisesGroup(valueLevel: valueLevel_)
+    }
     
 }
 

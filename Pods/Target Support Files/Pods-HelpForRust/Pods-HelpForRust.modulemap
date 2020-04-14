@@ -1,4 +1,4 @@
-framework module Pods_HelpForRust {
+module Pods_HelpForRust {
   umbrella header "Pods-HelpForRust-umbrella.h"
 
   export *

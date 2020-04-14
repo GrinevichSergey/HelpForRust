@@ -58,6 +58,8 @@ class WeaponTableViewCell: UITableViewCell {
         let layot = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layot)
         layot.scrollDirection = .vertical
+        layot.minimumInteritemSpacing = 0
+       
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor =  UIColor(red: 68/255, green: 67/255, blue: 63/255, alpha: 1.0)
         return collectionView
@@ -210,7 +212,7 @@ extension WeaponTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
             cellMain.mainImageView.af.setImage(withURL: url!, cacheKey: weaponItemsTest[indexPath.row].items.imageUrl!)
             
             if let value = weaponItemsTest[indexPath.row].weapons.value, let valueItems = valueLabel.text {
-                cellMain.mainTextLabel.text = String(value * (Int(valueItems) ?? 0))
+                cellMain.mainTextLabel.text = String(format: "%.0f", value * (Double(valueItems) ?? 0))
             }
              
             return cellMain
@@ -247,7 +249,7 @@ extension WeaponTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     //размер ячеек коллекции
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        return CGSize(width: 85.0, height: 25.0)
+        return CGSize(width: 90.0, height: 25.0)
         
     }
     

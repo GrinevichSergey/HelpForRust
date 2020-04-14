@@ -34,7 +34,7 @@ class TabBarMenuController: UITabBarController {
         
         //MARK: Blueprints
         
-        blueprints.tabBarItem = UITabBarItem(title: "Blue prints", image: UIImage(named: "blueprints")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), tag: 0)
+        blueprints.tabBarItem = UITabBarItem(title: "Blueprints", image: UIImage(named: "blueprints")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), tag: 0)
         
         
         

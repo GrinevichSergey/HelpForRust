@@ -1,4 +1,5 @@
 import SystemConfiguration
+import UIKit
 
 class TestConnectionNetwork {
     
@@ -37,5 +38,5 @@ class TestConnectionNetwork {
         
     }
     
-    
+   
 }

@@ -1,7 +1,7 @@
 1. Firebase 
-login : dvdoroveev@gmail.com
+login :   dvdoroveev@gmail.com
 password: dvdoroveev2019
 
 2. Data
 В папке 'дата' по каждой вкладке находятся .json файлы для работы с Firebase. 
-Для добавления/изминения данных открываем необходимый .json, правим и экспортируем новый файл в  Firebase. 
+Для добавления/ изменения данных открываем необходимый .json, правим и экспортируем новый файл в  Firebase. 

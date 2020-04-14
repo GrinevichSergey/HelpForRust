@@ -38,6 +38,10 @@ class RaidCalculatorVC: UIViewController {
     var postRefHandle: DatabaseHandle!
     var query = DatabaseQuery()
     
+    var tagVisibleHeader = 0
+    
+    var customView = UIView()
+    
     
     lazy var adBannerView: GADBannerView = {
         let adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
@@ -127,8 +131,10 @@ class RaidCalculatorVC: UIViewController {
         observeItemsCompound()
         observeWeapon(subject: 0)
         
-        adBannerView.load(GADRequest())
-        
+        if !purchaseRustHelpRemoveAds {
+            adBannerView.load(GADRequest())
+        }
+       
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-9023638698585769/5251204135")
         let request = GADRequest()
         interstitial.load(request)
@@ -138,6 +144,7 @@ class RaidCalculatorVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        purchaseRustHelpRemoveAds = UserDefaults.standard.bool(forKey: "purchaseRustHelpRemoveAds")
         stepperCalc.value = 1
         labelStepper.text = String(Int(stepperCalc.value))
         
@@ -289,8 +296,8 @@ class RaidCalculatorVC: UIViewController {
                 
                 if itemsValue.items.id == compoundValues.compound.items_id {
                     
-                    let compoundDtos = Compound(imageUrl: compoundValues.items.imageUrl!, valueSum: (compoundValues.compound.value_compound! * Double(itemsValue.weapons.value!) * Double(subjectValue.value!)))
-                    
+                    let compoundDtos = Compound(imageUrl: compoundValues.items.imageUrl!, valueSum: (compoundValues.compound.value_compound! * Double(itemsValue.weapons.value!) * Double(subjectValue.value!)  + (dict[compoundValues.items.id!]?.valueSum ?? 0)))
+                                   
                     dict[compoundValues.items.id!] = compoundDtos
                     
                 }
@@ -562,31 +569,56 @@ class RaidCalculatorVC: UIViewController {
         case 0:
             subjectType = "Двери"
             //segment.titleForSegment(at: segment.selectedSegmentIndex)!
-            subjectArrayFiltering(type: subjectType)
+            if TestConnectionNetwork.isConnectedNetwork() {
+                subjectArrayFiltering(type: subjectType)
+                customView.removeFromSuperview()
+            } else {
+                tapReloadNotInternetConnection()
+            }
             weaponItems.removeAll()
             weaponDTOs.removeAll()
             //            subjectCollectionView.reloadData()
             stepperCalc.value = 1
             labelStepper.text = String(Int(stepperCalc.value))
+            stepperCalc.isHidden = true
+            labelStepper.isHidden = true
+            tagVisibleHeader = 0
             // reload(tableView: weaponTableView)
+            
             handlerReloadTable(tableView: weaponTableView)
         case 1:
             subjectType = "Стены"
-            subjectArrayFiltering(type: subjectType)
+            if TestConnectionNetwork.isConnectedNetwork() {
+                subjectArrayFiltering(type: subjectType)
+                customView.removeFromSuperview()
+            } else {
+                tapReloadNotInternetConnection()
+            }
             weaponItems.removeAll()
             weaponDTOs.removeAll()
             stepperCalc.value = 1
             labelStepper.text = String(Int(stepperCalc.value))
+            stepperCalc.isHidden = true
+            labelStepper.isHidden = true
+            tagVisibleHeader = 0
             //             subjectCollectionView.reloadData()
             //reload(tableView: weaponTableView)
             handlerReloadTable(tableView: weaponTableView)
         case 2:
             subjectType = "Окна"
-            subjectArrayFiltering(type: subjectType)
+            if TestConnectionNetwork.isConnectedNetwork() {
+                subjectArrayFiltering(type: subjectType)
+                customView.removeFromSuperview()
+            } else {
+                tapReloadNotInternetConnection()
+            }
             weaponItems.removeAll()
             weaponDTOs.removeAll()
             stepperCalc.value = 1
             labelStepper.text = String(Int(stepperCalc.value))
+            stepperCalc.isHidden = true
+            labelStepper.isHidden = true
+            tagVisibleHeader = 0
             //             subjectCollectionView.reloadData()
             //reload(tableView: weaponTableView)
             handlerReloadTable(tableView: weaponTableView)
@@ -594,11 +626,19 @@ class RaidCalculatorVC: UIViewController {
             
         case 3:
             subjectType = "Другое"
-            subjectArrayFiltering(type: subjectType)
+            if TestConnectionNetwork.isConnectedNetwork() {
+                subjectArrayFiltering(type: subjectType)
+                customView.removeFromSuperview()
+            } else {
+                tapReloadNotInternetConnection()
+            }
             weaponItems.removeAll()
             weaponDTOs.removeAll()
             stepperCalc.value = 1
             labelStepper.text = String(Int(stepperCalc.value))
+            stepperCalc.isHidden = true
+            labelStepper.isHidden = true
+            tagVisibleHeader = 0
             //             subjectCollectionView.reloadData()
             // reload(tableView: weaponTableView)
             handlerReloadTable(tableView: weaponTableView)
@@ -703,6 +743,7 @@ class RaidCalculatorVC: UIViewController {
             //                .flatMap({ $0.values })
             //                .flatMap({ $0 as? [String: Any] })
             //                .
+            self.subjectImageView.removeAll()
             if let value = snapshot.value {
                 if let dictionary = value as? [Any] {
                     for item in dictionary {
@@ -736,6 +777,7 @@ class RaidCalculatorVC: UIViewController {
         
         self.subjectCollectionView.reloadData()
         
+        customView.removeFromSuperview()
         
     }
     
@@ -776,12 +818,22 @@ extension RaidCalculatorVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return adBannerView
+        if !purchaseRustHelpRemoveAds {
+            return adBannerView
+        } else {
+            return nil
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if !purchaseRustHelpRemoveAds {
+            return adBannerView.frame.height
+        } else {
+            return CGFloat.zero
+            
+        }
         
-        return adBannerView.frame.height
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -802,7 +854,7 @@ extension RaidCalculatorVC: UITableViewDelegate, UITableViewDataSource {
         
         var returnSize = CGFloat()
         
-        if weaponDTOs.count == 0 {
+        if weaponDTOs.count == 0 && tagVisibleHeader == 0 {
             returnSize = 45
         } else if weaponDTOs.count > 0 {
             returnSize = 160
@@ -840,8 +892,9 @@ extension RaidCalculatorVC: UITableViewDelegate, UITableViewDataSource {
             
             cell = cellWeapor
             
-        } else if weaponDTOs.count == 0 {
+        } else if weaponDTOs.count == 0 && tagVisibleHeader == 0 {
             let emptyCell = tableView.dequeueReusableCell(withIdentifier: emptyId, for: indexPath) as! EmptyTableViewCell
+     
             cell = emptyCell
         } 
         
@@ -895,41 +948,48 @@ extension RaidCalculatorVC: UICollectionViewDataSource, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        
+        tagVisibleHeader = 1
         stepperCalc.isHidden = false
         stepperCalc.value = 1
         labelStepper.text = String(Int(stepperCalc.value))
         labelStepper.isHidden = false
         
-        
-        if let id = subjectArrayFilter[indexPath.row].id {
-            //weaponItemsFiltering(subject_id: id)
-            
-            self.postsRef.removeObserver(withHandle: self.postRefHandle!)
+        if TestConnectionNetwork.isConnectedNetwork() {
+            if let id = subjectArrayFilter[indexPath.row].id {
+                //weaponItemsFiltering(subject_id: id)
+                
+                self.postsRef.removeObserver(withHandle: self.postRefHandle!)
+                weaponDTOs.removeAll()
+                weaponTableView.reloadData()
+                
+                self.indicator.stopAnimating()
+                self.indicator.hidesWhenStopped = true
+                
+                self.activityIndicator()
+                self.indicator.startAnimating()
+                self.indicator.backgroundColor = .clear
+                
+                observeWeapon(subject: id)
+                
+                customView.removeFromSuperview()
+                // reload(tableView: weaponTableView)
+            }
+        } else {
             weaponDTOs.removeAll()
+            tagVisibleHeader = 0
             weaponTableView.reloadData()
-            
-            self.indicator.stopAnimating()
-            self.indicator.hidesWhenStopped = true
-            
-            self.activityIndicator()
-            self.indicator.startAnimating()
-            self.indicator.backgroundColor = .clear
-            
-            observeWeapon(subject: id)
-            
-            // reload(tableView: weaponTableView)
+            tapReloadNotInternetConnection()
         }
-        
         
         
         
         if !purchaseRustHelpRemoveAds {
             if interstitial.isReady {
-                interstitial = createAndLoadInterstitial()
-                
+                interstitial.present(fromRootViewController: self)
             }
         }
+        
+        
     }
     
     
@@ -1120,8 +1180,52 @@ extension RaidCalculatorVC {
         segmentControl.trailingAnchor.constraint(equalTo: segmentView.trailingAnchor).isActive = true
         segmentControl.leadingAnchor.constraint(equalTo: segmentView.leadingAnchor).isActive = true
         
+        tapReloadNotInternetConnection()
+        
+       
     }
     
+    func tapReloadNotInternetConnection()  {
+        
+        if !TestConnectionNetwork.isConnectedNetwork() {
+            
+            
+            customView.frame = CGRect.init(x: 0, y: 0, width: 50, height: 50)
+            customView.backgroundColor = .clear     //give color to the view
+            customView.center = self.view.center
+            self.view.addSubview(customView)
+            
+            
+            
+            let button = UIButton()
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.setImage(UIImage(named: "update"), for: .normal)
+            button.addTarget(self, action: #selector(ifNotInternetConnection), for: .touchUpInside)
+            button.startAnimatingPressActions()
+            
+            customView.addSubview(button)
+            
+            button.topAnchor.constraint(equalTo: customView.topAnchor).isActive = true
+            button.widthAnchor.constraint(equalToConstant: 30).isActive = true
+            button.heightAnchor.constraint(equalToConstant: 30).isActive = true
+            button.centerXAnchor.constraint(equalTo: customView.centerXAnchor).isActive = true
+            
+            let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.textAlignment = .center
+            label.text = NSLocalizedString("No internet connection", comment: "")
+            label.font = UIFont(name: "Roboto-Regular", size: 12)
+            customView.addSubview(label)
+            
+            label.topAnchor.constraint(equalTo: button.bottomAnchor).isActive = true
+            label.centerXAnchor.constraint(equalTo: customView.centerXAnchor).isActive = true
+        }
+    }
+    
+    @objc func ifNotInternetConnection() {
+        print("reload")
+        observeSubjectRaidCalculator()
+    }
 }
 
 //extension Array

@@ -112,7 +112,11 @@ class AddBlueprintsVC: UIViewController {
     func setupView(){
         view.addSubview(btnLevel1)
         btnLevel1.backgroundColor = .green
-        btnLevel1.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        if #available(iOS 11.0, *) {
+            btnLevel1.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        } else {
+            // Fallback on earlier versions
+        }
         btnLevel1.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
         btnLevel1.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
         btnLevel1.heightAnchor.constraint(equalToConstant: 50).isActive = true

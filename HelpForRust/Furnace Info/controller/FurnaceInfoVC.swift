@@ -21,7 +21,7 @@ class FurnaceInfoVC: UITableViewController {
     var purchaseRustHelpRemoveAds = UserDefaults.standard.bool(forKey: "purchaseRustHelpRemoveAds")
     var interstitial: GADInterstitial!
     
-
+    var customView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,16 +29,27 @@ class FurnaceInfoVC: UITableViewController {
         setupComponents()
         observeFurnace()
         
-        timerShowAd()
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-9023638698585769/5251204135")
+        let request = GADRequest()
+        interstitial.load(request)
         
-       
+        timerShowAd()
+      
+    }
+    
+  
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        purchaseRustHelpRemoveAds = UserDefaults.standard.bool(forKey: "purchaseRustHelpRemoveAds")
+        
     }
     
     fileprivate func timerShowAd() {
         
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-9023638698585769/5251204135")
-        let request = GADRequest()
-        interstitial.load(request)
+        
         
         if #available(iOS 10.0, *) {
             Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
@@ -95,7 +106,7 @@ class FurnaceInfoVC: UITableViewController {
                         return
                     }
                     
-                   // print("Image URL: \((url?.absoluteString)!)")
+                    // print("Image URL: \((url?.absoluteString)!)")
                     self.sendFurnaceImageUrl(imageUrl: (url?.absoluteString)!)
                 }
                 
@@ -137,19 +148,35 @@ class FurnaceInfoVC: UITableViewController {
         var _index = UInt(NSNotFound)
         
         let ref = Database.database().reference().child("FurnaceInfo")
-        _index = ref.observe( .childAdded, with: {  [weak self] (snapshot) in
+        _index = ref.observe( .value, with: {  [weak self] (snapshot) in
             
             guard let self = self else { return }
             ref.removeObserver(withHandle: _index)
-            
-            if let dic = snapshot.value as? [String: AnyObject] {
-                let myFurnace = Furnace(dictionary: dic)
-                
-                self.furnaceInfoArray.append(myFurnace)
-                
+        
+            self.furnaceInfoArray.removeAll()
+            if let snapDict = snapshot.value as? [String: Any] {
+                for furnace in snapDict.values {
+                    if let furnaceDict = furnace as? [String: Any] {
+                        let myFurnace = Furnace(dictionary: furnaceDict)
+                        self.furnaceInfoArray.append(myFurnace)
+                    }
+                }
+            } else {
+                if let value = snapshot.value {
+                    if let dictionary = value as? [Any] {
+                        for furnace in dictionary {
+                            if let furnaceDict = furnace as? [String : Any] {
+                                let myFurnace = Furnace(dictionary: furnaceDict)
+                                self.furnaceInfoArray.append(myFurnace)
+                                
+                            }
+                        }
+                        
+                    }
+                }
             }
             
-     
+
             self.sortFurnaceInfo(type: self.typeFurnace)
             
             }, withCancel: nil)
@@ -176,23 +203,35 @@ class FurnaceInfoVC: UITableViewController {
     }
     
     func sortFurnaceInfo(type: String) {
-   
-//        furnaceFiltered = furnaceInfoArray.filter({ $0.type!.lowercased().contains(type) })
+        
+        //        furnaceFiltered = furnaceInfoArray.filter({ $0.type!.lowercased().contains(type) })
         //фильтрация массива в зависимости от типа
         furnaceFiltered = furnaceInfoArray.filter({ (furnace) -> Bool in
             return furnace.type == type
+        }).sorted(by: {
+            var sorted = false
+            if let first = $0.id, let second = $1.id {
+                sorted = first < second
+            }
+            return sorted
         })
-
+        
         
         DispatchQueue.main.async {
-
+            //
+            //            UIView.transition(with: self.tableView, duration: 1.0, options: .transitionCrossDissolve, animations: {
+            //
+            //
+            //            }, completion: nil)
             self.tableView.reloadData()
+            guard self.furnaceFiltered.count != 0 else { return }
             let indexPath = IndexPath(row: 0, section: 0)
-            self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
-               
+            self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+            
+            self.customView.removeFromSuperview()
         }
         
-//        observeFurnace()
+        //        observeFurnace()
         
     }
     
@@ -200,13 +239,34 @@ class FurnaceInfoVC: UITableViewController {
         switch segment.selectedSegmentIndex {
         case 0:
             typeFurnace = "iron"
-            sortFurnaceInfo(type: typeFurnace)
+            if TestConnectionNetwork.isConnectedNetwork() {
+                sortFurnaceInfo(type: typeFurnace)
+                customView.removeFromSuperview()
+            } else {
+                furnaceFiltered.removeAll()
+                tableView.reloadData()
+                tapReloadNotInternetConnection()
+            }
         case 1:
             typeFurnace = "sulfur"
-            sortFurnaceInfo(type: typeFurnace)
+            if TestConnectionNetwork.isConnectedNetwork() {
+                sortFurnaceInfo(type: typeFurnace)
+                customView.removeFromSuperview()
+            } else {
+                furnaceFiltered.removeAll()
+                tableView.reloadData()
+                tapReloadNotInternetConnection()
+            }
         case 2:
             typeFurnace = "MVK"
-            sortFurnaceInfo(type: typeFurnace)
+            if TestConnectionNetwork.isConnectedNetwork() {
+                sortFurnaceInfo(type: typeFurnace)
+                customView.removeFromSuperview()
+            } else {
+                furnaceFiltered.removeAll()
+                tableView.reloadData()
+                tapReloadNotInternetConnection()
+            }
         default:
             break
         }
@@ -214,7 +274,7 @@ class FurnaceInfoVC: UITableViewController {
     }
     
     func setupComponents()  {
-   
+        
         navigationItem.title = "Furnace Info"
         let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 134/255, green: 149/255, blue: 106/255, alpha: 1.0)]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
@@ -222,7 +282,7 @@ class FurnaceInfoVC: UITableViewController {
         
         view.backgroundColor = UIColor(red: 93/255, green: 95/255, blue: 92/255, alpha: 1.0)
         //let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(presentImagePickerController))
-       // navigationItem.rightBarButtonItem = addButton
+        // navigationItem.rightBarButtonItem = addButton
         
         let items = [NSLocalizedString("iron", comment: ""), NSLocalizedString("sulfur", comment: ""), NSLocalizedString("MVK", comment: "")]
         
@@ -248,7 +308,7 @@ class FurnaceInfoVC: UITableViewController {
         segmentView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         segmentView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         segmentView.heightAnchor.constraint(equalToConstant: 35).isActive = true
-    
+        
         segmentView.addSubview(segmentControll)
         segmentControll.centerYAnchor.constraint(equalTo: segmentView.centerYAnchor).isActive = true
         segmentControll.centerXAnchor.constraint(equalTo: segmentView.centerXAnchor).isActive = true
@@ -256,14 +316,60 @@ class FurnaceInfoVC: UITableViewController {
         segmentControll.leadingAnchor.constraint(equalTo: segmentView.leadingAnchor).isActive = true
         
         //tableView.tableHeaderView = segmentControll
-        
-        tableView.tableFooterView = UIView(frame: .zero)
+        tableView.tableFooterView = segmentView
+        //tableView.tableFooterView = UIView(frame: .zero)
         tableView.register(FurnaceInfoTableViewCell.self, forCellReuseIdentifier: cellID)
-      
-               
+        
+        tapReloadNotInternetConnection()
+        
     }
-  
+    
 
+    func tapReloadNotInternetConnection()  {
+        
+        if !TestConnectionNetwork.isConnectedNetwork() {
+            
+            customView.translatesAutoresizingMaskIntoConstraints = false
+            customView.backgroundColor = .clear     //give color to the view
+          
+            self.view.addSubview(customView)
+            customView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+            customView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            customView.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor).isActive = true
+            customView.centerYAnchor.constraint(equalTo: view.layoutMarginsGuide.centerYAnchor).isActive = true
+            
+            
+            let button = UIButton()
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.setImage(UIImage(named: "update"), for: .normal)
+            button.addTarget(self, action: #selector(ifNotInternetConnection), for: .touchUpInside)
+            button.startAnimatingPressActions()
+            
+            customView.addSubview(button)
+            
+            button.topAnchor.constraint(equalTo: customView.topAnchor).isActive = true
+            button.widthAnchor.constraint(equalToConstant: 30).isActive = true
+            button.heightAnchor.constraint(equalToConstant: 30).isActive = true
+            button.centerXAnchor.constraint(equalTo: customView.centerXAnchor).isActive = true
+            
+            let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.textAlignment = .center
+            label.text = NSLocalizedString("No internet connection", comment: "")
+            label.font = UIFont(name: "Roboto-Regular", size: 12)
+            customView.addSubview(label)
+            
+            label.topAnchor.constraint(equalTo: button.bottomAnchor).isActive = true
+            label.centerXAnchor.constraint(equalTo: customView.centerXAnchor).isActive = true
+        }
+    }
+    
+    @objc func ifNotInternetConnection() {
+        // print("reload")
+        observeFurnace()
+    }
+    
+    
 }
 
 extension FurnaceInfoVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

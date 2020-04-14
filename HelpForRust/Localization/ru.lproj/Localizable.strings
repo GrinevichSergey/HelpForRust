@@ -17,11 +17,13 @@
 "Chance - " = "Шанс - ";
 "Explore" = "Изучить";
 "Remove" = "Удалить";
+"All studied" = "Все изучено";
 
 //MARK: Purchase
 "Advertisement is an important part of the application development. You can disable ads for support, development and comfortable use of the application. Hope for your understanding." = "Реклама является важной частью развития приложения. Для поддержки, развития и комфортного использования приложения Вы можете отключить рекламу. Надеемся на Ваше понимание.";
 "Restore Purchases" = "Восстановить покупки";
 "Remove Ads" = "Отключить рекламу";
+"Thanks for your support." = "Спасибо за Вашу поддержку";
 
 
 //MARK : RaidCalc
@@ -39,3 +41,6 @@
 "iron" = "железо";
 "sulfur" = "сера";
 "MVK" = "МВК";
+
+//MARK: helpers
+"No internet connection" = "Отсутствует подключение к интернету";

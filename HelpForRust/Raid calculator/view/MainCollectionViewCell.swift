@@ -75,20 +75,40 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     func setupComponent() {
         
-        addSubview(mainImageView)
-        mainImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 6).isActive = true
-        mainImageView.widthAnchor.constraint(equalToConstant: 25).isActive = true
-        mainImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        mainImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-       // mainImageView.heightAnchor.constraint(equalToConstant: 25).isActive = true
+//        addSubview(mainImageView)
+//        mainImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 6).isActive = true
+//        mainImageView.widthAnchor.constraint(equalToConstant: 25).isActive = true
+//        mainImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+//        mainImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+//       // mainImageView.heightAnchor.constraint(equalToConstant: 25).isActive = true
+//
+//        addSubview(mainTextLabel)
+//        mainTextLabel.leftAnchor.constraint(equalTo: mainImageView.rightAnchor, constant: 3).isActive = true
+//       // mainTextLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
+//        mainTextLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+//        mainTextLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+//        mainTextLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+//     //   mainTextLabel.widthAnchor.constraint(equalToConstant: 35).isActive = true
         
-        addSubview(mainTextLabel)
-        mainTextLabel.leftAnchor.constraint(equalTo: mainImageView.rightAnchor, constant: 3).isActive = true
-       // mainTextLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
-        mainTextLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        mainTextLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        mainTextLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-     //   mainTextLabel.widthAnchor.constraint(equalToConstant: 35).isActive = true
+        let stackView = UIStackView()
+        stackView.axis = NSLayoutConstraint.Axis.horizontal
+        stackView.distribution = UIStackView.Distribution.equalSpacing
+        stackView.alignment = UIStackView.Alignment.center
+        stackView.spacing   = 2.0
+        stackView.addArrangedSubview(mainImageView)
+        stackView.addArrangedSubview(mainTextLabel)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(stackView)
+        
+        stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 3).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+    
+        mainImageView.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        mainImageView.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        
+        mainTextLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        mainTextLabel.widthAnchor.constraint(equalToConstant: 60).isActive = true
         
         
     }

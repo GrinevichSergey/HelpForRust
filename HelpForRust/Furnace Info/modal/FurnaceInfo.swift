@@ -14,7 +14,7 @@ class Furnace: NSObject {
     var imageUrl: String?
     var type: String?
     
-    init(dictionary: [String: AnyObject]) {
+    init(dictionary: [String: Any]) {
         super.init()
         id = dictionary["id"] as? String
         imageUrl = dictionary["imageUrl"] as? String

@@ -19,20 +19,26 @@ class headerBannerReusableView: UICollectionReusableView {
         return label
     }()
         
+//    func labelInternetConnection() {
+//        //  backgroundColor = .red
+//
+//        //проверка подключения интернета
+//        if TestConnectionNetwork.isConnectedNetwork() == false
+//        {
+//            addSubview(label)
+//            label.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+//            label.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+//            label.text = NSLocalizedString("Internet Connection not Available!", comment: "")
+//        } else {
+//            label.text = nil
+//        }
+//    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         
-        //  backgroundColor = .red
-        
-        //проверка подключения интернета
-        if TestConnectionNetwork.isConnectedNetwork() == false
-        {
-            addSubview(label)
-            label.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-            label.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-            label.text = NSLocalizedString("Internet Connection not Available!", comment: "")
-        }
+    //    labelInternetConnection()
          
     }
     

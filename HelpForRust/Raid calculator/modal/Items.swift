@@ -30,14 +30,14 @@ class ItemsWeapons: NSObject {
     var id: Int?
     var weapons_id : Int?
     var items_id: Int?
-    var value : Int?
+    var value : Double?
     
     init(dictionary: [String: Any]) {
         
         id = dictionary["id"] as? Int
         weapons_id = dictionary["weapons_id"] as? Int
         items_id = dictionary["items_id"] as? Int
-        value = dictionary["value"] as? Int
+        value = dictionary["value"] as? Double
         
     }
     

@@ -9,59 +9,12 @@
 import UIKit
 import StoreKit
 
-class PurchaseVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver  {
+
+class PurchaseVC: UIViewController, LabelChangeText  {
     
     var purchaseRustHelpRemoveAds = UserDefaults.standard.bool(forKey: "purchaseRustHelpRemoveAds")
     
-    
-    var p = SKProduct()
-    var list = [SKProduct]()
-    
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        let myProduct = response.products
-        print(myProduct)
-        for product in myProduct {
-            list.append(product)
-        }
-        print(list)
-    }
-    
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        for transaction: AnyObject in transactions {
-            let trans = transaction as! SKPaymentTransaction
-            
-            switch trans.transactionState {
-            case .purchased:
-                let prodID = p.productIdentifier
-                switch prodID {
-                case "DorofeevEvgenyApplication.RustHelp.RemoveAds":
-                    print("purchased")
-                    purchaseRustHelpRemoveAds = true
-                    UserDefaults.standard.set(purchaseRustHelpRemoveAds, forKey: "purchaseRustHelpRemoveAds")
-                    
-                default:
-                    print("IAP not found")
-                }
-                queue.finishTransaction(trans)
-                break
-            case .restored:
-                print("restored")
-                purchaseRustHelpRemoveAds = true
-                UserDefaults.standard.set(purchaseRustHelpRemoveAds, forKey: "purchaseRustHelpRemoveAds")
-                queue.finishTransaction(trans)
-                break
-            case .failed:
-                print("buy error")
-                queue.finishTransaction(trans)
-                break
-            default:
-                print("Default")
-                break
-            }
-            
-        }
-    }
-    
+    // let productID = "DorofeevEvgenyApplication.RustHelp.RemoveAds"
     
     lazy var imageView : UIImageView = {
         let imageView = UIImageView()
@@ -83,7 +36,7 @@ class PurchaseVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
         text.minimumScaleFactor = 0.01
         
         text.font = UIFont(name: "Roboto-Regular", size: 14)
-//        text.text = "Advertisement is an important part of the application development. You can disable ads for support, development and comfortable use of the application. Hope for your understanding."
+        //        text.text = "Advertisement is an important part of the application development. You can disable ads for support, development and comfortable use of the application. Hope for your understanding."
         return text
     }()
     
@@ -102,12 +55,13 @@ class PurchaseVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
         btn.addTarget(self, action: #selector(tapRemoveAds), for: .touchUpInside)
         UIView.animate(withDuration: 0.6, animations: {
             btn.transform = CGAffineTransform.identity.scaledBy(x: 0.6, y: 0.6)
-            }, completion: { (finish) in
-                UIView.animate(withDuration: 0.6, animations: {
-                    btn.transform = CGAffineTransform.identity
-                })
+        }, completion: { (finish) in
+            UIView.animate(withDuration: 0.6, animations: {
+                btn.transform = CGAffineTransform.identity
+            })
         })
-       // btn.showsTouchWhenHighlighted = true
+        //  btn.showsTouchWhenHighlighted = true
+        btn.startAnimatingPressActions()
         return btn
     }()
     
@@ -123,20 +77,24 @@ class PurchaseVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
         btn.layer.borderWidth = 1
         btn.layer.borderColor = UIColor.black.cgColor
         UIView.animate(withDuration: 0.6, animations: {
-                   btn.transform = CGAffineTransform.identity.scaledBy(x: 0.6, y: 0.6)
-                   }, completion: { (finish) in
-                       UIView.animate(withDuration: 0.6, animations: {
-                           btn.transform = CGAffineTransform.identity
-                       })
-               })
-       // btn.showsTouchWhenHighlighted = true
+            btn.transform = CGAffineTransform.identity.scaledBy(x: 0.6, y: 0.6)
+        }, completion: { (finish) in
+            UIView.animate(withDuration: 0.6, animations: {
+                btn.transform = CGAffineTransform.identity
+            })
+        })
+        //  btn.showsTouchWhenHighlighted = true
+        btn.startAnimatingPressActions()
         btn.addTarget(self, action: #selector(tapRestorePurchases), for: .touchUpInside)
         return btn
     }()
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        purchaseRustHelpRemoveAds = UserDefaults.standard.bool(forKey: "purchaseRustHelpRemoveAds")
+        
     }
     
     override func viewDidLoad() {
@@ -144,53 +102,92 @@ class PurchaseVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
         
         setupComponents()
         
-        if(SKPaymentQueue.canMakePayments()) {
-            print("IAP is enabled, loading")
-            let productID: NSSet = NSSet(objects: "DorofeevEvgenyApplication.RustHelp.RemoveAds")
-            let request: SKProductsRequest = SKProductsRequest(productIdentifiers: productID as! Set<String>)
-            request.delegate = self
-            request.start()
-        } else {
-            print("please enable IAPS")
+        for transactionPending in SKPaymentQueue.default().transactions {
+            SKPaymentQueue.default().finishTransaction(transactionPending)
         }
+        
+        IAPService.shared.getProduct()
+        
+        chancheTextLabel()
+        
+    }
+    
+    func chancheTextLabel() {
+        
+        purchaseRustHelpRemoveAds = UserDefaults.standard.bool(forKey: "purchaseRustHelpRemoveAds")
         
         if purchaseRustHelpRemoveAds {
             label.text = NSLocalizedString("Thanks for your support.", comment: "thanks for your support.")//"Спасибо за вашу поддержку"
+            removeAds.isEnabled = false
+            restorePurchases.isEnabled = false
+            removeAds.setTitleColor(UIColor(red: 93/255, green: 95/255, blue: 92/255, alpha: 1.0), for: .normal)
+            removeAds.layer.borderWidth = 0
+            restorePurchases.setTitleColor(UIColor(red: 93/255, green: 95/255, blue: 92/255, alpha: 1.0), for: .normal)
+            restorePurchases.layer.borderWidth = 0
         } else {
             label.text = NSLocalizedString("Advertisement is an important part of the application development. You can disable ads for support, development and comfortable use of the application. Hope for your understanding.", comment: "advertisement is an important part of the application development. You can disable ads for support, development and comfortable use of the application. Hope for your understanding.")//"Реклама является важной частью развития приложения. Для поддержки, развития и комфортного использования приложения Вы можете отключить рекламу. Надеемся на Ваше понимание."
+            removeAds.isEnabled = true
+            restorePurchases.isEnabled = true
+          
+            
         }
-        
     }
+    
+    
+    
+    //    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    //
+    //        for transaction in transactions{
+    //            if transaction.transactionState == .purchased {
+    //                UserDefaults.standard.set(true, forKey: "purchaseRustHelpRemoveAds")
+    //                label.text = NSLocalizedString("Thanks for your support. Purchased", comment: "thanks for your support.")
+    //                queue.finishTransaction(transaction)
+    //            } else if transaction.transactionState == .failed {
+    //                print("failed")
+    //                queue.finishTransaction(transaction)
+    //            } else if transaction.transactionState == .restored {
+    //                UserDefaults.standard.set(true, forKey: "purchaseRustHelpRemoveAds")
+    //                label.text = NSLocalizedString("Thanks for your support. Restored", comment: "thanks for your support.")
+    //                queue.finishTransaction(transaction)
+    //            }
+    //        }
+    //    }
+    
     
     
     @objc func tapRestorePurchases() {
         
-        SKPaymentQueue.default().add(self)
-        SKPaymentQueue.default().restoreCompletedTransactions()
+        IAPService.shared.delegate = self
+        IAPService.shared.restorePurchases()
+        //SKPaymentQueue.default().restoreCompletedTransactions()
+
+        restorePurchases.isEnabled = false
         
     }
     
     @objc func tapRemoveAds() {
         
-        for product in self.list {
-            if (product.productIdentifier == "DorofeevEvgenyApplication.RustHelp.RemoveAds") {
-                self.p = product
-                let pay = SKPayment(product: product)
-                SKPaymentQueue.default().add(self)
-                SKPaymentQueue.default().add(pay as SKPayment)
-            }
-        }
+        IAPService.shared.delegate = self
+        IAPService.shared.purchase(prod: .nonConsumable)
+        removeAds.isEnabled = false
+
+        
+        //        if SKPaymentQueue.canMakePayments() {
+        //            let paymentRequest = SKMutablePayment()
+        //            paymentRequest.productIdentifier = productID
+        //            SKPaymentQueue.default().add(paymentRequest)
+        //
+        //        } else {
+        //            print("user unabled to make payments")
+        //        }
         
     }
-    
-    
     
 }
 
 
 //MARK: setupComponents
 extension PurchaseVC {
-    
     
     func setupComponents() {
         
@@ -225,7 +222,7 @@ extension PurchaseVC {
         label.rightAnchor.constraint(equalTo: container.rightAnchor).isActive = true
         label.topAnchor.constraint(equalTo: container.topAnchor).isActive = true
         label.bottomAnchor.constraint(equalTo: container.bottomAnchor).isActive = true
-     
+        
         
         view.addSubview(removeAds)
         
@@ -244,5 +241,34 @@ extension PurchaseVC {
     }
     
     
+}
+
+extension UIButton {
+    
+    func startAnimatingPressActions() {
+        addTarget(self, action: #selector(animateDown), for: [.touchDown, .touchDragEnter])
+        addTarget(self, action: #selector(animateUp),   for: [.touchDragExit, .touchCancel, .touchUpInside, .touchUpOutside])
+    }
+    
+    @objc private func animateDown(sender: UIButton) {
+        animate(sender, transform: CGAffineTransform.identity.scaledBy(x: 0.95, y: 0.95))
+    }
+    
+    @objc private func animateUp(sender: UIButton) {
+        animate(sender, transform: .identity)
+    }
+    
+    private func animate(_ button: UIButton, transform: CGAffineTransform) {
+        UIView.animate(withDuration: 0.4,
+                       delay: 0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 3,
+                       options: [.curveEaseInOut],
+                       animations: {
+                        button.transform = transform
+        }, completion: nil)
+    }
     
 }
+
+
